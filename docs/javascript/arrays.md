@@ -500,3 +500,5 @@ function duplicateMatriz (array) {
 
 console.log('El valor de la nueva matriz es: ', duplicateMatriz(matriz));
 ```
+
+## [Ejercicios](./javascript/arrays_ejercicios.md)
