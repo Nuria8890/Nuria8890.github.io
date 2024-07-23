@@ -250,7 +250,7 @@ const indiceDelNumero = numerosAleatorios.findIndex(numero => numero < 50);
 console.log(indiceDelNumero); // 0 (el número 6)
 ```
 
-#### Método .concat(), Operador Spread, .join()
+#### Método .concat(), Spread Operator, .join()
 Estos métodos sirven para unir y entrelazar los elementos de dos o más arrays.
 
 ```javascript

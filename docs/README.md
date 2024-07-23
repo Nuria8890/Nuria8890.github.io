@@ -16,7 +16,8 @@
   - Symbol
   - Bigint
 - Datos complejos
-  - Objetos
+  - [Objetos](./javascript/objetos.md)
+    - [Objetos Ejercicios](./javascript/objetos_ejercicios.md)
   - [Arrays](./javascript/arrays.md)
     - [Arrays Ejercicios](./javascript/arrays_ejercicios.md)
   - [Funciones](./javascript/funciones.md)

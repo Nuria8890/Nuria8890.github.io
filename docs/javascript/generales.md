@@ -324,70 +324,7 @@ console.log(numberIfParticlesInTheUniverse) // 100000000000000000n
 Son **mutables** (cambia el valor original), se pasan por **referencia** (“crear un acceso directo y así, los cambios que haga en el nuevo archivo, son referenciados en el archivo original”).
 
 ###	Objet: objetos
-#### Enlace implícito o implicit binding
-Ocurre cuando se invoca un método de un objeto y this se vincula al objeto que contiene el método.
-
-```javascript
-const house = { //objeto
-  dogName: 'Firulais',
-  dogGreeting: function () {// Función dentro del objeto
-    console.log(`Hi, I'm ${this.dogName}`)//Con this accedo al objeto, y ya puedo acceder a la propiedades del objeto.
-  } 
-}
-house.dogGreeting() // Llamo a la función que está dentro del objeto house
-```
-
-#### Enlace explícito o explicit binding
-Ocurre cuando se usan métodos como **call, apply o bind** para establecer explícitamente el valor de *this*.
-
-```javascript
-const newHouse = { // Objeto
-  dogName: 'Coconut',
-}
-function dogGreeting () { // Función fuera del objeto
-  console.log(`Hi, I'm ${this.dogName}`)
-}
-dogGreeting.call(newHouse) // Llamo a la función, y con .call vinculo esta función al objeto (newHouse) para poder acceder a sus propiedades
-
-
-function newDogGreeting (owner, address) {
-  console.log(`Hi, I'm ${this.dogName} and I live with ${owner} on ${address}`)
-}
-const owner = 'Lucy'
-const address = 'Avenue 123'
-newDogGreeting.call(newHouse, owner, address) // Puedo vincular una función con un objeto y a la vez mandarle diferentes parámetros
-```
-##### Call
-
-```javascript
-const owner = 'Maca'
-const address = '567 Avenue'
-
-function dogGreeting (owner, address) {
-  console.log(`Hi, I'm ${this.dogName}, and I live with ${owner} on ${address}`)
-}
-
-const newHouse = {
-  dogName: 'Sheldom'
-}
-
-dogGreeting.call(newHouse, owner, address)
-```
-##### Apply
-Si tenemos muchos parámetros, lo mejor es usar apply, porque se añaden todos esos parámetros en a un array, y usamos el array como parámetro de la función.
-
-```javascript
-const necessaryValues = [owner, address]
-dogGreeting.apply(newHouse, necessaryValues)
-```
-
-##### Binds
-Devuelve una función, y para poder ver el resultado tengo que ejecutar esa función.
-
-```javascript
-const bindingWithBind = dogGreeting.bind(newHouse, owner, address)
-bindingWithBind()
-```
+[Apuntes de objetos](./javascript/objetos.md)
 
 ###	Array: listado de objetos
 [Apuntes de arrays](./javascript/arrays.md)
