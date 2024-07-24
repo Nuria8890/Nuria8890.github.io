@@ -1,4 +1,7 @@
 # *APUNTES DE JAVASCRIPT*
+
+Poner un comentario: ctrl + }
+
 # Variables
 **let**: se usa cuando el valor va a ir cambiando. Por ejemplo un contador, se iniciará en 0 y va a ir sumando a lo largo del tiempo.
 ```javascript
@@ -121,6 +124,22 @@ const escapeBarraInvertida = 'I\'m software engineer'
 ```javascript
 const escapeComillaInvertida = `I'm software engineer`
 ```
+\’ --> Comilla simple
+
+\” --> Comilla doble
+
+\\ --> Barra invertida
+
+\n --> Línea nueva
+
+\r --> Retorno de carro???
+
+\t --> Tabulación
+
+\b --> Retroceso
+
+\f --> Salto de página
+
 
 4. Strings **largos**:
 
@@ -279,6 +298,7 @@ console.log(otherExplicitBoolean) // True
 ```
 
 ###	Null: valores nulos, no hay nada
+Cuando un objeto en el código no existe, es un espacio vacío en memoria, que todavía no se le ha asignado ningún dato.
 
 ```javascript
 const snoopy = null
@@ -287,6 +307,7 @@ console.log(typeof null) // objet
 ```
 
 ###	Undefined: indefinidos
+Cuando no existe un valor asignado en memoria, es un valor indefinido
 
 ```javascript
 let name
