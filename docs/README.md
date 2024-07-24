@@ -2,6 +2,14 @@
 
 > An awesome project.
 
+## [HTML y CSS](./html-y-css/generales.md)
+- Elementos
+- Atributos
+- Listas
+- [Formularios](./html-y-css/formularios.md)
+- Tipos de imágenes
+- Etiquetas
+
 
 ## [Javascript](./javascript/generales.md)
 - Variables
