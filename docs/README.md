@@ -14,7 +14,7 @@
   - Margin y Padding
   - Medidas
   - Fuentes
-  - Disposición y alineación de elementos
+  - [Disposición y alineación de elementos](./html-y-css/css-disposicion-y-alineacion-de-elementos.md)
     - Flex Box
     - Grid
   - Variables
@@ -23,6 +23,7 @@
   - Pseudoelementos
   - Combinadores
   - Especificidad
+  - Responsive desing: Media Queries
 
 
 ## [Javascript](./javascript/generales.md)
