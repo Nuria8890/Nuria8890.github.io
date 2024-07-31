@@ -2,13 +2,27 @@
 
 > An awesome project.
 
-## [HTML y CSS](./html-y-css/generales.md)
-- Elementos
-- Atributos
-- Listas
-- [Formularios](./html-y-css/formularios.md)
-- Tipos de imágenes
-- Etiquetas
+## HTML y CSS
+- [HTML](./html-y-css/html.md)
+  - [Etiquetas](./html-y-css/html-etiquetas.md)
+  - Atributos
+  - Listas
+  - [Formularios](./html-y-css/html-formularios.md)
+- [CSS](./html-y-css/css.md)
+  - Selectores
+  - Colores
+  - Margin y Padding
+  - Medidas
+  - Fuentes
+  - Disposición y alineación de elementos
+    - Flex Box
+    - Grid
+  - Variables
+  - Opacidad y galerías de imágenes
+  - Pseudoclases
+  - Pseudoelementos
+  - Combinadores
+  - Especificidad
 
 
 ## [Javascript](./javascript/generales.md)
