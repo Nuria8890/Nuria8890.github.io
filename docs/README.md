@@ -2,6 +2,11 @@
 
 > An awesome project.
 
+## Terminal y GitHub
+  - [Terminal](./terminal-y-gitHub/terminal.md)
+  - [GitHub](./terminal-y-gitHub/gitHub.md)
+
+
 ## HTML y CSS
 - [HTML](./html-y-css/html.md)
   - [Etiquetas](./html-y-css/html-etiquetas.md)
