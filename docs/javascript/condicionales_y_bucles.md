@@ -116,7 +116,7 @@ let list = ["eat", "sleep", "code", "repeat"];
 
 for (let i = 0; i < list.length; i++) {
 console.log(list[i]);
-//eat
+// eat
 // sleep
 // code
 // repeat
@@ -136,7 +136,7 @@ let list = ["eat", "sleep", "code", "repeat"]
 
 list.forEach((item) => {
   console.log(item);
-//eat
+// eat
 // sleep
 // code
 // repeat
