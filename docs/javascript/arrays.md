@@ -188,7 +188,8 @@ azul
 */
 ```
 
-.forEach(): ejecuta una función sobre cada elemento del array, **sin crear un nuevo array**.
+.forEach(): ejecuta una función sobre cada elemento del array, **sin crear un nuevo array**.\
+[otro ejemplo de .forEach()](./javascript/condicionales_y_bucles.md#bucle-foreach)
 
 ```javascript
 const colors = ['red', 'pink', 'blue'];

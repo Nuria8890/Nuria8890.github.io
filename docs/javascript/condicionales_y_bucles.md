@@ -124,6 +124,7 @@ console.log(list[i]);
 ```
 
 ## Bucle forEach()
+[otro ejemplo de .forEach()](./javascript/arrays.md#método-map-y-foreach)\
 array.forEach((item)=> {\
   código a ejecutar\
 })
