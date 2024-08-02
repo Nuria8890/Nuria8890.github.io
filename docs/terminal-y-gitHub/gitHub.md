@@ -6,7 +6,9 @@
 
 ## Comandos
   - **git status**: me indica en qué estado está el proyecto, si tengo cambios sin guardar.
-  - **git log**: me chiva quién y cuándo ha hecho un commit.
+  - **git fetch**: descarga el historial de cambios pero NO descarga los cambios en el ordenador local.
+  - **git pull**: descarga el historial de cambios y TAMBIÉN descarga los cambios en el ordenador local.
+  - **git log**: me chiva quién y cuándo ha hecho un commit, y qué es lo que ha sido modificado.
   - **git reflog**: aparece el historial completo de interacciones entre las ramas, dónde me he movido, qué he eliminado y creado... TODO.
   - **git diff .**: indica en rojo y en verde las diferencias de lo que has modificado.
   - **git checkout + *nombre del archivo***: vuelvo al último archivo que había guardado. (Para cuando hago modificaciones y la cago, volver para atrás a la última versión que estaba ok).
@@ -20,6 +22,4 @@
   - **git stash pop**: recupera los archivos guardados temporalmente cuando hiciste git stash.
   - **git stash drop**: elimina el archivo guardado temporalmente cuando hiciste git stash.
   - **git branch -d + *nombre de la rama***: elimina la rama *nombre de la rama*. (Se suele hacer cuando se han añadido los cambios de esta rama a la rama main y se ha subido a producción).
-  - **git fetch**: descarga el historial de cambios pero NO descarga los cambios en el ordenador local.
-  - **git pull**: descarga el historial de cambios y TAMBIÉN descarga los cambios en el ordenador local.
   - **git clone + SSH*dirección o nombre del proyecto***: cuando eres nuevo en un proyecto y tienes que empezar a trabajar en él.

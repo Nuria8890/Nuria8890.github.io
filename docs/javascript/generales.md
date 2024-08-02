@@ -1,6 +1,6 @@
 # *APUNTES DE JAVASCRIPT*
 
-Poner un comentario: ctrl + }
+Poner un comentario: ctrl + /
 
 # Variables
 **let**: se usa cuando el valor va a ir cambiando. Por ejemplo un contador, se iniciará en 0 y va a ir sumando a lo largo del tiempo.
