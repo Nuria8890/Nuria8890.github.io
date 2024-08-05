@@ -121,6 +121,28 @@ console.log(list[i]);
 // code
 // repeat
 }
+
+
+
+coches = ["rojo", "azul", "rojo"]
+
+function compruebaSiLosCochesSonDelColor(color) {
+  
+  let colorDelCoche = true
+  
+  for (i=0;i<coches.length;i++) {
+    if (coches[i] == color) {
+      console.log("coche del mismo color")
+    } else {
+      console.log("coche distinto color")
+      colorDelCoche = false
+    }
+  }
+
+  return colorDelCoche
+}
+
+console.log(compruebaSiLosCochesSonDelColor("rojo"))  // false
 ```
 
 ## Bucle forEach()
