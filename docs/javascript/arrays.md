@@ -61,6 +61,7 @@ console.log(numberOfFruits); // 3
 ```
 
 ## Tipos de métodos
+Otros métodos [aquí](./javascript/generales.md#string-cadenas-de-texto)
 ### Métodos mutables
 Son aquellos que modifican el array original
 #### Método .push() y .pop()
@@ -298,6 +299,15 @@ palabraCompleta3(numeros, string);
 ```javascript
 const palabraCompletaString = palabraCompleta1.join('');
 console.log(palabraCompletaString); // HOLA
+```
+
+#### Método .split()
+**Separa todos los elementos** de un array y nos devuelve un array con la palabra dividida.
+
+```javascript
+const palabra = "abeja";
+const palabraSeparada = palabra.split('');
+console.log(palabraSeparada); // ['a', 'b', 'e', 'j', 'a']
 ```
 
 #### Método .every() y .some()
