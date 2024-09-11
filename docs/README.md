@@ -51,3 +51,6 @@
   - [Funciones](./javascript/funciones.md)
 - Type Casting y Coerción (Conversión de tipos)
 - [Condicionales y bucles](./javascript/condicionales_y_bucles.md)
+
+
+## [React](./react/generales.md)

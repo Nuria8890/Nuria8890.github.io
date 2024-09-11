@@ -11,17 +11,18 @@
   - **git add *nombre del fichero***: toma una instantánea del fichero para preparar la versión.
   - **git diff --staged**: muestra las diferencias del fichero entre el área de espera y la última versión del fichero.
   - **git reset *nombre del fichero***: mueve el fichero del área de espera, pero preserva su contenido.
-  - **git commit -m *mensaje descriptivo***: registra las instantáneas del fichero permanentemente en el historial de versión.
+  - **git commit -m *"mensaje descriptivo"***: registra las instantáneas del fichero permanentemente en el historial de versión.
   - **git restore + *nombre del archivo a restaurar***: cuando has hecho "git add" y no quieres hacer "commit" y quieres volver a lo que había antes.
 
 ### CREAR REPOSITORIOS: inicia un nuevo repositorio y obtiene uno de una URL existente.
   - **git init *nombre del proyecto***: crea un nuevo repositorio local con el nombre especificado.
   - **git clone SSH*url o nombre del proyecto***: descarga un proyecto y toda su historia de versión. Se usa cuando eres nuevo en un proyecto y tienes que empezar a trabajar en él.
 
-### CAMBIOS GRUPALES: nombra una serie de commits y combina esfuerzos ya culmonados.
+### CAMBIOS GRUPALES: nombra una serie de commits y combina esfuerzos ya culminados.
   - **git branch**: enumera todas las ramas en el repositorio actual.
   - **git branch *nombre de la rama***: crea una nueva rama.
   - **git checkout *nombre del fichero***: vuelvo al último fichero que había guardado. (Para cuando hago modificaciones y la cago, volver para atrás a la última versión que estaba ok).
+  - **git clean -df**: borra todos los ficheros nuevos que no tiene registrados en un commit.
   - **git checkout *nombre de la rama***: cambia a la rama especificada y actualiza el directorio activo.
   - **git merge *nombre de la rama2***: fusiona la rama en la que me encuentro con la rama *nombre de la rama2*.
   - **git branch -d *nombre de la rama***: elimina la rama *nombre de la rama*. (Se suele hacer cuando se han añadido los cambios de esta rama a la rama main y se ha subido a producción).
