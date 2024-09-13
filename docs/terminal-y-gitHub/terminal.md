@@ -20,6 +20,7 @@
    - **touch *nombre del archivo***: crear un archivo.
    - **vim *nombre del archivo***: escribir dentro del archivo.
    - **cat *nombre del archivo***: leer lo que hay dentro del archivo.
+   - **cat *nombre del archivo1* *nombre del archivo2***: concatena ambos archivos.
    - **head *nombre del archivo***: muestra las primeras 10 líneas de texto del archivo.
    - **tail *nombre del archivo***: muestra las últimas 10 líneas de texto del archivo.
    - **less *nombre del archivo***: muestra todo el texto del archivo. Una vez dentro, si se escrire **/*palabra a buscar***, busca la palabra en todo el archivo.
@@ -32,4 +33,32 @@
    - **./**: indica la carpeta en la que estoy
    - **alias *comando que quiero utilizar como alias*=*"comando real"***: cuando hay un comando largo que uso mucho, puedo ponerle un nombre corto y usarlo directamente (ls -lh --> l). Es temporal, no se guarda definitivamente.
    - **man *comando***: muestra el manual de uso del comando.
-   - **whatis *comando***: muestra una breve explicación de qué hace ese comando.  
+   - **whatis *comando***: muestra una breve explicación de qué hace ese comando.
+   - **echo *'Frase'***: al dar enter, devuelve la frase que has escrito.
+   - **pipe operator**: es esta barrita: | Permite enviar la salida de un comando como entrada del siguiente. Por ejemplo: cowsay "Hola amigos" | lolcat --> crea una vaca que diga hola amigos | píntala con colorinchis (cowsay y lolcat hay que instalarlo para que funcione...)
+
+### Ejecución de comandos:
+   - Comandos separados **por punto y coma ";"**: Se ejecutan uno después del otro en el orden en que fueron puestos, es decir, de forma síncrona. --> *ls; touch archivo.txt; cal* 
+   - Comandos separados **por *&***: Se ejecutan todos a la vez, es decir de forma asíncrona. --> *ls & date & cal* 
+   - Comandos separados **por *&&*** : Se ejecutan solo si el comando anterior se ha ejecutado exitosamente. --> *mkdir prueba.txt && cd prueba.txt*. Si se hace al revés *cd prueba && mkdir prueba* va a dar error, porque no puede entrar en una carpeta que no está creada, y ya no continúa ejecutando el siguiente comando.
+   - Comandos separados **por *||*** : Solo se ejecuta uno, el primero que se ejecute exitosamente, y descarta automaticamente los demas. --> *cd carpetaQueNoExite || touch nuevoArchivo.txt || mkdir nuevaCarpeta* va a ejecutar solo el segundo comando.
+
+## Permisos
+### Tipos de archivos
+   - Guión *-*: archivo normal
+   - *d*: directorio
+   - *l*: link simbólico
+   - *b*: archivo de bloque especial. Guardan información sobre un dispositivo, por ejemplo un USB.
+### Tipos de modo
+   - Dueño: el que ha creado el archivo. Ej: *rwx* --> puede leer, escribir y ejecutar 
+   - Grupo: un archivo compartido entre varios usuarios. Ej: *r-x* --> puede leer y ejecutar
+   - Mundo u Otros: cualquiera que no entre en las anteriores categorías. Ej: *r-x* --> puede leer y ejecutar.
+#### Modo simbólico
+Se pueden asignar permisos desde la terminal:
+   - *u*: solo para el usuario o dueño.
+   - *g*: solo para el grupo.
+   - *o*: solo para otros (mundo u otros).
+   - *a*: para todos, las tres categorías.
+#### Modificar permisos
+   - Al escribir el comando **chmod u-r *"nombre del archivo"*** se quita el permiso de lectura al usuario
+   Al escribir el comando **chmod u+r *"nombre del archivo"*** se le da el permiso de lectura al usuario
