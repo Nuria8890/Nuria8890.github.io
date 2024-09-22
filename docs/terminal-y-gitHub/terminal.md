@@ -18,9 +18,9 @@
    - **rm -ri *nombre de la carpeta***: pregunta antes de borrar el contenido, si tienes varios archivos, va preguntando uno a uno si quieres borrarlo o no.
    - **cd ..**: ir hacia arriba en las carpetas.
    - **touch *nombre del archivo***: crear un archivo.
-   - **vim *nombre del archivo***: escribir dentro del archivo.
+   - **vim *nombre del archivo***: escribir dentro del archivo. Hay que pulsar "i" para poder escribir.
    - **cat *nombre del archivo***: leer lo que hay dentro del archivo.
-   - **cat *nombre del archivo1* *nombre del archivo2***: concatena am  bos archivos.
+   - **cat *nombre del archivo1* *nombre del archivo2***: concatena ambos archivos.
    - **head *nombre del archivo***: muestra las primeras 10 líneas de texto del archivo.
    - **tail *nombre del archivo***: muestra las últimas 10 líneas de texto del archivo.
    - **less *nombre del archivo***: muestra todo el texto del archivo. Una vez dentro, si se escrire **/*palabra a buscar***, busca la palabra en todo el archivo.
@@ -85,7 +85,7 @@ Cuando hay un comando largo que uso mucho, puedo ponerle un nombre corto y usarl
    - zip -r *"nombre de la carpeta en la que quiero guardar los archivos comprimidos"*.zip *"nombre de la carpeta en la que están guardados los archivos a comprimir"*
    - unzip *"nombre de la carpeta en la que he guardado los archivos comprimidos"*.zip
 
-## Procesos
+## Procesos (en windows ctrl+alt+sup)
    - **ps**: indica qué procesos están corriendo en background.
    - **top**: muestra los procesos que está utilizando más recursos.
    - **kill**: matar procesos cuando se quedan atascados.
