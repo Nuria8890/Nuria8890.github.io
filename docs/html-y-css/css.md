@@ -7,7 +7,7 @@ box-sizing: border-box;
 padding: 0;
 margin: 0;
 }
-html {
+/* :root */ html {  
 font-size: 62.5%; 
 }
 ````
@@ -150,10 +150,22 @@ h1{
 }
 ```
 
-## Margin y Padding
-**Margin**: Espacio que guarda nuestro elementos con respecto al resto de elementos que hay en la página.
+## Modelo de caja
+Es una especificación que define el comportamiento de una etiqueta o elemento HTML y cómo influye en el resto de elementos de la página; es el que le dice al navegador cómo debe pintar cada elemento
 
-**Padding**: espacio que hay desde el borde del elemento al contenido.
+
+### Height, width, border, margin y padding
+**Height**: altura.
+
+**Width**: anchura.
+
+**Border**: es una línea que puede tener distinto grosor y que enmarca el contenido del elemento.
+
+**Padding**: espacio que hay desde el borde del elemento al contenido (margen interior).
+
+**Margin**: espacio que hay desde el borde del elemento hata el resto de elementos que hay en la página (margen exterior).
+
+
 
 ```html
 <div>
@@ -170,6 +182,9 @@ div {
 ```
 
 ![Ejemplo de margin y padding](./img/image-14.png)
+
+### Dimensiones y box-sizing
+Por defecto los elementos tienen el modelo de caja *content-box*. Con la propiedad CSS *box-sizing* podemos cambiarlo asignando el valor *border-box*, que es el otro modelo existente. En *border-box* tanto el  
 
 ## Medidas
 1. **Absolutas**: no cambia, sin importar el tamaño de la pantalla (px).
@@ -222,17 +237,36 @@ html {
 
 
 ## Fuentes
-Importar fuentes:
-1. Entrar en [google fonts.](https://fonts.google.com/?preview.layout=grid)
-2. Elegir la fuente que quieres.
-3. Seleccionar todos los tipos que vamos a necesitar (no seleccionar TODO, porque ralentizará mucho la web).
-4. Copiar y pegar al head de html con un link, o directamente importar en CSS, copiar y pegar.
+Para declarar una nueva familia de fuentes podemos decirle al navegador que tiene disponible en el servidor o en Internet una fuente que no está instalada en su ordenador. Esto se hace con el pseudo-elemento "@font-face", donde le indicaremos un nombre y la URL al fichero que contiene la fuente. Los ficheros de fuentes pueden ser ficheros ttf (TrueType) o woff.
+
+```css
+@font-face {
+  font-family: 'Mi fuente';
+  src: url('assets/FicheroFuente.woff');
+}
+
+body {
+  font-family: 'Mi fuente', sans-serif;
+}
+```
+
+Además de escribir esta declaración CSS, habrá que copiar el fichero FicheroFuente.woff que contiene la fuente en el directorio assets.
+
+@font-face es un pseudo-elemento de CSS. Esto quiere decir que no se puede colocar dentro de las reglas de otro elmento, sino que tiene que estar en el primer nivel de jerarquía.
+
+- Importar fuentes:
+  1. Entrar en [google fonts.](https://fonts.google.com/?preview.layout=grid)
+  2. Elegir la fuente que quieres.
+  3. Seleccionar todos los tipos que vamos a necesitar (no seleccionar TODO, porque ralentizará mucho la web).
+  4. Copiar y pegar al head de html con un link, o directamente importar en CSS, copiar y pegar.
 
 Hay que darle a embeber código y copiar el link en nuestro html.
+
 ## Disposición y alineación de elementos
 [Apuntes de disposición y alineación de elementos](./html-y-css/css-disposicion-y-alineacion-de-elementos.md)
 
 ## Variables
+Nos permiten  almacenar propiedades con un nombre y reutilizarlas a lo largo de nuestra hoja de estilos para que si en un futuro queremos, por ejemplo, cambiar un color, podamos cambiar solamente el valor de la variable y no el color uno por uno, en todas nuestras propiedades.
 
 ```css
 :root {

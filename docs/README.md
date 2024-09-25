@@ -16,7 +16,9 @@
 - [CSS](./html-y-css/css.md)
   - Selectores
   - Colores
-  - Margin y Padding
+  - Modelo de caja
+    - Height, width, border, margin y padding
+    - Dimensiones y box-sizing
   - Medidas
   - Fuentes
   - [Disposición y alineación de elementos](./html-y-css/css-disposicion-y-alineacion-de-elementos.md)

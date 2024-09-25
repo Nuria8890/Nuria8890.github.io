@@ -95,11 +95,13 @@ div {
 
 ### [Flex Box](https://codepen.io/enxaneta/full/adLPwv)
 
-- **display: block;** utiliza el 100% del widrh de su contenedor. Se puede agregar margin en las cuatro posiciones.
+- **display: block;** los elementos ocupan el 100% del width de su contenedor y se colocan unos debajo de otros. Se puede agregar margin en las cuatro posiciones. (Los elementos que por defecto tienen display block son: "¿Tendría sentido meter este elemento dentro de un párrafo?". Si la respuesta es no, es muy probable que sea un elemento en block.)
 
-- **display: inline;** utiliza el width que ocupa su contenido, y si queda espacio, la siguiente etiqueta con display inline la pondrá después, no debajo. No se le puede agregar margin ni arriba ni abajo, ni se puede manipular el widht y el height de los elementos.
+- **display: inline;** los elementos utilizan el width que ocupa su contenido, y si queda espacio, la siguiente etiqueta con display inline la pondrá después, en línea, no debajo. No se le puede agregar margin ni arriba ni abajo, ni se puede manipular el width y el height de los elementos. (Los elementos que por defecto tienen display inline son:  "¿Tendría sentido meter este elemento dentro de un párrafo?". Si la respuesta es sí, es muy probable que sea un elemento en línea.)
 
-- **display: inline-block** es una fusión del display inline y el display block. *De inline*: utiliza el width que ocupa su contenido. *De block*: se puede agregar margin en las cuatro posiciones.
+- **display: inline-block;** es una fusión del display inline y el display block. *De inline*: utiliza el width que ocupa su contenido. *De block*: se puede agregar margin en las cuatro posiciones.
+
+- **display: none;** oculta el elemento, no lo muestra.
 
 - **display: flex;** hace qus sus hijos sean flexibles. Se pueden usar varios recursos: 
 
@@ -168,7 +170,6 @@ div {
 ```
 
 ![ejemplo de flex box](./img/image-16.png)
-
 
 ### Grid
 **display: grid;**
