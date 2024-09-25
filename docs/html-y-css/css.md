@@ -344,6 +344,25 @@ Estos son todos:
 ## Combinadores
 Sirven para combinar múltiples selectores y poder crear una mayor especificidad:
 
+- **Cualquier descendiente**: basta con poner un espacio.
+
+```css
+.action button {
+  color: green;
+}
+```
+
+```html
+<!-- aplica la siguiente regla a cualquier etiqueta button que esté dentro de una etiqueta con clase action, aunque haya etiquetas intermedias -->
+<form class="action">
+  <button>Botón hija directa, en verde</button>
+  <div>
+    Valores
+    <button>Botón descendiente, también en verde</button>
+  </div>
+</form>
+```
+
 - **Combinador hermano adyacente o cercano**: + 
 
 ```css
@@ -362,14 +381,24 @@ Sirven para combinar múltiples selectores y poder crear una mayor especificidad
 }
 ```
 
-- **Combinador hijo**: >
+- **Combinador madre o hija**: > Se usa cuando una etiqueta es madre de otra.
 
 ```css
-/*aplica la siguiente regla a todas las etiquetas p que sean hijas directas de una etiqueta div. */
-.hijo div > p { 
-  color: green;
+/*aplica la siguiente regla a todas las etiquetas p que están incluidos directamente en un artículo, pero no cuando aparezcan dentro de otros elementos intermedios. */
+article > p { 
+  color: blue;
 }
 ```
+
+```html
+<article>
+  <p>Esta etiqueta es hija directa y por tanto aparece en azul.</p>
+  <div>
+    <p>Esta etiqueta no es hija directa y aparece en negro.</p>
+  </div>
+</article>
+```
+
 
 - **Combinador descendiente**:
 
@@ -380,10 +409,18 @@ Sirven para combinar múltiples selectores y poder crear una mayor especificidad
 }
 ```
 
+## Herencia de CSS
+Para modificar la herencia podemos aplicar las siguientes palabras clave:
+- **inherit**: activa la herencia.
+- **initial**: fija la propiedad a su valor por defecto. En esencia, "desactiva" la herencia.
+- **unset**: devuelve la propiedad a su valor por defecto: si la propiedad normalmente se hereda actúa como inherit, y de otro modo como initial.
+- **revert** y **revert-layer**: resetean una propiedad al estilo por defecto del browser o de la capa, respectivamente.
+
 ## Especificidad
+atributo > id > clase > etiqueta
 
 1º !important 1,0,0,0,0\
-2º estilos en línea (directamente en html) 0,1,0,0,0\
+2º estilos en línea (directamente en html style="") 0,1,0,0,0\
 3º #id 0,0,1,0,0\
 4º .class 0,0,0,1,0\
 5º tag 0,0,0,0,1
@@ -393,6 +430,40 @@ Sirven para combinar múltiples selectores y poder crear una mayor especificidad
 - El **id** (#id) es superior (tiene mayor especificidad) al selector clase (.class), independientemente de si se escribe antes o después en css.
 - Si especificamos directamente **en htm** (en línea) el estilo que le queremos dar a algo, prevalecerá frente a todo lo que pongamos en css.
 - PERO si en css ponemos la etiqueta **!important**, prevalecerá ante todo lo que pongamos. (Hay que evitarlo en la medida de lo posible).
+
+## Colores y fondos
+### **background**
+Puede contener estos valores:
+  - URL de la imagen.
+  - Posición de la imagen dentro del contenedor (horizontal y vertical).
+  - Modo de repetición de la imagen.
+  - Color de fondo.
+
+```css
+.box {
+  background: url('url-de-la-imagen') left top no-repeat #ffcc00;
+}
+```
+- **background-color**: fija el color del fondo, con los mismos valores que la propiedad color que hemos visto en detalle.
+
+- **background-image**: carga una imagen para usar como fondo del elemento. Normalmente se usa con una URL: url('https://servidor.com/ruta/imagen.jpg').
+
+- **background-position**: especifica la posición de la imagen en el fondo, relativa al origen de la capa. Valores posibles: *top, bottom, left, right, center*. También se pueden combinar los dos valores, vertical y horizontal: *top right*.
+
+- **background-repeat**: especifica cómo se repite la imagen si hay espacio de sobra. Valores posibles: *repeat* repite la imagen, *no-repeat* no la repite, *space* deja espacio entre repeticiones.
+
+- **background-size**: fija el tamaño de la imagen de fondo respecto al elemento contenedor. Valores posibles: *contain* aumenta o reduce la imagen proporcionalmente todo lo que pueda sin deformarla para que quepa en nuestro contenedor, *cover* Aumenta o reduce la imagen proporcionalmente para asegurarse que siempre cubre todo el área de nuestro contenedor, aunque eso signifique que parte de la imagen pueda quedar oculta.
+
+- **background-attachment**: especifica cómo se comporta la imagen de fondo cuando el texto no cabe en la ventana y hay que hacer scroll. Valores posibles: *scroll* hace que el fondo no se mueva, *fixed* hace que se quede clavado en la esquina, y *local* hace que el fondo se mueva con el resto del contenido.
+
+- **background-clip**: especifica si el fondo se extiende por debajo del borde (*border-box*), del relleno (*padding*) (*padding-box*) o solo del contenido (*content-box*). El modo *text* nos permite también fijar el fondo únicamente en el texto.
+
+- **background-origin**: fija el origen de la capa que puede tener los siguientes valores:
+  - *border-box*: El fondo se coloca en relación con el borde del cuadro.
+  - *padding-box*: El fondo está colocado en relación con el relleno del cuadro.
+  - *content-box*: El fondo se coloca en relación con el contenido del cuadro.
+
+- **background-blend-mode**: Es la única propiedad que se puede usar por separado. Es el modo de mezclar imágenes. Es posible cargar varias imágenes con un modo de mezcla diferente cada una.
 
 ## Responsive desing: Media Queries
 

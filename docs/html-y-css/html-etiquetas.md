@@ -1,18 +1,42 @@
 # Etiquetas
 
-**< html > </ htm >**:  TODO el contenido de la página
+**< html > </ html >**:  TODO el contenido de la página
 
-**< head > </ head >**: Título de la página que aparece en la pestaña del navegador. Elementos no visibles. Contiene los metadatos (todos los elementos que están “detrás de escena”)
+**< head > </ head >**: Es el lugar donde se ponen los elementos no visibles, como por ejemplo los metadatos (todos los elementos que están “detrás de escena”).
+
+**< meta >**: Aporta información sobre el documento.
+
+**< title > </ title >**: Define el título del documento que se muestra en un navegador la barra de título o la pestaña de una página.
+
+**< abbr > </ abbr >**: Representa una abreviación o acrónimo
+
+```html
+<p>I do <abbr title="Hypertext Markup Language">HTML</abbr></p>
+```
 
 **< body > </ body >**: Contiene los elementos visibles. Toda la estructura de la página tiene que estar dentro de esta etiqueta.
 
+**< header > </ header >**: cabecera o sección de presentación de un bloque.
+
 **< main > </ main >**: Es el contenido principal de < body >. Debe ser único.
+
+**< nav > </ nav >**: Un bloque de navegación, para un menú.
+
+**< aside > </ aside >**: Un bloque de contenido de menor importancia o con contenido relacionado.
+
+**< section > </ section >**: Se utiliza para agrupar contenidos por temática.
+
+**< article > </ article >**: Un artículo, que aunque elimináramos el resto de contenido seguiría teniendo sentido por sí mismo.
 
 **< h1 > </ h6 >**: Encabezados o títulos por nivel de índice.
 
 **< p > </ p >**: Párrafos
 
-**< a > </ a >**: Enlace a otra página web o a un apartado de la propia página que estamos creando.
+**< ol >**: Order list.
+
+**< ul >**: Unorder list.
+
+**< li >**: Cada uno de los elementos de las listas (ol/ul).
 
 **< strong > </ strong >**: Para resaltar texto importante (negrita).
 
@@ -20,19 +44,60 @@
 
 **< s > </ s >**: Para tachar el texto.
 
+**< sup > </ sup >**: superíndice.
+
+**< sub > </ sub >**: subíndice.
+
+```html
+<p>La fórmula química de agua: H<sub>2</sub>O</p>
+```
+
 **< small > </ small >**: Para hacer el texto un poquito más pequeño que el del resto de la web.
 
 **< form > </ form >**: Para crear un [formulario.](./html-y-css/html-formularios.md)
 
 **< input >**: Cada una de las “casillas” del formulario.
 
-**< footer > </ footer >**: Pie de página. Se pone después del elemento </ main >.
+**< footer > </ footer >**: Pie de página, que se pone después del elemento </ main >, o sección final de un bloque.
+
+**< blockquote > </ blockquote >**: Sirve para citas en bloque. Marca las citas a otros autores o documentos.
+
+**< col > </ col >**: Permite especificar propiedades para una columna o un grupo de ellas.
+
+**< colgroup > </ colgroup >**: Permite crear grupos de columnas.
 
 **< link >**: Para importar “referencias externas” (CSS).
 
 **< hr >**: Línea horizontal (para separar secciones).
 
-**< div > </ div >**: Es un contenedor que sirve para agrupar otros elementos.
+**< div > </ div >**: Es un contenedor que sirve para agrupar otros elementos. Es para bloques de contenido.
+
+**< span > </ span >**: Es un contenedor que está indicado para partes del texto o elementos en línea.
+
+**< br >**: salto de línea.
+
+## < a > </ a >
+
+Enlace a otra página web o a un apartado de la propia página que estamos creando.
+
+- Atributo **href=""**: aquí se indica "el lugar" que estamos enlazando.
+
+```html
+<!-- Ejemplos de enlaces <a>: -->
+
+<!-- A otra página web -->
+<a href="https://www.wikipedia.org">Wikipedia</a>
+
+<!-- A un apartado de la propia página web -->
+<a href="#top">Volver arriba</a>
+
+<!-- Enlazar al contenido principal de mi página desde otra página -->
+<a href="index.html#top">Volver al principio de la página principal</a>
+```
+
+- Atributo **title=""**: donde podemos añadir un texto complementario que el navegador mostrará en un pequeño tooltip cuando pongamos el cursor sobre el enlace. Nos interesará usarlo cuando tengamos un enlace tipo "descargar" y queramos asociarle un texto explicativo, como "Descargar archivo PDF".
+
+- Atributo **target=""**: aquí podemos especificar dónde se abre el enlace. Por ejemplo, con el valor *_blank*, indicamos que se abra en una nueva pestaña, lo cual nos interesa cuando en nuestra página enlazamos a páginas externas y no queremos que la usuaria "pierda" nuestra página al hacer clic en esos enlaces.
 
 ## < datalist > </ datalist >
 
@@ -74,6 +139,10 @@ Aparece un desplegable donde puedes escribir para localizar más rápidamente la
 **width**: determina el ancho de la imagen.
 
 **height**: determina el alto de la imagen.
+
+- Atributo **src=""**: Aquí indicamos la ruta de nuestro archivo de imagen.
+
+- Atributo **alt=""**: Es el texto que va a mostrar el navegador en caso de que la imagen no se pueda cargar. 
 
 ```html
 <img src= "https://www.google.com/search-gato" alt= "un lindo gato naranja" width="300" height="300">
@@ -120,6 +189,10 @@ Esta etiqueta carga las imágenes
 ```
 
 ## < table > </ table >
+La tabla básica tiene una estructura bastante simple y tres etiquetas principales:
+- Una etiqueta que indica que se va a escribir una tabla *< table >*.
+- Una etiqueta para las filas *< tr >*.
+- Una etiqueta para las celdas *< td >*.
 
 ```html
 <table>
@@ -153,3 +226,5 @@ Esta etiqueta carga las imágenes
 ```
 
 ![ejemplo de etiqueta table](./img/image-11.png)
+
+**< caption > </ caption >**: Da el título descriptivo a las tablas.

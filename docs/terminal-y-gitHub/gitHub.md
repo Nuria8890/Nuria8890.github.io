@@ -1,8 +1,9 @@
 # GitHub
 ## Subir repositorios
-1. **git add -A**: git, añade *todos los ficheros que he modificado*, al nuevo historial de versiones.
-2. **git commit -m "*mensaje*"**: mensaje que tiene que indicar en esta nueva versión de código.
-3. **git push**: sube a github los ficheros.
+1. **git status**: ver los cambios que están sin guardar
+2. **git add -A**: git, añade *todos los ficheros que he modificado*, al nuevo historial de versiones.
+3. **git commit -m "*mensaje*"**: mensaje que tiene que indicar en esta nueva versión de código.
+4. **git push**: sube a github los ficheros.
 
 ## Comandos
 ### EFECTUAR CAMBIOS: revisa las ediciones y elabora una transacción de commit.
