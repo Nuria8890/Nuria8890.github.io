@@ -94,6 +94,7 @@ div {
 ![ejemplo de disposición y alineación de elementos](./img/image-15.png)
 
 ### [Flex Box](https://codepen.io/enxaneta/full/adLPwv)
+Esta propiedad es un modo de diseño que permite colocar los elementos de una página para que se comporten de forma predecible cuando el diseño de la página debe acomodarse a diferentes tamaños de pantalla y diferentes dispositivos.
 
 - **display: block;** los elementos ocupan el 100% del width de su contenedor y se colocan unos debajo de otros. Se puede agregar margin en las cuatro posiciones. (Los elementos que por defecto tienen display block son: "¿Tendría sentido meter este elemento dentro de un párrafo?". Si la respuesta es no, es muy probable que sea un elemento en block.)
 
@@ -103,17 +104,33 @@ div {
 
 - **display: none;** oculta el elemento, no lo muestra.
 
-- **display: flex;** hace qus sus hijos sean flexibles. Se pueden usar varios recursos: 
+- **display: flex;** afecta a la caja contenedora (donde se activa el modo flex) y a las cajas contenidas (las hijas directas). Se pueden usar varios recursos: 
 
-  - **justify-content: center;** indica cómo quiero justificar el contenido con relación al eje principal (X), es decir, en horizontal, en este caso los coloca centrados. *space-evenly* (mismo espacio entre todos los elementos y a los extremos).
+  - **flex-direction: ___;** **row** (coloca los items en fila de izquierda a derecha), **row-reverse** (en fila en sentido inverso) , **column** (coloca los items en columna de arriba a abajo), **column-reverse** (en columna en sentido inverso). Cuando lo pongo en column, *el eje principal y el eje secundario se intercambian* (el X pasa a ser el secundario y el Y empieza a ser el principal).
 
-  - **align-items: center;** indica cómo colocar el contenido con relación al eje secundario (Y), es decir, en vertical, en este caso centrado. *strech* (los elementos se estiran al 100% de su contenedor padre). *baseline* (los elementos se encogen al tamaño de su contenido).
+  - **flex-wrap: ___;** **wrap** (según se va haciendo pequeña la pantalla, los items cambian de posición y se van reordenando poniéndose unos debajo de los otros), **wrap-reverse** (se reordenan en sentido inverso, de abajo a arriba).
 
-  - **flex-direction: column;** coloca los items en fila de izquierda a derecha (row), o en columna (column) de arriba a abajo. cuando lo pongo en column, el eje principal y el eje secundario se intercambian (el X pasa a ser el secundario y el Y empieza a ser el principal).
+  - **flex-flow: column wrap;** combina flex direction y flex-wrap.
 
-  - **flex-wrap: wrap;** según se va haciendo pequeña la pantalla, los items cambian de posición y se van reordenando poniéndose unos debajo de los otros.
+  - **justify-content: ___;** indica cómo quiero justificar el contenido con relación al eje principal (X), es decir, en horizontal. **center**(los coloca centrados), **flex-start** (junta todo el espacio libre a la derecha), **space-evenly** (mismo espacio entre todos los elementos y a los extremos), **space-between** (el primer elemento se alinea al inicio del contenedor, el último elemento se alinea al final, y los elementos intermedios se distribuyen uniformemente, dejando el mismo espacio entre ellos), **space-around** (hay un espacio igual al rededor de cada uno de los elementos), **flex-end** (junta todo el espacio libre a la izquierda).
 
-  - **flex-grow: 1;** cuando la pantalla crece, el div al que le haya puesto el flex.grow, se va haciendo más grande que el resto para, entre todos los div, ocupar el 100% del ancho de la pantalla.
+  - **align-items: ___;** indica cómo colocar el contenido con relación al eje secundario (Y), es decir, en vertical. **center** (centrado), **strech** (los elementos se estiran al 100% de su contenedor padre), **flex-start** (junta todo el espacio libre abajo), **baseline** (los elementos se organizan en la línea de base), **flex-end** (junta todo el espacio libre arriba).
+
+  - **align-self: ___;** permite a una caja hija cambiar la alineación especificada en la caja contenedora. Tiene los mismos valores que align-items.
+
+  - **gap: *10px 20px*;** espacio entre cajas hijas.(*row-gap: 10px; ó column-gap: 10px;* permiten especificar de forma aislada la separación entre filas y entre columnas.)
+
+  - **order: *5*;** por defecto las cajas hija se colocan en orden de llegada; si queremos adelantar o atrasar cajas lo podemos especificar.
+
+  - **flex-grow: *2*;** cuando la pantalla crece, el div al que le haya puesto el flex-grow, se va haciendo más grande que el resto para, entre todos los div, ocupar el 100% del ancho de la pantalla. Un ejemplo: si tuviéramos las cajas 1 y 2 con flex-grow=1 y la 3 con flex-grow=2, y no tuvieran tamaño fijo, acabaríamos con una caja 3 de doble tamaño que las otras: [-1-] [-2-] [--3--]
+
+  - **flex-shrink: *2*;** similar a flex-grow, pero en lugar de agrandar la caja hija, la reduce.
+
+  - **flex-basis: *200px*;** define el tamaño por defecto de un elemento antes de distribuir el espacio. Puede usarse **auto** para que el tamaño del elemento se base en su contenido.
+
+  - **flex: *3 1 auto*;** combina *flex-grow*, *flex-shrink* y *flex-basis*. Se recomienda usar esta propiedad, porque da valores con sentido a las que no.
+
+  - **align-content: ___;** permite ajustar cómo quedan las filas o columnas en conjunto dentro de la caja contenedora, cuando hay espacio de sobra. **flex-start**, **center**, **stretch** (las líneas del contenedor se estiran para ocupar todo el espacio disponible en el eje transversal (eje contrario del principal)).
 
 ```html
 <!-- HTML -->
@@ -170,6 +187,45 @@ div {
 ```
 
 ![ejemplo de flex box](./img/image-16.png)
+
+#### Guía para un buen flexbox
+
+- ¿Dónde debemos aplicar los estilos?
+  - Los *estilos de la caja contenedora* (dirección, distribución...) los aplicamos en la propia caja contenedora.
+
+  - Los *estilos comunes a todas las hijas* los aplicamos a una clase común para todas las hijas, por ejemplo: .item.
+
+  - Si *una de las hijas* tiene una *disposición o tamaño diferente* a la de las demás, se le aplica estilos solo a esa caja con una clase propia, por ejemplo: .item-x.
+
+- Procedimiento normal
+  1. Aplicar *box-sizing* y *border* o *background-color* tanto a la caja contenedora como a las hijas para visualizar cómo se comportan (después se pueden borrar estos estilos).
+
+  2. En la caja contenedora:
+    - Indica: *display: flex*.
+
+    - Elige *dirección del eje principal*: filas (row) o columnas (column). Hay que tener muy muy claro cuál queremos que sea el eje principal y cuál el secundario.
+
+    - Indica la *dirección del eje principal*: flex-direction: row | column. No hay que confundir eje principal con eje horizontal, ni eje secundario con eje vertical.
+
+    - Indica si quieres que los *items salten de fila* (o columna): flex-wrap: wrap, *o se mantengan en una sola*. A lo mejor es necesario añadir muchas hijas para poder ver el salto de línea.
+
+    - Indica *cómo se alinean o distribuyen los elementos en el eje principal*, en el caso de que sobre o falte espacio: justify-content: center. (si no parece que no funciona es porque no sobra espacio y no se puede añadir espacio entre las hijas)
+
+    - Indica *cómo se alinean o distribuyen los elementos en el eje secundario*: align-items: center. (si no parece que no funciona es porque no sobra espacio y no se puede añadir espacio entre las hijas)
+
+  3. En los elementos items:
+    - Indica a todos los items el *tamaño* que deben tener: ancho si el eje principal es horizontal o alto si el eje principal es vertical.
+
+- Procedimiento avanzado
+  1. Si queremos indicar un *ancho variable* en función del espacio sobrante o el espacio faltante, usamos: flex-grow, flex-shrink.
+
+  2. Si queremos indicar un *ancho inicial* antes de repartir el espacio sobrante o faltante, usamos: flex-basis.
+
+  3. Si queremos usar un *ancho fijo* usamos: width.
+
+  4. Para indicar *en un elemento un tamaño especial* que debe tener: flex-grow, flex-shrink y flex-basis.
+
+  5. Si queremos *cambiar el orden de las hijas* le aplicamos order a una de ellas, teniendo en cuenta que los órdenes menores de 0 se moverán a la izquierda y mayores de 0 se moverán a la derecha.
 
 ### Grid
 **display: grid;**
