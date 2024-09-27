@@ -189,6 +189,7 @@ Por defecto los elementos tienen el modelo de caja *content-box*. Con la propied
 ## Medidas
 1. **Absolutas**: no cambia, sin importar el tamaño de la pantalla (px).
 2. **Relativas**: cambian en función del tamaño de la pantalla (%, em, rem, max-width, min-width, max-height, min-height, vw(viewport width), vh(viewport height))
+  
   - **em (element)**: toma el tamaño de fuente que tiene su padre directo. 
 
 ```css
@@ -229,9 +230,16 @@ html {
 ```
 ![ejemplo de medidas em y rem](./img/image-19.png)
 
+  - **porcentaje %**: ajusta tamaños para que sea un porcentaje del tamaño de su etiqueta madre.
+
+  - **unidades relativas al viewport**: El viewport es la zona visible en una web, mide 100vw (viewport width) de ancho y 100vh (viewport height) de alto siempre, en la pantalla pequeña de un móvil o en la grande de un portátil. **vw** (ajusta el ancho) y **vh** (ajusta el alto).
+
   - **width**: 80%; El div siempre va a ocupar el 80% de la pantalla.
+
   - **min-width**: 320px; El div nunca va a ser más pequeño que 320px. Cuando llegue a esta medida, no segurá adaptándose al tamaño de la pantalla y ocupará el 100% en vez del 80%.
+
   - **max-width**: 500px; el div nunca va a ser más grande que 500px. Mientras va llegando a ese tamaño, estará ocupando el 80% de la pantalla y, cuando llegue, el div no segurá adaptándose al tamaño de la pantalla, se quedará en 500px.
+
   - **min-height**: 500px; La altura mínima del div va a ser 500px, pero si el contenido excede de este tamaño, puede crecer con el contenido hasta que el contenido deje de crecer.
 
 
