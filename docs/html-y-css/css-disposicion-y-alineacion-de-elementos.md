@@ -1,5 +1,32 @@
 # Disposición y alineación de elementos
 
+Las etiquetas con visualización **inline** (spam, button...) les dicen a sus hijas (o al texto que contengan): "yo no tengo tamaño, decidme qué tengo que pintar dentro y yo me adapto". Y a su contenedora: "ponme en línea con las demás". Por contra, las etiquetas con visualización **block** (p, h1...) les dicen a sus hijas: "mi tamaño es este, colocaos como podáis", aunque si no les imponemos tamaño se adaptan en altura. Y a su contenedora: "hazme hueco en la siguiente línea".
+
+## Definir una tabla con css
+*table*: define una tabla sin necesidad de usar < table >.
+
+Dentro de la tabla, podemos imitar cada elemento:
+
+*table-row*: se comporta como < tr >.
+
+*table-cell*: se comporta como < td >.
+
+*table-header-group*: se comporta como < thead > y nos permite convertir su contenido en cabeceras < th >.
+
+*table-row-group*: se comporta como < tbody >.
+
+*table-footer-group*: se comporta como < tfoot >, de nuevo convirtiendo las celdas en < th >.
+
+*table-caption*: se comporta como < caption >.
+
+[Ver ejemplo de una tabla en html](./html-y-css/html-etiquetas?id=lt-table-gt-lt-table-gt.md)
+
+# Posicionamiento (position)
+Vídeos para entender el posicionamiento:
+- https://www.youtube.com/watch?v=13CbCpAnvYI
+- https://www.youtube.com/watch?v=lSfKpltbvJs
+
+
 ```html
 <!--HTML-->
 <section>
@@ -40,7 +67,7 @@ div {
   border: 3px solid black;
 }
 ```
-- Static: es el que viene por defecto.
+- **Position: static;** es el que viene por defecto. No le afectan las coordenadas top, left, bottom y right aunque las especifiquemos.
 
 ```css
 .static {
@@ -48,7 +75,7 @@ div {
 }
 ```
 
-- Relative: nos permite posicionarle en relación a la posición que tendría si fuera static. // Movemos el div con respecto a los demás.
+- **Position: relative;** nos permite posicionarle en relación a la posición que tendría si fuera static. // Movemos el div con respecto a los demás.
 
 ```css
 .relative {
@@ -59,7 +86,7 @@ div {
 }
 ```
 
-- Fixed: independientemente del scroll que hagamos, siempre se va a mantener fijo.
+- **Position: fixed;** independientemente del scroll que hagamos, siempre se va a mantener fijo. [queda fija en la página, y no se mueve aunque hagamos scroll; usa coordenadas absolutas en la página]
 
 ```css
 .fixed{
@@ -70,7 +97,7 @@ div {
 }
 ```
 
-- Absolute: permite posicionarlo igual que el fixed pero en relación a su elemento padre. Normalmente se mete el div de clase absolute dentro del div de clase relative (elemento padre). Un recuadro (absolute) dentro de otro (relative). // El div se pone encima y "desaparece" el de al lado.
+- **Position: absolute;** permite posicionarlo igual que el fixed pero en relación a su elemento padre. Normalmente se mete el div de clase absolute dentro del div de clase relative (elemento padre). Un recuadro (absolute) dentro de otro (relative). // El div se pone encima y "desaparece" el de al lado. [queda fija dentro de la página, y se mueve con la página; usa coordenadas absolutas en la página]
 
 ```css
 .absolute{
@@ -81,7 +108,7 @@ div {
 }
 ```
 
-- Sticky: Es una mezcla entre el relative y el fixed. Se usa normalmente para los menús, al hacer scroll siempre está visible.
+- **Position: sticky;** Es una mezcla entre el relative y el fixed. Se usa normalmente para los menús, al hacer scroll siempre está visible. [queda siempre visible dentro de su contenedor (no de la página), por tanto se comporta igual que absolute en este caso; pero requiere coordenadas relativas al contenedor y no a la página.]
 
 ```css
 .sticky{
@@ -93,7 +120,7 @@ div {
 
 ![ejemplo de disposición y alineación de elementos](./img/image-15.png)
 
-### [Flex Box](https://codepen.io/enxaneta/full/adLPwv)
+## [Flex Box](https://codepen.io/enxaneta/full/adLPwv)
 Esta propiedad es un modo de diseño que permite colocar los elementos de una página para que se comporten de forma predecible cuando el diseño de la página debe acomodarse a diferentes tamaños de pantalla y diferentes dispositivos.
 
 - **display: block;** los elementos ocupan el 100% del width de su contenedor y se colocan unos debajo de otros. Se puede agregar margin en las cuatro posiciones. (Los elementos que por defecto tienen display block son: "¿Tendría sentido meter este elemento dentro de un párrafo?". Si la respuesta es no, es muy probable que sea un elemento en block.)
@@ -188,7 +215,7 @@ div {
 
 ![ejemplo de flex box](./img/image-16.png)
 
-#### Guía para un buen flexbox
+### Guía para un buen flexbox
 
 - ¿Dónde debemos aplicar los estilos?
   - Los *estilos de la caja contenedora* (dirección, distribución...) los aplicamos en la propia caja contenedora.
@@ -227,7 +254,7 @@ div {
 
   5. Si queremos *cambiar el orden de las hijas* le aplicamos order a una de ellas, teniendo en cuenta que los órdenes menores de 0 se moverán a la izquierda y mayores de 0 se moverán a la derecha.
 
-### Grid
+## Grid
 **display: grid;**
 
 **grid-template-columns:** Formas de colocar los items en tres columnas:\
@@ -282,3 +309,98 @@ section {
 ```
 
 ![ejemplo de grid](./img/image-17.png)
+
+## Transform
+### Transformaciones 2D
+Los elementos cambian y se mueven por la página, pero no saca al elemento del flujo de la página como position absolute o fixed, ya que el resto de elementos de la página se comportan como si no hubiésemos aplicado una transformación a uno de ellos, respetando su "hueco" original.
+
+  - **translate(*30px*, *30px*)**: mueve el elemento en el plano las distancias especificadas. También tenemos las funciones individuales **translateX(dx)** y **translateY(dy)**.
+  - **rotate(*15deg*)**: rota el elemento alrededor de un punto del plano. El punto se especifica con la propiedad **transform-origin**.
+  -  **scale(*0.1*, *0.8*)**: nos permite modificar las dimensiones del elemento por los factores dados para X e Y. También tenemos las funciones individuales **scaleX(fx)**, **scaleY(fy)** y **scaleZ(fz)**.
+  - **skew(ax, ay)**: estira el elemento en ambas direcciones, dándole el ángulo especificado. También tenemos las funciones individuales **skewX(a)** y *skewY(a)*. El efecto es parecido a un rombo.
+  - **transform-origin**: la más útil, nos permite seleccionar el punto a partir del cual se aplican las transformaciones. Por ejemplo si queremos girar un elemento a partir de su centro (center, valor por defecto) o un punto determinado (ejemplo: transform-origin: 10px -20px).
+  - **transform-box**: nos permite elegir si transformamos solo el contenido (content-box), el borde (border-box), el relleno (fill-box), el trazo (stroke-box) o la vista SVG (view-box). Para uso avanzado. 
+  - **transform-style**: selecciona si las transformaciones son planas (flat, valor por defecto) o en 3D (preserve-3d),
+
+  ```html
+  <body>
+    <div id="contenedor">
+      <div class="cara" id="c1">me</div>
+      <div class="cara" id="c2">cai</div>
+      <div class="cara" id="c3">go</div>
+      <div class="cara" id="c4">ooo</div>
+      <div class="cara" id="c5">yo no</div>
+      <div class="eje" id="x">eje X →</div>
+      <div class="eje" id="y">eje Y →</div>
+    </div>
+  </body>
+  ```
+
+  ```css
+  #contenedor {
+  border: #84318d solid;
+  color: white;
+  }
+  .cara {
+  top: 100px;
+  left: 100px;
+  width: 100px;
+  height: 100px;
+  display: inline-flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  font-size: 32px;
+  }
+  #c1 {
+  background: #e01670;
+  /* Prueba a descomentar las líneas siguientes */
+  /* transform: translate(30px, 30px); */
+  /* transform: rotate(15deg); */
+  /* transform: scale(0.8); */
+  }
+  #c2 {
+  background: #14d9c4;
+  transform: translateY(10px) rotate(5deg) scale(0.95);
+  }
+  #c3 {
+    background: #e01670;
+    transform: translateY(30px) rotate(10deg) scale(0.9);
+  }
+  #c4 {
+    background: #14d9c4;
+    transform: translateY(80px) rotate(30deg) scale(0.8);
+  }
+  #c5 {
+    background: #e01670;
+  }
+  .eje {
+    border-top: #4a86e8 solid;
+    position: absolute;
+    top: 200px;
+    left: 100px;
+    width: 150px;
+    text-align: right;
+    color: #4a86e8;
+    transform-origin: top left;
+  }
+  #x {
+  }
+  #y {
+    transform: rotateZ(90deg);
+  }
+  ```
+
+  ![ejemplo de transform](./img/image-20.png)
+
+### Transformaciones 3D
+Los elementos "se salen" de la página a lo largo de un eje Z invisible, hacen piruetas y luego terminan proyectados sobre la página otra vez.
+
+  - **rotateX(ángulo)**, **rotateY(ángulo)**, **rotateZ(ángulo)**: rota el elemento alrededor del eje indicado.
+  - **scale3d(fx, fy, fz)**: nos permite modificar las dimensiones del elemento por los factores dados. También tenemos las funciones individuales **scaleX(fx)**, **scaleY(fy)** y **scaleZ(fz)**.
+  - **perspective(z)**: fija la distancia del punto de perspectiva (ejemplo: 800px). Como en fotografía, cuanto más cerca hagamos "la foto" más distorsionada saldrá la imagen.
+  - **rotate3d(x, y, z, ángulo)**: genera una rotación alrededor del punto dado, del ángulo especificado.
+  - **matrix3d(4x4)**: múltiples transformaciones en una, poco recomendable.
+  - **transform-origin**: ya la vimos antes, pero ahora también podemos seleccionar un punto en el espacio 3D: transform-origin: 10px -20px -30px.
+  - **perspective**: equivalente a la función perspective(), nos permite seleccionar la distancia del punto de perspectiva (ejemplo: 800px). Como en fotografía, cuanto más cerca hagamos "la foto" más distorsionada saldrá la imagen.
+  - **perspective-origin**: nos permite seleccionar el punto desde el cual calculamos la perspectiva.

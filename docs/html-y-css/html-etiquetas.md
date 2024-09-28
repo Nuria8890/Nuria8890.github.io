@@ -228,3 +228,5 @@ La tabla básica tiene una estructura bastante simple y tres etiquetas principal
 ![ejemplo de etiqueta table](./img/image-11.png)
 
 **< caption > </ caption >**: Da el título descriptivo a las tablas.
+
+También podemos hacer una tabla con CSS [así](./html-y-css/css-disposicion-y-alineacion-de-elementos?id=definir-una-tabla-con-css.md)

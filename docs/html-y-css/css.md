@@ -10,6 +10,14 @@ margin: 0;
 /* :root */ html {  
 font-size: 62.5%; 
 }
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
 ````
 
 Se puede especificar el estilo de varias formas:
