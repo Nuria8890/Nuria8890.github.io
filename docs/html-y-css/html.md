@@ -1,4 +1,6 @@
 # *APUNTES DE HTML Y CSS*
+**HTML** es un lenguaje de marcas o etiquetas, es un lenguaje de marcado. Tiene el contenido de una página web. El **landing** es la página inicial donde aterrizamos cuando entramos en una página web.
+
 **Alt+Z** Cuando un párrafo es muy largo, al hacer Alt+Z el código se adapta al tamaño de la ventana.
 
 **Ctrl+/** Para poner un comentario. El usuario no los ve y sirven para ver a simple vista la estructura de la página. `<!--HTML-->` `/*CSS*/`

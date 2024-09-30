@@ -1,8 +1,11 @@
 # GitHub
+**Git** es un sistema de control de versiones.
+**GitHub** es un espacio en la nube donde almacenamos nuestros documentos. GitHub utiliza Git para controlar las versiones.
+
 ## Subir repositorios
 1. **git status**: ver los cambios que están sin guardar
 2. **git add -A**: git, añade *todos los ficheros que he modificado*, al nuevo historial de versiones.
-3. **git commit -m "*mensaje*"**: mensaje que tiene que indicar en esta nueva versión de código.
+3. **git commit -m "*mensaje*"**: mensaje que tiene que indicar en esta nueva versión de código. (*“Result conflict and merge”*)
 4. **git push**: sube a github los ficheros.
 
 ## Comandos

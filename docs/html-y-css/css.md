@@ -1,5 +1,9 @@
 # CSS
 
+**CSS** es un lenguaje de estilos.
+
+Estilos de Reset: quitar todos los márgenes y los tamaños que les da el navegador a todos los elementos. Estilos que las etiquetas en sí no heredan, como el margin, pero sí queremos que los tenga toda la página:
+
 ```css
 /* Restaurar valores */
 * {
@@ -7,7 +11,7 @@ box-sizing: border-box;
 padding: 0;
 margin: 0;
 }
-/* :root */ html {  
+:root /* = html */ {
 font-size: 62.5%; 
 }
 
@@ -18,7 +22,7 @@ ul {
 a {
   text-decoration: none;
 }
-````
+```
 
 Se puede especificar el estilo de varias formas:
 
@@ -31,94 +35,94 @@ Color: propiedad del atributo
 Blue: valor de la propiedad
 
 ```html
-<h1 style= “color: blue”>Mi primera página web</h1>
+<h1 style= "color blue">Mi primera página web</h1>
 ```
 
 Todos los h1 tendrán ese formato:
 
 ```html
 <head>
-	<title> Mi primera página web</title>
-		<style>
-			h1{
-				color: blue;
-				font-size:15px;
-			}
-		</style>
+  <title> Mi primera página web</title>
+    <style>
+      h1{
+        color: blue;
+        font-size:15px;
+        }
+    </style>
 ```
 
 2. Insertando en html un archivo css independiente.
 
 ```html
 <head>
-	<link href=”style.css” rel=”stylesheet”>
+  <link href=”style.css” rel=”stylesheet”>
 </head>
 ```
 
 ## Selectores
-Definen sobre qué elementos se aplicará un conjunto de reglas CSS:
+Definen sobre qué elementos se aplicará un conjunto de reglas CSS, es lo que está a la izquierda de las llaves:
 
-**Universal**: la regla que le impongamos se va a aplicar a TODO el documento.
+- **Universal**: la regla que le impongamos se va a aplicar a TODO el documento.
 
 ```css
 * {
-	box-sizing: border-box; /* Hace que el width de la caja no sea solo el contenido, sino que suma también el padding y el border. El margin no lo suma*/
-	padding: 0;
-	margin: 0;
+  box-sizing: border-box; /* Hace que el width de la caja no sea solo el contenido, sino que suma también el padding y el border. El margin no lo suma*/
+  padding: 0;
+  margin: 0;
 }
 ```
 
-**De tipo**: permiten aplicar un formato a todos los elementos de un tipo específico
+- **De tipo**: permiten aplicar un formato a todos los elementos de un tipo específico
 
 ```css
 html {
-font-size: 62.5%; /* Al indicar este tamaño de fuente en html, 16px = 1.6rem. Así es más sencillo usar rem */
+  font-size: 62.5%; /* Al indicar este tamaño de fuente en html, 16px = 1.6rem. Así es más sencillo usar rem */
 }
 
 p,
 ul,
 ol {
-	font-size: 2px;
+  font-size: 2px;
 }
 ```
 
-**De clase**: permiten seleccionar todos los elementos que tienen una clase específica asignada.
+- **De clase**: permiten seleccionar todos los elementos que tienen una clase específica asignada.
 
 ```html
 <ol class = "lista-de-gatos">
-	<li>tratamientos antipulgas</li>
-	<li>truenos</li>
+  <li>tratamientos antipulgas</li>
+  <li>truenos</li>
 </ol>
 ```
 
 ```css
 .lista-de-gatos {
-	color: red;
+  color: red;
 }
 ```
 
 ![ejemplo de selector de clase](./img/image-12.png)
 
-**De id**: permiten seleccionar el elemento con un id específico.
+- **De id**: permiten seleccionar el elemento con un id específico. Se usan para enlaces dentro de la propia página web.
 
 ```html
 <ol class = "lista-de-gatos">
-	<li>tratamientos antipulgas</li>
-	<li>truenos</li>
-	<li id = tercer-li>agua</li>
-	<li>perros</li>
+  <li>tratamientos antipulgas</li>
+  <li>truenos</li>
+  <li id = tercer-li>agua</li>
+  <li>perros</li>
 </ol>
 ```
 
 ```css
 /*Selector de clase:*/
 .lista-de-gatos {
-	color: red;
+  color: red;
 }
 
 /*Selector de id:*/
 #tercer-li {
-	color: blue;
+  color: blue;
 }
 ```
 
@@ -130,7 +134,7 @@ ol {
 
 ```css
 h1{
-	color: orange
+  color: orange
 }
 ```
 
@@ -138,7 +142,7 @@ h1{
 
 ```css
 h1{
-	color: #BCE784
+  color: #BCE784
 }
 ```
 
@@ -146,7 +150,7 @@ h1{
 
 ```css
 h1{
-	color: rgb(100, 0, 200)
+  color: rgb(100, 0, 200)
 }
 ```
 
@@ -154,7 +158,7 @@ h1{
 
 ```css
 h1{
-	color: rgba(100, 0, 200, 0.2)
+  color: rgba(100, 0, 200, 0.2)
 }
 ```
 
@@ -295,6 +299,9 @@ Nos permiten  almacenar propiedades con un nombre y reutilizarlas a lo largo de 
   width: var(--ancho-principal);
 }
 ```
+
+Todo lo que queramos que sea común a toda la página y que queramos que vayan *heredando* todas las etiquetas, como por ejemplo font-size, hay que ponerlo en el :root.
+
 
 ## Opacidad y galerías de imágenes
 
@@ -516,6 +523,7 @@ Puede contener estos valores:
 - **background-blend-mode**: Es la única propiedad que se puede usar por separado. Es el modo de mezclar imágenes. Es posible cargar varias imágenes con un modo de mezcla diferente cada una.
 
 ## Responsive desing: Media Queries
+Maquetación líquida: cuando definimos todos los anchos de los contenedores en términos de porcentajes de la vista del navegador.
 
 - **Breack points**: dimensión de la pantalla (cuando agrando o empequeñezco) donde voy a hacer un cambio.
 
@@ -526,24 +534,29 @@ Puede contener estos valores:
 
 <link href=”style.css” rel=”stylesheet”> <!-- Tus estilos para enfocarlos a mobile -->
 
-<link href=”tablet.css” rel=”stylesheet” media=”screem an (min-width: 768px)”> <!-- Tus estilos para enfocarlos a tablet -->
+<link href=”tablet.css” rel=”stylesheet” media=”screen an (min-width: 768px)”> <!-- Tus estilos para enfocarlos a tablet -->
 
-<link href=”desktop.css” rel=”stylesheet” media=”screem an (min-width: 1024px)”> <!-- Tus estilos para enfocarlos a ordenadores -->
+<link href=”desktop.css” rel=”stylesheet” media=”screen an (min-width: 1024px)”> <!-- Tus estilos para enfocarlos a ordenadores -->
 ```
 
 ```css
 
 /* CSS */
 
-@media (min-width: 480px) {
-  /* para dispositivos móviles */
+@media screen and (min-width: 480px) {
+  /* para dispositivos móviles cuando la pantalla sea como mínimo de 480px (width > 480px) cuando sea de 480 o más, se aplicarán estos estilos */
 }
 
-@media (min-width: 768px) {
+@media screen and (min-width: 736px) {
   /* para tablets */
 }
 
-@media (min-width: 1024px) {
+@media screen and (min-width: 1024px) {
   /* para ordenadores */
 }
 ```
+
+- **aspect-ratio**: relación de aspecto entre anchura/altura.
+- **orientation**: orientación de la pantalla: *portrait* (vertical) o *landscape* (horizontal);
+- **resolution**: resolución del dispositivo, normalmente en puntos por pulgada (dpi);
+- **hover**: *hover* cuando ocurre algo si el ratón pasa sobre un elemento, *none* cuando se desactiva este efecto (por ejemplo en un móvil);

@@ -6,7 +6,7 @@
 
 **< meta >**: Aporta información sobre el documento.
 
-**< title > </ title >**: Define el título del documento que se muestra en un navegador la barra de título o la pestaña de una página.
+**< title > </ title >**: Define el título del documento que se muestra en un navegador, la barra de título o la pestaña de una página.
 
 **< abbr > </ abbr >**: Representa una abreviación o acrónimo
 
@@ -22,7 +22,7 @@
 
 **< nav > </ nav >**: Un bloque de navegación, para un menú.
 
-**< aside > </ aside >**: Un bloque de contenido de menor importancia o con contenido relacionado.
+**< aside > </ aside >**: Un bloque de contenido de menor importancia o con contenido relacionado, elemento secundario.
 
 **< section > </ section >**: Se utiliza para agrupar contenidos por temática.
 
@@ -79,6 +79,8 @@
 ## < a > </ a >
 
 Enlace a otra página web o a un apartado de la propia página que estamos creando.
+
+**Aributo**: solo se escriben en la etiqueta de apertura. No se puede poner el mismo atributo varias veces en la misma etiqueta.
 
 - Atributo **href=""**: aquí se indica "el lugar" que estamos enlazando.
 

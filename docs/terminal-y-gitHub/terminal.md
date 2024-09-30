@@ -12,6 +12,7 @@
    - **ls *.html**: listado de todos los archivos que terminan en .html
    - **cd *nombre carpeta***: entrar en la carpeta.
    - **pwd**: me dice la ruta en la que me encuentro.
+   - **history**: veo qué es lo que he escrito antes, cuando hago clear y no veo lo anterior.
    - **file *nombre del archivo***: muestra la información del archivo.
    - **mkdir *nombre de la carpeta***: crear una carpeta nueva.
    - **rm -r *nombre de la carpeta***: borrar la carpeta *nombre de la carpeta* y todo lo que contiene.

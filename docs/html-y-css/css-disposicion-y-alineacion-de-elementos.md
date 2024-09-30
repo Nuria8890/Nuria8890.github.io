@@ -1,5 +1,7 @@
 # Disposición y alineación de elementos
 
+**Elemento**: etiqueta de apertura + contenido (inher) + etiqueta de cierre.
+
 Las etiquetas con visualización **inline** (spam, button...) les dicen a sus hijas (o al texto que contengan): "yo no tengo tamaño, decidme qué tengo que pintar dentro y yo me adapto". Y a su contenedora: "ponme en línea con las demás". Por contra, las etiquetas con visualización **block** (p, h1...) les dicen a sus hijas: "mi tamaño es este, colocaos como podáis", aunque si no les imponemos tamaño se adaptan en altura. Y a su contenedora: "hazme hueco en la siguiente línea".
 
 ## Definir una tabla con css
@@ -123,25 +125,25 @@ div {
 ## [Flex Box](https://codepen.io/enxaneta/full/adLPwv)
 Esta propiedad es un modo de diseño que permite colocar los elementos de una página para que se comporten de forma predecible cuando el diseño de la página debe acomodarse a diferentes tamaños de pantalla y diferentes dispositivos.
 
-- **display: block;** los elementos ocupan el 100% del width de su contenedor y se colocan unos debajo de otros. Se puede agregar margin en las cuatro posiciones. (Los elementos que por defecto tienen display block son: "¿Tendría sentido meter este elemento dentro de un párrafo?". Si la respuesta es no, es muy probable que sea un elemento en block.)
+- **display: block;** los elementos ocupan el 100% del width de su contenedor y se colocan unos debajo de otros. Se puede agregar *margin en las cuatro posiciones*. (Los elementos que por defecto tienen display block son: "¿Tendría sentido meter este elemento dentro de un párrafo?". Si la respuesta es no, es muy probable que sea un elemento en block.) Ej: p, div, header, nav, list...
 
-- **display: inline;** los elementos utilizan el width que ocupa su contenido, y si queda espacio, la siguiente etiqueta con display inline la pondrá después, en línea, no debajo. No se le puede agregar margin ni arriba ni abajo, ni se puede manipular el width y el height de los elementos. (Los elementos que por defecto tienen display inline son:  "¿Tendría sentido meter este elemento dentro de un párrafo?". Si la respuesta es sí, es muy probable que sea un elemento en línea.)
+- **display: inline;** los elementos utilizan el width que ocupa su contenido, y si queda espacio, la siguiente etiqueta con display inline la pondrá después, en línea, no debajo. No se le puede agregar *margin ni arriba ni abajo*, *ni* se puede manipular *el width y el height* de los elementos. (Los elementos que por defecto tienen display inline son:  "¿Tendría sentido meter este elemento dentro de un párrafo?". Si la respuesta es sí, es muy probable que sea un elemento en línea.) Ej: span, a, input.
 
-- **display: inline-block;** es una fusión del display inline y el display block. *De inline*: utiliza el width que ocupa su contenido. *De block*: se puede agregar margin en las cuatro posiciones.
+- **display: inline-block;** es una fusión del display inline y el display block. *De inline*: utiliza el width que ocupa su contenido. *De block*: se puede agregar margin en las cuatro posiciones. es decir, se comportan como elementos en línea, pero sí se puede ajustar su tamaño. Ej: img, button.
 
 - **display: none;** oculta el elemento, no lo muestra.
 
 - **display: flex;** afecta a la caja contenedora (donde se activa el modo flex) y a las cajas contenidas (las hijas directas). Se pueden usar varios recursos: 
 
-  - **flex-direction: ___;** **row** (coloca los items en fila de izquierda a derecha), **row-reverse** (en fila en sentido inverso) , **column** (coloca los items en columna de arriba a abajo), **column-reverse** (en columna en sentido inverso). Cuando lo pongo en column, *el eje principal y el eje secundario se intercambian* (el X pasa a ser el secundario y el Y empieza a ser el principal).
+  - **flex-direction: ___;** **row** (coloca los items en fila de izquierda a derecha, eje principal X), **row-reverse** (en fila en sentido inverso) , **column** (coloca los items en columna de arriba a abajo, eje principall Y), **column-reverse** (en columna en sentido inverso).
 
   - **flex-wrap: ___;** **wrap** (según se va haciendo pequeña la pantalla, los items cambian de posición y se van reordenando poniéndose unos debajo de los otros), **wrap-reverse** (se reordenan en sentido inverso, de abajo a arriba).
 
   - **flex-flow: column wrap;** combina flex direction y flex-wrap.
 
-  - **justify-content: ___;** indica cómo quiero justificar el contenido con relación al eje principal (X), es decir, en horizontal. **center**(los coloca centrados), **flex-start** (junta todo el espacio libre a la derecha), **space-evenly** (mismo espacio entre todos los elementos y a los extremos), **space-between** (el primer elemento se alinea al inicio del contenedor, el último elemento se alinea al final, y los elementos intermedios se distribuyen uniformemente, dejando el mismo espacio entre ellos), **space-around** (hay un espacio igual al rededor de cada uno de los elementos), **flex-end** (junta todo el espacio libre a la izquierda).
+  - **justify-content: ___;** indica cómo quiero justificar el contenido con relación al eje principal. **center**(los coloca centrados), **flex-start** (junta todo el espacio libre a la derecha), **space-evenly** (mismo espacio entre todos los elementos y a los extremos), **space-between** (el primer elemento se alinea al inicio del contenedor, el último elemento se alinea al final, y los elementos intermedios se distribuyen uniformemente, dejando el mismo espacio entre ellos), **space-around** (hay un espacio igual al rededor de cada uno de los elementos), **flex-end** (junta todo el espacio libre a la izquierda).
 
-  - **align-items: ___;** indica cómo colocar el contenido con relación al eje secundario (Y), es decir, en vertical. **center** (centrado), **strech** (los elementos se estiran al 100% de su contenedor padre), **flex-start** (junta todo el espacio libre abajo), **baseline** (los elementos se organizan en la línea de base), **flex-end** (junta todo el espacio libre arriba).
+  - **align-items: ___;** indica cómo colocar el contenido con relación al eje secundario. **center** (centrado), **strech** (los elementos se estiran al 100% de su contenedor padre), **flex-start** (junta todo el espacio libre abajo), **baseline** (los elementos se organizan en la línea de base), **flex-end** (junta todo el espacio libre arriba).
 
   - **align-self: ___;** permite a una caja hija cambiar la alineación especificada en la caja contenedora. Tiene los mismos valores que align-items.
 
@@ -157,7 +159,7 @@ Esta propiedad es un modo de diseño que permite colocar los elementos de una p�
 
   - **flex: *3 1 auto*;** combina *flex-grow*, *flex-shrink* y *flex-basis*. Se recomienda usar esta propiedad, porque da valores con sentido a las que no.
 
-  - **align-content: ___;** permite ajustar cómo quedan las filas o columnas en conjunto dentro de la caja contenedora, cuando hay espacio de sobra. **flex-start**, **center**, **stretch** (las líneas del contenedor se estiran para ocupar todo el espacio disponible en el eje transversal (eje contrario del principal)).
+  - **align-content: ___;** permite ajustar cómo quedan las filas o columnas en conjunto dentro de la caja contenedora, es decir, centra varias filas o columnas sin dejar hueco entre medias de cada fila o columna cuando hay espacio de sobra. **flex-start**, **center**, **stretch** (las líneas del contenedor se estiran para ocupar todo el espacio disponible en el eje transversal (eje contrario del principal)).
 
 ```html
 <!-- HTML -->
@@ -314,7 +316,7 @@ section {
 ### Transformaciones 2D
 Los elementos cambian y se mueven por la página, pero no saca al elemento del flujo de la página como position absolute o fixed, ya que el resto de elementos de la página se comportan como si no hubiésemos aplicado una transformación a uno de ellos, respetando su "hueco" original.
 
-  - **translate(*30px*, *30px*)**: mueve el elemento en el plano las distancias especificadas. También tenemos las funciones individuales **translateX(dx)** y **translateY(dy)**.
+  - **translate(*30px* *30px*)**: mueve el elemento en el plano las distancias especificadas. También tenemos las funciones individuales **translateX(dx)** y **translateY(dy)**.
   - **rotate(*15deg*)**: rota el elemento alrededor de un punto del plano. El punto se especifica con la propiedad **transform-origin**.
   -  **scale(*0.1*, *0.8*)**: nos permite modificar las dimensiones del elemento por los factores dados para X e Y. También tenemos las funciones individuales **scaleX(fx)**, **scaleY(fy)** y **scaleZ(fz)**.
   - **skew(ax, ay)**: estira el elemento en ambas direcciones, dándole el ángulo especificado. También tenemos las funciones individuales **skewX(a)** y *skewY(a)*. El efecto es parecido a un rombo.
