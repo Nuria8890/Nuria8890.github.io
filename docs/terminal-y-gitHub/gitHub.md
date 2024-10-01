@@ -2,6 +2,16 @@
 **Git** es un sistema de control de versiones.
 **GitHub** es un espacio en la nube donde almacenamos nuestros documentos. GitHub utiliza Git para controlar las versiones.
 
+- VSC nos ayuda con git:
+  1. En el explorador (menú de la izquierda) aparecen:
+    - En color verde los ficheros nuevos respecto al último commit local.
+    - En color amarillo los ficheros modificados desde el último commit local.
+
+  2. También en el panel principal del editor del fichero que estamos editando, aparece a la izquierda del número de línea una franja de color:
+    - Amarillo para las líneas modificadas desde el último commit.
+    - Verde para las líneas nuevas desde el último commit.
+
+
 ## Subir repositorios
 1. **git status**: ver los cambios que están sin guardar
 2. **git add -A**: git, añade *todos los ficheros que he modificado*, al nuevo historial de versiones.
@@ -26,10 +36,11 @@
   - **git branch**: enumera todas las ramas en el repositorio actual.
   - **git branch *nombre de la rama***: crea una nueva rama.
   - **git checkout *nombre del fichero***: vuelvo al último fichero que había guardado. (Para cuando hago modificaciones y la cago, volver para atrás a la última versión que estaba ok).
-  - **git clean -df**: borra todos los ficheros nuevos que no tiene registrados en un commit.
   - **git checkout *nombre de la rama***: cambia a la rama especificada y actualiza el directorio activo.
   - **git merge *nombre de la rama2***: fusiona la rama en la que me encuentro con la rama *nombre de la rama2*.
+  - **git branch -r**: me dice las ramas que hay en remoto. Las ramas con las que están trabajando mis compañeras.
   - **git branch -d *nombre de la rama***: elimina la rama *nombre de la rama*. (Se suele hacer cuando se han añadido los cambios de esta rama a la rama main y se ha subido a producción).
+  - **git clean -df**: borra todos los ficheros nuevos que no tiene registrados en un commit.
 
 ### REPASAR HISTORIAL: navega e inspecciona la evolución de los ficheros de proyecto.
   - **git log**: me chiva quién y cuándo ha hecho un commit, y qué es lo que ha sido modificado.
@@ -40,6 +51,7 @@
 ### REHACER COMMITS: borra errores y elabora historial de reemplazo.
   - **git reset *commit***: deshace todos los commits después de *commit*, preservando los cambios localmente.
   - **git reset --hard *commit***: desecha todo el historial y regresa al commit especificado.
+  - **git revert *has del commit que quiero borrar***: revertimos el último commit que hemos hecho.
 
 ### SINCRONIZAR CAMBIOS: registrar un marcador de repositorio e intercambiar historial de versión.
   - **git fetch**: descarga el historial de cambios pero NO descarga los cambios en el ordenador local.
@@ -68,4 +80,24 @@
   - **git switch + *nombre de la rama***: moverse entre ramas (también se puede utilizar checkout).
   
   
-  
+## Archivo .gitignore
+<https://choosealicense.com/> Aquí se especifica qué se puede y qué no se puede hacer con los archivos asociados al .gitignore.
+
+## Ramas
+  - Crear una rama: **git branch *nombre de la rama***
+  - Movernos a una rama: **git checkout *nombre de la rama***
+  - Crear rama y movernos a ella: **git checkout -b *nombre de la rama***
+  - Primera ver que usamos git push: **git push -u origin *nombre de la rama***
+  - Siguientes veces que usamos el push: **git push origin *nombre de la rama***
+  ### Fusionar ramas
+    Cuando ya hemos terminado el trabajo en la rama y lo queremos subir al main:
+    1. Hacer git pull en la rama en la que hemos terminado el trabajo (*nombre de la rama*). 
+    2. Ir a la rama de destino (main): **git checkout main** y hacer git pull.
+    3. Mergear en esta rama (main), la rama donde hemos terminado el trabajo (*nombre de la rama*): ***git merge *nombre de la rama*** y creará un commit automático.
+    4. Comprobar que la páginia web está bien, no se ha desbarajustado todo.
+    6. Hacer push.
+  ### Git flow
+  - Cuando he terminado el trabajo en mi rama secundaria:
+    1. Mergeo la rama master (main) en la rama secundaria, para comprobar aquí que todo está Ok, y si no lo está, poder cambiarlo sin estropear el main.
+    2. Una vez he comprobado que todo funciona, mergear toda la rama secundaria a la rama master. (Hay que hacerlo en un período corto de tiempo para que nadie meta un commit en la rama master entre medias, porque sino me tocaría volver a mergear ambas ramas.)
+

@@ -534,24 +534,24 @@ Maquetación líquida: cuando definimos todos los anchos de los contenedores en 
 
 <link href=”style.css” rel=”stylesheet”> <!-- Tus estilos para enfocarlos a mobile -->
 
-<link href=”tablet.css” rel=”stylesheet” media=”screen an (min-width: 768px)”> <!-- Tus estilos para enfocarlos a tablet -->
+<link href=”tablet.css” rel=”stylesheet” media=”screen and (min-width: 768px)”> <!-- Tus estilos para enfocarlos a tablet -->
 
-<link href=”desktop.css” rel=”stylesheet” media=”screen an (min-width: 1024px)”> <!-- Tus estilos para enfocarlos a ordenadores -->
+<link href=”desktop.css” rel=”stylesheet” media=”screen and (min-width: 1024px)”> <!-- Tus estilos para enfocarlos a ordenadores -->
 ```
 
 ```css
 
 /* CSS */
 
-@media screen and (min-width: 480px) {
+@media (min-width: 480px) {
   /* para dispositivos móviles cuando la pantalla sea como mínimo de 480px (width > 480px) cuando sea de 480 o más, se aplicarán estos estilos */
 }
 
-@media screen and (min-width: 736px) {
+@media (min-width: 736px) {
   /* para tablets */
 }
 
-@media screen and (min-width: 1024px) {
+@media (min-width: 1024px) {
   /* para ordenadores */
 }
 ```
