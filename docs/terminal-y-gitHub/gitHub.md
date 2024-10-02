@@ -58,7 +58,8 @@
   - **git merge *nombre de la rama del marcador*/*nombre de la rama***: combina la rama del marcador con la rama local actual.
   - **git push**: carga todos los commits de la rama local al GitHub.
   - **git pull**: descarga el historial de cambios y TAMBIÉN descarga los cambios en el ordenador local.
-  
+  - **git fetch --prune**: cuando he borrado ramas tanto de github como de mi local, al hacer git branch -a siguen saliendo, si las quier eliminar de ahí, escribo este comando.
+
 ### GUARDAR FRAGMENTOS: almacena y restaura cambios incompletos.
   - **git stash**: hace un "commit temporal" que solo queda reflejado en mi local y que eso no afecta al árbol. Se usa cuando no has terminado de pulir el código y sabes que está mal y no lo quieres guardar aún.
   - **git stash pop**: recupera los ficheros guardados temporalmente cuando hiciste git stash.
