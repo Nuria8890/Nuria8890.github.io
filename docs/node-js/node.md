@@ -27,6 +27,6 @@ Paquete: código que ha desarrollado otra persona y lo ha subido a una bibliotec
 4. Ejecutar `npm install`. Ejecutar `npm run dev`
 5. Migramos los ficheros de version-0 al Starter Kit.
 5.1. Copiar imágenes de version-0 a `public/images`.
-5.2. Copiar index.html de version-0 a `src`.
+5.2. Copiar index.html de version-0 a `src` (sustituir el que hay).
 5.3. Copiar *el contenido* de styles.css y de reset.css de version-0 en `src/scss/main.scss` (no eliminar contenido) y `src/scss/core/_reset.scss` (eliminar contenido).
 6. En index.html corregir la ruta de los estilos. La ruta de los estilos reset la borramos (ya están incluidos en .scss)
