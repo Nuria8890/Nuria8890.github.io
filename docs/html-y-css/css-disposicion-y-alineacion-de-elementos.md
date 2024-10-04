@@ -260,10 +260,10 @@ div {
 **display: grid;**
 
 **grid-template-columns:** Formas de colocar los items en tres columnas:\
-    - **auto auto auto;\
+    **- auto auto auto;\
     - repeat(3, auto);\
     - 20px 3rem 25vw;\
-    - 1fr 1fr 3fr;**
+    - 1fr 1fr 3fr;** --> free space, espacio disponible 
 
 **grid-template-rows: 220px 5rem 100px;** Le damos un tamaño a las filas
 
@@ -311,6 +311,17 @@ section {
 ```
 
 ![ejemplo de grid](./img/image-17.png)
+
+
+  - **grid-template-columns**: 1fr 3fr; cuántos espacios quiero que ocupen mis columnas.
+  - **grid-template-rows**: 1fr 1fr 1fr; cuántos espacios quiero que ocupen mis filas.
+  - **grid-column**: 1/4; de qué línea a qué línea quiero que ocupe el item.
+  - **column-gap**: separació entre los elementos.
+  - **grid-auto-rows**: funciona igual que grid-template-rows, pero sólo se aplica cuando hay más elementos de la cuenta.
+  - **grid-auto-flow**: fuerza una única dirección (columna o fila) para nuestra rejilla.
+  - **grid-area**: *main*; le digo a un item en concreto que se coloque en la posición asociada al *main*.
+
+![ejemplo 2 de grid](./img/image-21.png)
 
 ## Transform
 ### Transformaciones 2D
