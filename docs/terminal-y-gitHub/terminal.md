@@ -1,5 +1,7 @@
 # Terminal
 
+Ctrl + r --> cuando empiezo a escribir, me autocompleta cosas anteriores que ya he escrito. (crtl + r prett --> me escribe el comando para indentar el css o el html)
+
 ## [Instalar cosas](https://aur.archlinux.org/)
    yay -S nombre del programa a descargar\
       (comprobar si la versión que va a descargar es la que quiero, si es así, escribir):\

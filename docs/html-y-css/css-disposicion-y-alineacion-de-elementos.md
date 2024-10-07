@@ -313,13 +313,19 @@ section {
 ![ejemplo de grid](./img/image-17.png)
 
 
-  - **grid-template-columns**: 1fr 3fr; cuántos espacios quiero que ocupen mis columnas.
-  - **grid-template-rows**: 1fr 1fr 1fr; cuántos espacios quiero que ocupen mis filas.
-  - **grid-column**: 1/4; de qué línea a qué línea quiero que ocupe el item.
-  - **column-gap**: separació entre los elementos.
+  - **grid-template-columns**: *1fr 3fr*; define cuántas columnas quiero que haya.
+  - **grid-template-rows**: *1fr 1fr 1fr*; *[repeat(3, 1fr)]* define cuántas filas quiero que haya. Si le doy una medida en píxeles por ejemplo, lo que me da es altura.
+  - **grid-column**: *1/4*; de qué línea a qué línea quiero que ocupe el item. *span 2* ocupa dos columnas desde su posición inicial. 
+  - **column-gap**: separación entre los elementos.
   - **grid-auto-rows**: funciona igual que grid-template-rows, pero sólo se aplica cuando hay más elementos de la cuenta.
   - **grid-auto-flow**: fuerza una única dirección (columna o fila) para nuestra rejilla.
-  - **grid-area**: *main*; le digo a un item en concreto que se coloque en la posición asociada al *main*.
+
+  
+  - **grid-template-areas**: 
+      "header header header"
+      "articulo1 articulo2 articulo3"
+      "footer footer footer";
+  - **grid-area**: *header*; le digo a un item en concreto que se coloque en la posición asociada al *header*. Hay que definirlo en TODOS los elementos que quiero que se coloquen en esas posicines.
 
 ![ejemplo 2 de grid](./img/image-21.png)
 
