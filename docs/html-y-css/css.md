@@ -381,9 +381,10 @@ Todo lo que queramos que sea común a toda la página y que queramos que vayan *
 ![ejemplo de opacidad y galerías de imágenes](./img/image-18.png)
 
 ## [Pseudoclases](https://www.w3schools.com/css/css_pseudo_classes.asp)
+
 Los más comunes son:
 - **:hover**: se activa cuando paso el ratón por encima.
-- **:focus**: se activa cuando hago click (por ejemplo enun formulario tipo texto, al pinchar cambia de color).
+- **:focus**: se activa cuando hago click (por ejemplo en un formulario tipo texto, al pinchar cambia de color).
 - **:first-child**: hace referencia al primer elemento (primer hijo) para darle una serie de características solo a ese elemento.
 - **:link**: link no visitado todavía.
 - **:visited**: link ya visitado.
@@ -560,3 +561,16 @@ Maquetación líquida: cuando definimos todos los anchos de los contenedores en 
 - **orientation**: orientación de la pantalla: *portrait* (vertical) o *landscape* (horizontal);
 - **resolution**: resolución del dispositivo, normalmente en puntos por pulgada (dpi);
 - **hover**: *hover* cuando ocurre algo si el ratón pasa sobre un elemento, *none* cuando se desactiva este efecto (por ejemplo en un móvil);
+
+## Estilos para  [formularios](./html-y-css/html-formularios.md)
+Para que los estilos de botón e input que vienen por defecto no se apliquen a nuestros campos debemos añadirles el atributo appearance: none;
+
+```html
+input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+```
+
+El prefijo -webkit- y -moz- es específico para los navegadores Safari y Chrome, y Mozilla Firefox respectivamente.
