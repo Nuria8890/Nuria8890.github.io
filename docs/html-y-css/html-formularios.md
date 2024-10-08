@@ -1,10 +1,16 @@
 # Formularios
 
+Todos los input van dentro de la etiqueta form, sino action no funciona.
+
+Formspree.io --> te mandan un e-mail con los datos que ha rellenado la usuaria.
+
 - **action**: dirección del servidor donde vamos a ver los datos que introduzca el usuario en el formulario.
-- **method**: método utilizado para enviar la información (POST (contraseñas, DNI, datos bancarios...) o GET (resto de cosas))
+- **method**: método utilizado para enviar la información (POST (contraseñas, DNI, datos bancarios...) o GET (resto de cosas)). El valor por defecto, si no se pone método, es GET.
 
 - **for**: busca un input con el mismo id. (< label for = "interior" > < input id = "interior">)
 
+
+En el botón de inspeccionar, pestaña Network- form - payload veo si se está enviando el formulario.
 
 ## Type="text"
 
@@ -12,7 +18,7 @@
 **required**: campo requerido, obligatorio rellenar.
 
 ```html
-<form action="/signup" method="post">
+<form action="/signup" method="POST">
   <label for="firstName">Nombre</label>
   <input
   placeholder="Escribe aquí tu nombre de pila"
@@ -27,17 +33,22 @@
   type="text"
   name="lastName"
   />
-  <button type="submit"> Enviar </button>
-  <!-- Otra forma de crear el botón -->
+ 
+  
   <input type="submit" value="Enviar"/>
+  <input type="reset" value="Borrar"/>
+<!-- Otra forma de crear el botón -->
+  <button type="submit"> Enviar </button>
 </form>
 ```
 ![ejemplo de formulario tipo "text"](./img/image-2.png)
 
 ## Type="radio"
+Sólo se puede elegir UNA opción.
 
 **checked**: marca una opción por defecto.
 **value**: indica al servidor ("/signup") qué opción es la que ha seleccionado el usuario.
+**name**: todas las opciones tienen que tener el mismo nombre, para que se identifiquen con el mismo grupo.
 
 ```html
 <h3>Método de pago:</h3>
@@ -81,6 +92,7 @@
 ## Type="checkbox"
 
 Se pueden selecionar varias opciones.
+**name**: todas las opciones tienen que tener el mismo nombre, para que se identifiquen con el mismo grupo.
 
 ```html
 <h3>Suplementos del vuelo:</h3>
@@ -130,7 +142,7 @@ No deja escribir letras.
 **step**="2": sirve para definir cómo será el incremento de los campos.
 
 ```html
-<form action="/signup" method="post">
+<form action="/signup" method="POST">
   <label for="edad">
     ¿Cuál es tu edad?
   </label>
@@ -145,7 +157,7 @@ No deja escribir letras.
 Obliga a que haya un @.
 
 ```html
-<form action="/signup" method="post">
+<form action="/signup" method="POST">
   <label for="emailAddress">
     Introduce dirección de e-mail
   </label>
@@ -160,7 +172,7 @@ Obliga a que haya un @.
 Mostrará un teclado numérico si el usuario accede a la página con en el teléfono móvil.
 
 ```html
-<form action="/signup" method="post">
+<form action="/signup" method="POST">
   <label for="telephone">Teléfono</label>
   <input type="tel" id="telephone" name="telephone" />
   <input type="submit" value="Enviar" />
@@ -171,7 +183,7 @@ Mostrará un teclado numérico si el usuario accede a la página con en el telé
 Aparece en formato fecha, y un desplegable con un calendario.
 
 ```html
-<form action="/signup" method="post">
+<form action="/signup" method="POST">
   <label for="nacimiento">
     Fecha de nacimiento
   </label>
@@ -185,7 +197,7 @@ Aparece en formato fecha, y un desplegable con un calendario.
 Sustituyen el texto que contienen por puntos negros (●) para aumentar la seguridad y que la contraseña no sea visible, y su contenido se borra si se recarga la página.
 
 ```html
-<form action="/signup" method="post">
+<form action="/signup" method="POST">
   <label for="password">
     Contraseña 
   </label>
@@ -201,7 +213,7 @@ rows="8" define el número de filas (altura) que tendrá por defecto la etiqueta
 cols="80" define el número de columnas (anchura) que tendrá por defecto la etiqueta.
 
 ```html
-<form action="/signup" method="post">
+<form action="/signup" method="POST">
   <label for="comentarios">
     Comentarios
   </label>
