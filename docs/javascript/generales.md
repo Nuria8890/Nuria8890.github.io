@@ -1,6 +1,15 @@
 # *APUNTES DE JAVASCRIPT*
 
 Poner un comentario: ctrl + /
+Programar es pensar en los pasos para resolver un problema.
+
+**Sentencia**: es la unidad mínima de código que expresa una acción u orden.
+
+# Propiedades
+
+`document.querySelector('.title').innerHTML = '¡Hola mundo!';` Permite cambiar el texto de un determinado elemento de HTML (el que tiene la clase 'title')
+
+`classList` contiene varios métodos que nos permiten añadir (**classList.add**) o eliminar (**classList.remove**) una clase o comprobar si el elemento contiene una clase o no.
 
 # Variables
 **let**: se usa cuando el valor va a ir cambiando. Por ejemplo un contador, se iniciará en 0 y va a ir sumando a lo largo del tiempo.
