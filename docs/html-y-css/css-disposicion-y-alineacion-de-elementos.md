@@ -28,6 +28,7 @@ Vídeos para entender el posicionamiento:
 - https://www.youtube.com/watch?v=13CbCpAnvYI
 - https://www.youtube.com/watch?v=lSfKpltbvJs
 
+Siempre que un elemento se sale del flujo normal de la página, cuando se superpone a la página en sí, es cuando se usa el posicionamiento.
 
 ```html
 <!--HTML-->
@@ -84,11 +85,11 @@ div {
   background-color: rgb(234, 60, 60);
 	position: relative;
 	left: 80px; /*De la izquierda se separa 80px*/
-	z-index: 10; /*Visualmente está en primer plano*/
+	z-index: 10; /*Visualmente está en primer plano. Se usa cuando queremos que los elementos se superpongan unos encima de otros.*/
 }
 ```
 
-- **Position: fixed;** independientemente del scroll que hagamos, siempre se va a mantener fijo. [queda fija en la página, y no se mueve aunque hagamos scroll; usa coordenadas absolutas en la página]
+- **Position: fixed;** independientemente del scroll que hagamos, siempre se va a mantener fijo. [queda fijo en la página, y no se mueve aunque hagamos scroll; usa coordenadas absolutas en la página]
 
 ```css
 .fixed{
@@ -99,7 +100,7 @@ div {
 }
 ```
 
-- **Position: absolute;** permite posicionarlo igual que el fixed pero en relación a su elemento padre. Normalmente se mete el div de clase absolute dentro del div de clase relative (elemento padre). Un recuadro (absolute) dentro de otro (relative). // El div se pone encima y "desaparece" el de al lado. [queda fija dentro de la página, y se mueve con la página; usa coordenadas absolutas en la página]
+- **Position: absolute;** saca el elemento del flujo natural de la página. Se coloca en base a su contenedor más cercano que tenga una posición diferente a static. Si le doy position relative a su madre, se coloca en base a ella, porque sino lo más normal es que se posicione en base al propio html.
 
 ```css
 .absolute{
@@ -330,6 +331,9 @@ section {
 ![ejemplo 2 de grid](./img/image-21.png)
 
 ## Transform
+
+Se utiliza con animaciones, cuando queremos que suceda algo cuando la usuaria interactua con la página.
+
 ### Transformaciones 2D
 Los elementos cambian y se mueven por la página, pero no saca al elemento del flujo de la página como position absolute o fixed, ya que el resto de elementos de la página se comportan como si no hubiésemos aplicado una transformación a uno de ellos, respetando su "hueco" original.
 

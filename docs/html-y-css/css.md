@@ -158,7 +158,7 @@ h1{
 
 ```css
 h1{
-  color: rgba(100, 0, 200, 0.2)
+  color: rgba(100, 0, 200, 0.2) /*este 0.2 es la opacidad o transparencia*/
 }
 ```
 

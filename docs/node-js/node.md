@@ -14,11 +14,10 @@ Paquete: código que ha desarrollado otra persona y lo ha subido a una bibliotec
 - **npm run build** o **vite build**: solo se ejecuta una vez, y genera una versión lista para producción en la carpeta docs/. Es hacer un **deploy**, ya que despliega el código en un servidor.
 
 
-## Pintar un mapa de google map
-- **package.json**: fichero obligatorio en un proyecto de node.js. Aquí se describe la configuración del proyecto (nombre, licencia, url, autor, dependencias...). Las *dependencias* son librerías, paquetes o módulos que nuestro proyecto usa.
+- **package.json**: fichero obligatorio en un proyecto de node.js. Aquí se describe la configuración del proyecto (nombre, licencia, url, autor, dependencias, scripts...). Las *dependencias* son librerías, paquetes o módulos que nuestro proyecto usa.
 
 1. En la terminal **npm install**: abre la carpeta package.json, busca todas las dependencias y las instala para poder utilizarlas en nuestro proyecto. Crea una carpeta *node_modules* (meterla en .gitignore) y las mete ahí. Esta instalación solo hay que hacerla la primera vez que empezamos a trabajar en el proyecto, o cuando una compañera crea una dependencia nueva, para estar actualizados.
-2. Cuando acabe de instalar, hacer **npm start**. Arranca el proyecto. Se va a *scripts* (dentro del package.json), busca start y ejecuta lo que pone.
+2. Cuando acabe de instalar, hacer **npm start** o npm run dev. Arranca el proyecto. Se va a *scripts* (dentro del package.json), busca start y ejecuta lo que pone.
 
 ## Migración de proyectos colaborativos EN ADALAB
 1. Mergear todas las ramas en la rama `dev`.

@@ -85,20 +85,68 @@
 <https://choosealicense.com/> Aquí se especifica qué se puede y qué no se puede hacer con los archivos asociados al .gitignore.
 
 ## Ramas
-  - Crear una rama: **git branch *nombre de la rama***
-  - Movernos a una rama: **git checkout *nombre de la rama***
-  - Crear rama y movernos a ella: **git checkout -b *nombre de la rama***
-  - Primera ver que usamos git push: **git push -u origin *nombre de la rama***
-  - Siguientes veces que usamos el push: **git push origin *nombre de la rama***
-  ### Fusionar ramas
-    Cuando ya hemos terminado el trabajo en la rama y lo queremos subir al main:
-    1. Hacer git pull en la rama en la que hemos terminado el trabajo (*nombre de la rama*). 
-    2. Ir a la rama de destino (main): **git checkout main** y hacer git pull.
-    3. Mergear en esta rama (main), la rama donde hemos terminado el trabajo (*nombre de la rama*): ***git merge *nombre de la rama*** y creará un commit automático.
-    4. Comprobar que la páginia web está bien, no se ha desbarajustado todo.
-    6. Hacer push.
-  ### Git flow
-  - Cuando he terminado el trabajo en mi rama secundaria:
-    1. Mergeo la rama master (main) en la rama secundaria, para comprobar aquí que todo está Ok, y si no lo está, poder cambiarlo sin estropear el main.
-    2. Una vez he comprobado que todo funciona, mergear toda la rama secundaria a la rama master. (Hay que hacerlo en un período corto de tiempo para que nadie meta un commit en la rama master entre medias, porque sino me tocaría volver a mergear ambas ramas.)
+`main` es la rama principal o versión de producción.
+`dev`es la rama de desarrollo. Desde aquí vamos creando ramas para ir desarrollando (rama header, footer, styled_section...), y cuando termino de trabajar en una rama, mergeo el contenido en dev.
 
+- Crear una rama: **git branch *nombre de la rama***
+- Movernos a una rama: **git checkout *nombre de la rama***
+- Crear rama y movernos a ella: **git checkout -b *nombre de la rama***
+- Primera ver que usamos git push: **git push -u origin *nombre de la rama***
+- Siguientes veces que usamos el push: **git push origin *nombre de la rama***
+
+### Fusionar ramas
+Cuando ya hemos terminado el trabajo en la rama y lo queremos subir al main:
+1. Hacer git pull en la rama en la que hemos terminado el trabajo (*nombre de la rama*). 
+2. Ir a la rama de destino (main): **git checkout main** y hacer git pull.
+3. Mergear en esta rama (main), la rama donde hemos terminado el trabajo (*nombre de la rama*): ***git merge *nombre de la rama*** y creará un commit automático.
+4. Comprobar que la páginia web está bien, no se ha desbarajustado todo.
+6. Hacer push.
+
+### Git flow
+- Cuando he terminado el trabajo en mi rama secundaria:
+1. Mergeo la rama master (main) en la rama secundaria, para comprobar aquí que todo está Ok, y si no lo está, poder cambiarlo sin estropear el main.
+2. Una vez he comprobado que todo funciona, mergear toda la rama secundaria a la rama master. (Hay que hacerlo en un período corto de tiempo para que nadie meta un commit en la rama master entre medias, porque sino me tocaría volver a mergear ambas ramas.)
+
+### RESUMEN DE CÓMO TRABAJAR CON RAMAS:
+- Configurar atajos / alias de git:
+  - git config --global alias.st status
+  - git config --global alias.br branch
+  - git config --global alias.co checkout
+  - git config --global alias.dc diff --cached
+
+- **Crear una nueva rama**:
+   1. git pull en rama dev
+   2. git co -b nombre de la nueva rama
+   3. Trabajo en mi nueva rama
+
+- **Trabajar en mi rama:**
+   1. git st
+   2. git add -A
+   3. git dc (reviso el diff de lo que he modificado antes de hacer el commit)
+   4. git commit -m "mensaje descriptivo"
+   5. git push en mi rama (si es la primera vez que hago push: git push -u origin nombre de mi rama)
+
+- **Mergear** el trabajo de mi rama con la rama dev:
+   1. git fetch
+   2. git st (si git me dice que hay cambios con respecto origen hacer pull o push)
+   3. git merge origin/dev
+   4. Solucionar conflictos si los hay ((si no hay conflictos pasar al punto 6.)). Una vez solucionados hacer:
+       4.1. git st
+       4.2. git add-A
+       4.3. git commit -m "Result conflict and merge"
+       4.4. git push
+   5. git co dev
+   6. git merge nombre de mi rama
+   7. Aviso de que he hecho un merge en dev. 
+
+
+EL RESTO DE COMPAÑERAS, cuando alguien ha hecho merge en dev:
+- Si están en su rama
+   1. git st
+   2. Si hay modificaciones sin guardar ((si NO hay modificaciones, pasar al punto 3))
+       2.1. git add -A
+       2.2. git commit -m "mensaje descriptivo"
+       2.3. git push.
+   3. git fetch
+   4. git merge origin/dev
+- Si estoy en dev, hacer desde el punto 4
