@@ -21,6 +21,12 @@ if(nombre == "Nuria") {
 ```
 
 ## Condición ternaria
+Solo se usa cuando:
+- queremos guardar un valor en una variable.
+- queremos hacer una operación o sentencia dentro del ? y del : (si queremos hacer más cosas, usamos if - else).
+- queremos hacer una operación dentro del ? y otra dentro del : (si no queremos hacer nada en el :, es decir el else, no podemos usar un operador ternario).
+
+
 condición ? true : false
 
 Este sería un if normal:
