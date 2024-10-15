@@ -3,11 +3,11 @@
 Nuestra web es interactiva de verdad cuando escuchamos eventos y reaccionamos a ellos `addEventListener()`.
 
 Para utilizar la información que el navegador nos devuelve sobre los eventos:
-- `event.currentTarget`: contiene el elemento sobre el que pusimos el addEventListener. Es decir, al que asociamos el evento. Es muy útil cuando queremos que se ejecute el mismo código para varios elementos.
+- `event.currentTarget`: contiene el elemento sobre el que pusimos el addEventListener. Es decir, al que asociamos el evento. Es muy útil cuando queremos que se ejecute el mismo código para varios elementos. (El contenedor padre).
 
-- `event.target`: elemento sobre el que sucede el evento.
+- `event.target`: elemento sobre el que sucede el evento. (El hijo, el propio elemento en sí).
 
-- `event.preventDefault()`: método para prevenir el comportamiento por defecto de un evento sobre un elemento.
+- `event.preventDefault()`: método para prevenir el comportamiento por defecto de un evento sobre un elemento (se usa en formularios, para que la página no se recargue).
 
 - `event bubbling` para que los eventos pasen de unos elementos a otros de manera ascendente.
 
