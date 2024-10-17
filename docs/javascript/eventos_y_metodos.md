@@ -7,8 +7,6 @@ Para utilizar la información que el navegador nos devuelve sobre los eventos:
 
 - `event.target`: elemento sobre el que sucede el evento. (El hijo, el propio elemento en sí).
 
-- `event.preventDefault()`: método para prevenir el comportamiento por defecto de un evento sobre un elemento (se usa en formularios, para que la página no se recargue).
-
 - `event bubbling` para que los eventos pasen de unos elementos a otros de manera ascendente.
 
 - `event delegation` parar poner listeners a elementos padres para controlar eventos en hijos.
@@ -37,8 +35,9 @@ Para utilizar la información que el navegador nos devuelve sobre los eventos:
 
 ## De la ventana
 - `resize`: se ha cambiado el tamaño de la ventana
-- `scroll`: se ha hecho scroll en la ventana o un 
+- `scroll`: se ha hecho scroll en la ventana. `window.scrollY` nos devuelve la posición del scroll vertical.
 
 # Metodos
 - `classList.contains()`: para comprobar si un elemento contiene una clase. Devolverá un booleano.
 - `setAttribute(atributo, valor)`: sirve para añadir atributos a etiquetas de html.
+- `event.preventDefault()`: sirve para prevenir el comportamiento por defecto de un evento sobre un elemento (se usa en formularios, para que la página no se recargue).

@@ -565,11 +565,12 @@ Maquetación líquida: cuando definimos todos los anchos de los contenedores en 
 ## Estilos para  [formularios](./html-y-css/html-formularios.md)
 Para que los estilos de botón e input que vienen por defecto no se apliquen a nuestros campos debemos añadirles el atributo appearance: none;
 
-```html
+```css
 input {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+  align-self: flex-start;
 }
 ```
 

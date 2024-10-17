@@ -66,15 +66,15 @@ a != b || a === c; --> true\
 Son **inmutables** (no cambia el dato original), se pasan por **valor** (“copiar y pegar un archivo cambiándole el contenido”):
 
 ### String: cadenas de texto
-_String literals_: lo que escribimos en consola entre comillas.\
-_String values_: el propio valor de ese string, es decir, lo que nos devuelve la terminal.
+- *String literals*: lo que escribimos en consola entre comillas.
+- *String values*: el propio valor de ese string, es decir, lo que nos devuelve la terminal.
 
 1. **Creación** strings:
 
 ```javascript
 const primeraOpcion = 'Comillas simples'
 const segundaOpcion = "Comillas dobles"
-const terceraOpcion = `Comillas ladeadas`
+const terceraOpcion = `Comillas francesas`
 ```
 
 2. **Concatenación**: juntar un string con otro string:
