@@ -23,6 +23,25 @@ const suma = function (a, b) {
 ```
 
 ## 3. Funciones flecha (arrow functions)
+- Cuando la función arrow solo tiene 1 parámetro, puede (y suele) ir sin paréntesis.
+
+```javascript
+const getWaitingTime = minutes => {
+  return `Please, wait ${minutes} minutes`;
+};
+```
+
+- Cuando la función arrow solo tiene una instrucción, puede (y suele) ir sin llaves.
+
+```javascript
+const getWaitingTime = minutes => `Please, wait ${minutes} minutes`;
+
+console.log(getWaitingTime(4));
+```
+
+
+- Una situación no tiene que ver con la otra: pueden haber funciones arrow con llaves y sin paréntesis, sin llaves y con paréntesis, con ambos o sin ninguno
+---
 - Proporcionan una sintaxis más concisa.
 - Tienen un comportamiento ligeramente diferente con respecto al valor de *this*.
 
