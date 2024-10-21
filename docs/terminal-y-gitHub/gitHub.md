@@ -52,6 +52,7 @@
   - **git reset *commit***: deshace todos los commits después de *commit*, preservando los cambios localmente.
   - **git reset --hard *commit***: desecha todo el historial y regresa al commit especificado.
   - **git revert *has del commit que quiero borrar***: revertimos el último commit que hemos hecho.
+  - **git commit --amend**: renombrar el último commit que he escrito.
 
 ### SINCRONIZAR CAMBIOS: registrar un marcador de repositorio e intercambiar historial de versión.
   - **git fetch**: descarga el historial de cambios pero NO descarga los cambios en el ordenador local.
