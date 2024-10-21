@@ -1,5 +1,65 @@
 # Objetos
-Los objetos son una estructura de datos que guardan valores de una forma particular (key: value)
+Los objetos son una estructura de datos que guardan valores de una forma particular (key: value), permiten agrupar varios datos de forma estructurada.
+
+**Sintaxis para crear un objeto:**
+1. indicamos el nombre de la variable donde guardamos el objeto, por ejemplo, `adalaber`
+2. el contenido del objeto irá entre llaves `{ }`
+3. dentro de las llaves ponemos parejas `clave: valor`, donde la clave será el nombre de la propiedad y el valor puede ser de cualquier tipo de datos (cadena, número, booleano...), por ejemplo, `name: "Nuria"`
+4. separamos cada pareja `clave: valor` con una coma `,`
+
+```javascript
+const adalaber = {
+  name: "Nuria",
+  age: 34,
+  isMarried: false,
+};
+```
+
+Los objetos son tipos de datos, por lo tanto un objeto puede tener como propiedad otro objeto:
+
+```javascript
+const adalaber = {
+  name: "Nuria",
+  age: 33,
+  isMarried: false,
+  address: {
+    street: "Jilguero",
+    number: 25,
+  },
+};
+```
+
+Para acceder al valor de la propiedad de un objeto se puede hacer de dos formas:
+
+```javascript
+// Normalmente se usa esta:
+console.log(adalaber.name); // Nuria
+
+// Pero cuando el nombre de la propiedad lo tenemos guardado en una constante,
+const nameKey = "name";
+//se usa esta:
+console.log(adalaber[nameKey]); // Nuria
+```
+
+### Añadir nueva propiedad a un objeto
+
+```javascript
+adalaber.telefono = '555-555-5555';
+
+console.log('Añado al objeto adalaber la propiedad teléfono: ', adalaber);
+/*
+Añado al objeto adalaber la propiedad teléfono: {
+  name: "Nuria",
+  age: 33,
+  isMarried: false,
+  address: {
+    street: "Jilguero",
+    number: 25,
+  },
+  telefono: '555-555-5555'
+};
+*/
+```
 
 ## Métodos
 Son funciones que están dentro del objeto que nos ayudan a generar interacción.
@@ -29,22 +89,8 @@ saludar: [Function: saludar]
 console.log('La función saludar dice: ', persona.saludar()); // La función saludar dice: Hola, mi nombre es John
 ```
 
-### Añadir nueva propiedad
+> NOTA: Por convención, los métodos suelen tener como nombre un verbo (show, hide, reset, etc.) y las características (propiedades) suelen tener un sustantivo (color, size, type, content, text, etc).
 
-```javascript
-persona.telefono = '555-555-5555';
-
-console.log('Añado al objeto persona la propiedad teléfono: ', persona);
-/*
-Añado al objeto persona la propiedad teléfono: {
-nombre: 'John',
-edad: 30,
-direccion: { calle: 'Av Insurgente 187', ciudad: 'CDMX' },
-saludar: [Function: saludar],
-telefono: '555-555-5555'
-}
-*/
-```
 
 ### Añadir nuevo método al objeto
 
