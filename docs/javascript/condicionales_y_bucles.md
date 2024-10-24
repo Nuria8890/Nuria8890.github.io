@@ -96,26 +96,37 @@ console.log("¿Hay algo más que desees?")
 ```
 
 ## Bucle for()
-for (variable; condición; incremento) {\
-  código a ejecutar\
+
+```javascript
+/*
+for (variable; condición; incremento) {
+  código a ejecutar
 }
+*/
 
-Una vez que se evalúe la condición se ejecuta el código, después la variable se incrementa. Se inicia una segunda vuelta y la variable vale más (porque se ha incrementado antes), vuelve a evaluar la condición, ejecuta el código e incrementa la variable... así sucesivamente hasta que la condición se evalúe y sea false, entonces el código deja de ejecutarse.
+for (let i = 0; i < 2; i++) {
+  console.log("Voy por la vuelta ", i);
+}
+```
 
-1. Evalúa la condición teniendo en cuenta la variable inicial // true
-2. Ejecuta el código
-3. Incrementa el valor de la variable
-
-
-4. Evalúa la condición teniendo en cuenta la variable incrementada en el bucle anterior// true
-5. Ejecuta el código
-6. Incrementa el valor de la variable
-
-
-7. Evalúa la condición teniendo en cuenta la variable incrementada en el bucle anterior // false
-8. Fin
+1. Revisa la variable inicial (let i = 0)
+2. Evalúa la condición (i < 2) // true
+3. Ejecuta el código (Voy por la vuelta 0)
+4. Incrementa el valor de la variable (i++)
 
 
+5. Revisa la variable que ha incrementado en el bucle anterior (let i = 1)
+6. Evalúa la condición (i < 2)// true
+7. Ejecuta el código (Voy por la vuelta 1)
+8. Incrementa el valor de la variable (i++)
+
+
+9. Revisa la variable que ha incrementado en el bucle anterior (let i = 2)
+10. Evalúa la condición (i < 2) // false
+11. Fin
+
+
+Ejemplo 1: recorre la lista y píntala en consola:
 
 ```javascript
 let list = ["eat", "sleep", "code", "repeat"];
@@ -127,37 +138,86 @@ console.log(list[i]);
 // code
 // repeat
 }
+```
 
+Ejemplo 2:
 
-
-coches = ["rojo", "azul", "rojo"]
+```javascript
+const coches = ["rojo", "azul", "rojo"];
 
 function compruebaSiLosCochesSonDelColor(color) {
   
-  let colorDelCoche = true
+  let colorDelCoche = true;
   
-  for (i=0;i<coches.length;i++) {
-    if (coches[i] == color) {
-      console.log("coche del mismo color")
+  for (let i = 0; i < coches.length; i++) {
+    if (coches[i] === color) {
+      console.log("coche del mismo color");
     } else {
-      console.log("coche distinto color")
-      colorDelCoche = false
+      console.log("coche distinto color");
+      colorDelCoche = false;
     }
   }
 
-  return colorDelCoche
+  return colorDelCoche;
 }
 
-console.log(compruebaSiLosCochesSonDelColor("rojo"))  // false
+console.log(compruebaSiLosCochesSonDelColor("rojo"));  // false
+```
+
+Ejemplo 3:
+
+```javascript
+const scores = [4, 2, 7, 8, 6, 7, 9, 1, 2, 6, 7];
+
+// Creamos una variable fuera del bucle para que no se sobrescriba en cada iteración
+// En esta variable iremos sumando cada una de las puntuaciones
+let acc = 0;
+
+// La i empieza en 0 porque el índice de los arrays empieza en 0 también
+for (let i = 0; i < scores.length; i++) {
+  acc += scores[i];
+  // Sumamos a `acc` el valor actual del array en cada iteración del bucle
+  // acc += arr[i] es igual a acc = acc + arr[i]
+}
+
+console.log("La puntuación final es " + acc); // 59
+```
+
+## Bucle forOf()
+Permite recorrer un objeto iterable, como son los arrays, sin tener que escribir las condiciones de un for. Además, nos permite usar nombres mucho más reconocibles para los valores dentro del array.
+ForOf solo nos permite leer los datos, ya que no nos da información sobre el índice, por lo que no podemos modificar los valores del array.
+
+```
+for (variable of objeto) {\
+  código a ejecutar\
+}
+```
+
+Se usa en objetos iterables como arrays o strings (porque son una lista de algo).
+
+```javascript
+let list = ["eat", "sleep", "code", "repeat"]
+
+for (let fruta of canasta) {
+  console.log(fruta);
+// eat
+// sleep
+// code
+// repeat
+}
 ```
 
 ## Bucle forEach()
-[otro ejemplo de .forEach()](./javascript/arrays.md#método-map-y-foreach)\
-array.forEach((item)=> {\
-  código a ejecutar\
-})
+[otro ejemplo de .forEach()](./javascript/arrays.md#método-map-y-foreach)
 
 Ejecuta el código por cada uno de los elementos (items) que hay en mi array.
+
+```
+array.forEach((item)=> {
+  código a ejecutar
+})
+```
+
 
 ```javascript
 let list = ["eat", "sleep", "code", "repeat"]
@@ -171,29 +231,13 @@ list.forEach((item) => {
 })
 ```
 
-## Bucle forOf()
-for (variable of objeto) {\
-  código a ejecutar\
-}
+## Bucle forIn()
 
-Se usa en objetos iterables como arrays o strings (porque son una lista de algo).
-
-```javascript
-let canasta = ["manzana", "pera", "naranja", "uva"]
-
-for (fruta of canasta) {
-  console.log(fruta);
-// manzana
-// pera
-// naranja
-// uva
+```
+for (variable in objeto) {
+  código a ejecutar
 }
 ```
-
-## Bucle forIn()
-for (variable in objeto) {\
-  código a ejecutar\
-}
 
 Se usa en objetos enumerables.
 Los objetos tienen propiedades, y las propiedades tienen un valor.
@@ -206,7 +250,7 @@ const listaDeCompras = {
   uvas: 1
 }
 
-for (fruta in listaDeCompras) {
+for (let fruta in listaDeCompras) {
   console.log(fruta);
 // manzana
 // peras
@@ -214,7 +258,7 @@ for (fruta in listaDeCompras) {
 // uvas
 }
 
-for (fruta in listaDeCompras) {
+for (let fruta in listaDeCompras) {
   console.log(`${fruta}: ${listaDeCompras[fruta]}`)
 // manzana: 5
 // peras: 3
