@@ -62,8 +62,10 @@ console.log(numberOfFruits); // 3
 
 ## Tipos de métodos
 Otros métodos [aquí](./javascript/generales.md#string-cadenas-de-texto)
+
 ### Métodos mutables
 Son aquellos que modifican el array original
+
 #### Método .push() y .pop()
 
 ```javascript
