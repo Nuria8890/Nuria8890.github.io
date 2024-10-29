@@ -171,7 +171,22 @@ console.log(ages); // [ 21, '😎', '😎', 50 ]
 ### MÉTODOS INMUTABLES
 Son aquellos que NO modifican el array original, pero sí iteran con él.
 #### Método .map() y .forEach()
-.map(): **crea un nuevo array** con el resultado de la función aplicada a cada elemento del array original.
+.map(): **crea un nuevo array** con el resultado de aplicar una función a cada elemento del array original. El único argumento que recibe la función map es una función.
+
+```javascript
+const names = ['María', 'Lucía', 'Susana', 'Rocío', 'Inmaculada'];
+const capitalNames = names.map((name) => name.toUpperCase());
+
+console.log(capitalNames); // ["MARÍA","LUCÍA","SUSANA","ROCÍO","INMACULADA"]
+
+//Es igual que hacer esto:
+
+const names = ['María', 'Lucía', 'Susana', 'Rocío', 'Inmaculada'];
+const getUperCaseName = (name) => name.toUpperCase();
+const capitalNames = names.map(getUperCaseName);
+
+console.log(capitalNames);// ["MARÍA","LUCÍA","SUSANA","ROCÍO","INMACULADA"]
+```
 
 ```javascript
 const numbers = [1, 2, 3, 4, 5];
@@ -211,6 +226,13 @@ console.log(iteratedColors); // undefined
 .filter(): **crea un nuevo array** con los elementos del array original que cumplen una condición dada por una función.
 
 ```javascript
+const names = ["María", "Lucía", "Susana", "Rocío", "Inmaculada"];
+const longNames = names.filter((name) => name.length > 5);
+
+console.log(longNames); // ["Susana","Inmaculada"]
+```
+
+```javascript
 const numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 let numerosPares = numeros.filter(numero => numero % 2 === 0) // Devolverá los números pares. Por ejemplo, si tenemos 4 % 2, el resultado es 0 (4/2 = 2 y el resto es 0). Si tenemos 5 % 2, el resultado sería 1 (5/2 = 2 con un resto de 1).
 console.log('El array números es: ' + numeros); // El array numeros es: 1,2,3,4,5,6,7,8,9,10
@@ -240,7 +262,7 @@ console.log(frecuenciaDePalabras); // [ apple: 1, banana: 2, hello: 1, bye: 3 ]
 ```
 
 #### Método .find() y .findIndex()
-.find(): **devuelve el _valor_ del primer elemento** del array que cumple la condición proporcionada.
+.find(): **devuelve el *valor* del primer elemento** del array que cumple la condición proporcionada.
 
 ```javascript
 const multiplosDe5 = [5, 10, 15, 20];
