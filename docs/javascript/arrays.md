@@ -63,7 +63,7 @@ console.log(numberOfFruits); // 3
 ## Tipos de métodos
 Otros métodos [aquí](./javascript/generales.md#string-cadenas-de-texto)
 
-### Métodos mutables
+### MÉTODOS MUTABLES
 Son aquellos que modifican el array original
 
 #### Método .push() y .pop()
@@ -112,6 +112,8 @@ console.log(newColors); // 4
 
 #### Método .splice(), .reverse(), .sort() y .fill()
 .splice(): cambia el contenido de un array **eliminando** elementos existentes **y/o agregando** nuevos elementos.
+
+*.splice(posición inicial, cuántos elementos quiero cambiar a partir de la posición inicial incluida, elemento/s que quiero añadir en su lugar)*
 
 ```javascript
 var vegetables = ['carrot', 'broccoli', 'spinach', 'tomato'];
@@ -166,7 +168,7 @@ var agesEmogi = ages.fill('😎', 1, 3); // Llena con emogi, desde la posición 
 console.log(ages); // [ 21, '😎', '😎', 50 ]
 ```
 
-### Métodos inmutables
+### MÉTODOS INMUTABLES
 Son aquellos que NO modifican el array original, pero sí iteran con él.
 #### Método .map() y .forEach()
 .map(): **crea un nuevo array** con el resultado de la función aplicada a cada elemento del array original.
@@ -274,6 +276,13 @@ const palabraCompleta2 = [].concat(primeraParte, segundaParte);
 console.log(palabraCompleta2); // ['H','O','L','A']
 ```
 
+Para hacer una copia de un array:
+
+```javascript
+const animals = ['perro', 'caballo', 'vaca'];
+const animalsCopy = animals.concat();
+```
+
 Spread Operator: 
 
 ```javascript
@@ -345,7 +354,7 @@ const resultado2 = numeros.includes(8);
 console.log(resultado2); //false
 ```
 
-.indexOf(): **devuelve el primer índice** en el que se puede encontrar un elemento dado en el array, **o devuelve-1** si el elemento no está.
+.indexOf(): **devuelve el primer índice** en el que se puede encontrar un elemento dado en el array, **o devuelve-1** si el elemento no está. NO FUNCIONA con arrays de objetos.º
 
 ```javascript
 const frutas = ['manzana', 'uvas', 'cereza', 'mango', 'cereza'];
@@ -371,6 +380,9 @@ console.log(index4); // -1
 
 #### Método .slice()
 .slice(): crea una **copia** superficial (shallow copy) de una porción **del array**, especificada por índices de **inicio (incluido) y fin (no incluido)**.
+
+*.slice(posición inicial, posición final NO incluida)*
+
 
 ```javascript
 const animales = ['ant', 'bison', 'camel', 'duck', 'elephant'];
