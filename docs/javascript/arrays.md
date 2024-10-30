@@ -170,8 +170,11 @@ console.log(ages); // [ 21, '😎', '😎', 50 ]
 
 ### MÉTODOS INMUTABLES
 Son aquellos que NO modifican el array original, pero sí iteran con él.
+
 #### Método .map() y .forEach()
-.map(): **crea un nuevo array** con el resultado de aplicar una función a cada elemento del array original. El único argumento que recibe la función map es una función.
+.map(): **devuelve un nuevo array**, siempre de la misma longitud que el origina, con el resultado de aplicar una función a cada elemento del array original. El único argumento que recibe la función map es una función.
+
+Se utiliza para transformar los elementos de un array.
 
 ```javascript
 const names = ['María', 'Lucía', 'Susana', 'Rocío', 'Inmaculada'];
@@ -186,6 +189,45 @@ const getUperCaseName = (name) => name.toUpperCase();
 const capitalNames = names.map(getUperCaseName);
 
 console.log(capitalNames);// ["MARÍA","LUCÍA","SUSANA","ROCÍO","INMACULADA"]
+```
+
+Ejemplo diferenciando map con un bucle for
+
+```javascript
+
+const users = [
+  {
+    name: "Lucía",
+    age: 67
+  },
+    {
+    name: "Blanca",
+    age: 43
+  },
+]
+
+// Con bucle for:
+const sentences= [];
+
+for (const user of users) {
+  const text = `${user.name} tiene ${user.age} años`;
+
+  sentences.push(text);
+}
+
+console.log(sentences); // [Lucía tiene 67 años], [Blanca tiene 43 años]
+
+// con .map()
+
+const sentencesUsers = users.map((user) => {
+  return `${user.name} tiene ${user.age} años`
+})
+
+/* Lo de arriba es IGUAL que esto:
+const sentencesUsers = users.map((user) => `${user.name} tiene ${user.age} años`)
+*/
+
+console.log(sentencesUsers); // [Lucía tiene 67 años], [Blanca tiene 43 años]
 ```
 
 ```javascript
@@ -224,6 +266,8 @@ console.log(iteratedColors); // undefined
 
 #### Método .filter() y .reduce()
 .filter(): **crea un nuevo array** con los elementos del array original que cumplen una condición dada por una función.
+
+Se utiliza para buscar *todos* elementos de un array que cumplan una condición.
 
 ```javascript
 const names = ["María", "Lucía", "Susana", "Rocío", "Inmaculada"];
@@ -264,6 +308,8 @@ console.log(frecuenciaDePalabras); // [ apple: 1, banana: 2, hello: 1, bye: 3 ]
 #### Método .find() y .findIndex()
 .find(): **devuelve el *valor* del primer elemento** del array que cumple la condición proporcionada.
 
+Se utiliza para buscar un elemento en un array.
+
 ```javascript
 const multiplosDe5 = [5, 10, 15, 20];
 const primerNumeroMayorQue10 = multiplosDe5.find(numero => numero > 10);
@@ -271,6 +317,8 @@ console.log(primerNumeroMayorQue10); // 15
 ```
 
 .findIndex(): **devuelve el _índice_ del primer elemento** del array que cumple la condición proporcionada en forma de función. Si no encuentra ningún elemento que cumpla la condición, devuelve -1.
+
+Se utiliza para buscar un elemento en un array.
 
 ```javascript
 const numerosAleatorios = [6, 14, 27, 56, 40];
