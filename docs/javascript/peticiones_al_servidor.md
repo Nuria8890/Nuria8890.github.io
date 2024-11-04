@@ -9,7 +9,12 @@
 **AJAX** (Asynchronous JavaScript And XML) es el puente entre el cliente (navegador) y el servidor, entre el frontend y el backend de nuestra aplicación. Las peticiones AJAX nos permiten **acceder y manipular datos en el servidor**, pero **iniciando el proceso en el frontend**.
 
 **Método GET**: se usa para decir al sevidor que esa petición es para consultar datos que él ya tiene.
+
 **Método POST**: se usa para enviar nosotros datos al servidor.
+
+**Método PUT**: actualiza un recurso, y si no existe ese recurso lo va a crear.
+
+**Método DELETE**: elimina un recurso.
 
 ## fetch
 
@@ -131,7 +136,7 @@ Nos permite guardar datos en el propio navegador del usuario. Por ejemplo, podem
 
 - localStorage.**removeItem**('key'): elimina el elemento del almacenamiento local según la clave especificada.
 
-- localStorage.clear(): elimina todo el almacenamiento local.
+- localStorage.**clear()**: elimina todo el almacenamiento local.
 
 Local Storage solo puede guardar strings, números y booleanos, así que cada vez que queramos guardar algo en localStorage hay que utilizar la siguiente función:
 
