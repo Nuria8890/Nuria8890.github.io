@@ -202,3 +202,11 @@ console.log(parseTodos);
 {text: 'Piscina', completed: true}
 */
 ```
+
+## Asincronía y temporizadores
+
+**Asincronía**: capacidad de realizar operaciones sin tener que esperar a que se ejecute el código completo.
+
+- **setInterval**: permite ejecutar una función cada x milisegundos. Se cancela con **clearInterval**
+
+- **setTimeout**: permite ejecutar una función pasados x milisegundos. Se cancela con **clearTimeout**

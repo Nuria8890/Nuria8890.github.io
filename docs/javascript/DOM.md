@@ -1,6 +1,6 @@
 ## DOM
 
-El DOM es la propia página web, el conjunto de html, css y js.
+El DOM es, desde JS, la propia estructura de la página web. Es un esquema virtual de todo el documento HTML.
 
 # Crear, añadir y eliminar elementos
 
@@ -16,7 +16,7 @@ Partiendo de este html:
 </div>
 ```
 
-- **.parentelement**: selecciona el padre del elemento
+- **.parentElement**: selecciona el padre del elemento
 
 ```javascript
 const item1 = document.querySelector(".item--1");
