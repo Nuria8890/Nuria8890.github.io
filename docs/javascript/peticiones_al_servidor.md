@@ -210,3 +210,29 @@ console.log(parseTodos);
 - **setInterval**: permite ejecutar una función cada x milisegundos. Se cancela con **clearInterval**
 
 - **setTimeout**: permite ejecutar una función pasados x milisegundos. Se cancela con **clearTimeout**
+
+## Envío de datos al servidor
+
+```javascript
+console.log("JSON.stringify(dataForm),", JSON.stringify(dataForm));
+fetch("https://dev.adalab.es/api/info/data", {
+  method: "POST",
+  body: JSON.stringify(dataForm),
+  headers: { "Content-type": "application/json" },
+})
+  .then((response) => response.json())
+  .then((data) => {
+    const idCard = data.infoID;
+    linkCard.classList.remove("collapse");
+    linkCard.href = `./cardDetails.html?id=${idCard}`;
+
+    openShare.classList.remove("collapse");
+  });
+```
+
+- Para coger un parámetro de una url:
+
+```javascript
+const urlParam = new URLSearchParams(window.location.search);
+const id = urlParam.get("id");
+```
