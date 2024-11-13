@@ -1,11 +1,18 @@
+# REACT
+
 **Apuntes de React de un chico de Platzi**
 
 https://github.com/aleroses/Platzi/blob/master/DW/3-avanzado/1.react.js/Platzi/reactjs.md
 
+**Librería**: conjunto de utilidades de programación, que podemos decidir si utilizar o no.
+**Framework**: es un marco de trabajo, un sistema de pautas o reglas concretas. React es un framework. Es una herramienta que nos proporciona una forma de trabajar con unas reglas claras y estrictas de cómo programar.
+
 **Crear un comentario**
 
 ```javascript
-{/* <CreateTodoButton/> */}
+{
+  /* <CreateTodoButton/> */
+}
 ```
 
 **Ctrl+espacio**
@@ -13,29 +20,50 @@ Al hacer doble click en un componente (seleccionarlo), si se pulsa ctrl+espacio,
 
 ## ¿Qué es un componente de React.js?
 
-Si en un proyecto de React nos encontramos una función donde su nombre empieza con una letra mayúscula, 99% es un componente
+Es una identidad, finalidad o funcionalidad propia y que se pueden reutilizar (input de formulario, elementos del menú...), es como si fueran funciones de JS.
+
+Si en un proyecto de React nos encontramos una función donde su nombre empieza con una letra mayúscula, 99% es un componente.
 
 ```javascript
 function App() {} // componente de React.js
 ```
 
-## Ejecutar código en React
+## Crear un nuevo proyecto de React:
 
-Abrir la terminal y escribir: npm start - enter - click en el http
+1. UNA ÚNICA VEZ EN CADA ORDENADOR: `npm install -g create-vite`.
+2. Ejecuta `create-vite my-react-app --template react`.
+3. Abre VS Code en la carpeta creada.
+4. Ejecuta `npm install node-sass` y `npm install sass`. si sale este error `Cannot find module 'sass'` hay que volver a ejecutar el punto 4.
+5. Ejecuta `npm run dev` para arrancar el proyecto.
+6. Ejecuta `npm run build` para crear una versión de producción.
+
+## Ficheros
+
+- **public/vite.svg**: es el favicon que aparece en la pestaña del navegador.
+- **index.html**: HTML principal y único.
+  - `<div id="root"></div>` contenedor donde se meten los componentes creados en React. Todo lo que esté dentro, lo gestiona React, lo que está fuera lo gestiono yo a mano con JS y CSS (normalmente no se pone nada fuera).
+- **src/styles/App.css**: es un partial de estilos del componente **App.jsx**
+- **src/component/App.jsx**: componente principal de la web
+  - Aquí se crea el HTML y el JS.
+  - `import reactLogo from './assets/react.svg';` y `import viteLogo from '/vite.svg'`: importa una imagen para luego ser utilizada en el HTML de más abajo.
+  - `function App() {...}`: retorna el HTML que queremos mostrar en nuestra web.
+  - No debemos cambiarlo de nombre ni de carpeta.
+- **src/index.css**: los estilos principales de la página. Se importan en el fichero **src/main.jsx**.
+- **src/main.jsx**: fichero principal en el que se arranca el proyecto. Desde aquí se le indica a React qué componentes quiero que renderice y dónde.
 
 ## Diferenciar html de jsx
 
 Lo que está dentro del **componente de React.js** es jsx. Lo diferenciamos de html porque, por ejemplo, en jsx ponemos className, en lugar de solo class.
 
 Más adelante, esto se convertiá en html.
+
 ```javascript
 function App() {
   return (
     <div className="App">
-
-      <TodoItem/>
-      <TodoItem/>
-      <TodoItem/>
+      <TodoItem />
+      <TodoItem />
+      <TodoItem />
 
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
@@ -62,7 +90,7 @@ Un elemento es una "etiqueta de html". En el ejemplo sería <span>
 
 ```javascript
 function TodoItem() {
-  return(
+  return (
     <li>
       <span>V</span>
       <p>Llorar con la Llorona</p>
@@ -73,13 +101,15 @@ function TodoItem() {
 ```
 
 ## Recibir propiedades
+
 Permiten cambiar valores para que sean dinámicos.
 
 ```javascript
-function TodoCount(props) { // componente
+function TodoCount(props) {
+  // componente
   return (
     // propiedad
-    <h1>  
+    <h1>
       Completaste
       {props.completed} de
       {props.total} TODOs
@@ -92,14 +122,12 @@ Esto se transforma, con la máquina de render de React, en JavaScript de verdad 
 
 ```javascript
 function TodoCount(props) {
-  return (
-    React.createElement(
-      'h1',
-      null,
-      `Completaste
+  return React.createElement(
+    "h1",
+    null,
+    `Completaste
       ${props.completed} de
       ${props.total} TODOs`
-    )
   );
 }
 ```
@@ -123,9 +151,11 @@ function TodoCount(props) {
 ## Comunicación entre componentes por medio de props
 
 ## Local Storage
+
 Guarda el historial.
 
 En la consola:
+
 - localStorage.setItem('key', 'value'): añade un elemento con una clave y un valor al almacenamiento local.
 - localStorage.getItem('key'): recupera el valor de la clave especificada en el almacenamiento local.
 - localStorage.removeItem('key'): elimina el elemento del almacenamiento local según la clave especificada.
@@ -140,45 +170,43 @@ Ejemplo en consola:
 
 ```javascript
 const defaultTodos = [
-  {text: 'Cortar cebolla', completed: true},
-  {text: 'Curso React.js', completed: false},
-  {text: 'Saltar a la comba', completed: false},
-  {text: 'Piscina', completed: true},
+  { text: "Cortar cebolla", completed: true },
+  { text: "Curso React.js", completed: false },
+  { text: "Saltar a la comba", completed: false },
+  { text: "Piscina", completed: true },
 ];
 
-JSON.stringify(defaultTodos) // '[{"text":"Cortar cebolla","completed":true},{"text":"Curso React.js","completed":false},{"text":"Saltar a la comba","completed":false},{"text":"Piscina","completed":true}]'
+JSON.stringify(defaultTodos); // '[{"text":"Cortar cebolla","completed":true},{"text":"Curso React.js","completed":false},{"text":"Saltar a la comba","completed":false},{"text":"Piscina","completed":true}]'
 
+const stringifyedTodos = JSON.stringify(defaultTodos);
 
-const stringifyedTodos = JSON.stringify(defaultTodos)
+stringifyedTodos; // '[{"text":"Cortar cebolla","completed":true},{"text":"Curso React.js","completed":false},{"text":"Saltar a la comba","completed":false},{"text":"Piscina","completed":true}]'
 
-stringifyedTodos // '[{"text":"Cortar cebolla","completed":true},{"text":"Curso React.js","completed":false},{"text":"Saltar a la comba","completed":false},{"text":"Piscina","completed":true}]'
-
-
-JSON.parse(stringifyedTodos)
+JSON.parse(stringifyedTodos);
 
 // (4) [{…}, {…}, {…}, {…}]
 // 0
-// : 
+// :
 // {text: 'Cortar cebolla', completed: true}
 // 1
-// : 
+// :
 // {text: 'Curso React.js', completed: false}
 // 2
-// : 
+// :
 // {text: 'Saltar a la comba', completed: false}
 // 3
-// : 
+// :
 // {text: 'Piscina', completed: true}
 // length
-// : 
+// :
 // 4
 // [[Prototype]]
-// : 
+// :
 // Array(0)
-
 ```
 
 ## Custom Hooks
+
 Separar la lógica de un componente cuando es demasiado compleja o "enguarrina" el código y no deja que se lea facilmente.
 
 ## React Context
