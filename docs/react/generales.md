@@ -35,20 +35,37 @@ function App() {} // componente de React.js
 3. Abre VS Code en la carpeta creada.
 4. Ejecuta `npm install node-sass` y `npm install sass`. si sale este error `Cannot find module 'sass'` hay que volver a ejecutar el punto 4.
 5. Ejecuta `npm run dev` para arrancar el proyecto.
-6. Ejecuta `npm run build` para crear una versión de producción.
+6. Ejecuta `npm install prop-types` e importa las props con `import PropTypes from "prop-types";`
+7. Configurar las prop types:
+
+```
+NombreDelComponente.propTypes = {
+  nombreDeLaPropOpcional: PropTypes.string,
+  nombreDeLaPropObligatoria: PropTypes.string.isRequired,
+};
+```
+
+8. Ejecuta `npm run build` para crear una versión de producción.
 
 ## Ficheros
 
 - **public/vite.svg**: es el favicon que aparece en la pestaña del navegador.
+
 - **index.html**: HTML principal y único.
+
   - `<div id="root"></div>` contenedor donde se meten los componentes creados en React. Todo lo que esté dentro, lo gestiona React, lo que está fuera lo gestiono yo a mano con JS y CSS (normalmente no se pone nada fuera).
+
 - **src/styles/App.css**: es un partial de estilos del componente **App.jsx**
+
 - **src/component/App.jsx**: componente principal de la web
+
   - Aquí se crea el HTML y el JS.
   - `import reactLogo from './assets/react.svg';` y `import viteLogo from '/vite.svg'`: importa una imagen para luego ser utilizada en el HTML de más abajo.
   - `function App() {...}`: retorna el HTML que queremos mostrar en nuestra web.
   - No debemos cambiarlo de nombre ni de carpeta.
+
 - **src/index.css**: los estilos principales de la página. Se importan en el fichero **src/main.jsx**.
+
 - **src/main.jsx**: fichero principal en el que se arranca el proyecto. Desde aquí se le indica a React qué componentes quiero que renderice y dónde.
 
 ## Diferenciar html de jsx
@@ -101,6 +118,8 @@ function TodoItem() {
 ```
 
 ## Recibir propiedades
+
+Las props (propierties) es la información que un componente padre le pasa a su hijo para personalizarlo. Es decir, sirve para comunicar dos componentes.
 
 Permiten cambiar valores para que sean dinámicos.
 
