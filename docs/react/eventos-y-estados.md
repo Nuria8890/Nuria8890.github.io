@@ -1,5 +1,7 @@
 # Eventos y Estados en React
 
+**Estado**: es un objeto que representa el conjunto de datos que pueden cambiar con el tiempo. Se maneja con `useState`
+
 ```
 // Fichero src/components/App.jsx
 const App = () => {
