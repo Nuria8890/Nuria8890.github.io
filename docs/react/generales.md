@@ -35,17 +35,8 @@ function App() {} // componente de React.js
 3. Abre VS Code en la carpeta creada.
 4. Ejecuta `npm install node-sass` y `npm install sass`. si sale este error `Cannot find module 'sass'` hay que volver a ejecutar el punto 4.
 5. Ejecuta `npm run dev` para arrancar el proyecto.
-6. Ejecuta `npm install prop-types` e importa las props con `import PropTypes from "prop-types";`
-7. Configurar las prop types:
-
-```
-NombreDelComponente.propTypes = {
-  nombreDeLaPropOpcional: PropTypes.string,
-  nombreDeLaPropObligatoria: PropTypes.string.isRequired,
-};
-```
-
-8. Ejecuta `npm run build` para crear una versión de producción.
+6. Ejecuta `npm install prop-types`.
+7. Ejecuta `npm run build` para crear una versión de producción.
 
 ## Ficheros
 
@@ -123,49 +114,36 @@ Las props (propierties) es la información que un componente padre le pasa a su 
 
 Permiten cambiar valores para que sean dinámicos.
 
+Las recibe el hijo así:
+
 ```javascript
-function TodoCount(props) {
-  // componente
+import "../styles/layout/Button.scss";
+import PropTypes from "prop-types";
+
+function Button(props) {
   return (
-    // propiedad
-    <h1>
-      Completaste
-      {props.completed} de
-      {props.total} TODOs
-    </h1>
+    <>
+      <button className="btn">{props.textButton}</button>
+    </>
   );
 }
-```
 
-Esto se transforma, con la máquina de render de React, en JavaScript de verdad así:
+export default Button;
 
-```javascript
-function TodoCount(props) {
-  return React.createElement(
-    "h1",
-    null,
-    `Completaste
-      ${props.completed} de
-      ${props.total} TODOs`
-  );
-}
+Button.propTypes = {
+  textButton: PropTypes.string.isRequired,
+};
 ```
 
 ## Enviar propiedades
 
+Las envía el padre así:
+
 ```javascript
-<TodoCount
-  completed={8}
-  total={10}
+<Button textButton={"Ir a Adalab"} href={"http://www.adalab.es"} />
 />
 
-<TodoCount
-  completed={3}
-  total={5}
-/>
 ```
-
-![ejemplo de propiedades](./img/image-1.png)
 
 ## Comunicación entre componentes por medio de props
 
