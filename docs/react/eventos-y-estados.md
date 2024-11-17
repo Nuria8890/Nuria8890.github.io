@@ -1,6 +1,18 @@
 # Eventos y Estados en React
 
-**Estado**: es un objeto que representa el conjunto de datos que pueden cambiar con el tiempo. Se maneja con `useState`
+Los **eventos** en React se declaran con on, seguido del tipo de evento seguido de la función manejadora sin paréntesis y entre llaves:
+
+`onClick={handleClick}`
+
+`onKeyUp={handleInput}`
+
+`onChange={handleInput}`
+
+La _función manejadora_:
+
+Tiene que estar _declarada dentro de la función App_.
+
+Todo lo demás funciona exactamente igual que en JS.
 
 ```
 // Fichero src/components/App.jsx
@@ -20,19 +32,7 @@ const App = () => {
 export default App;
 ```
 
-Los **eventos** en React se declaran con on, seguido del tipo de evento seguido de la función manejadora sin paréntesis y entre llaves:
-
-`onClick={handleClick}`
-
-`onKeyUp={handleInput}`
-
-`onChange={handleInput}`
-
-La _función manejadora_:
-
-Tiene que estar _declarada dentro de la función App_.
-
-Todo lo demás funciona exactamente igual que en JS.
+**Estado**: es un objeto que representa el conjunto de datos que pueden cambiar con el tiempo. Se maneja con `useState`
 
 ```
 // Fichero src/components/App.jsx

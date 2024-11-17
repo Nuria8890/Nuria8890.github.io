@@ -108,13 +108,15 @@ function TodoItem() {
 }
 ```
 
-## Recibir propiedades
+## Props
 
 Las props (propierties) es la información que un componente padre le pasa a su hijo para personalizarlo. Es decir, sirve para comunicar dos componentes.
 
 Permiten cambiar valores para que sean dinámicos.
 
-Las recibe el hijo así:
+### Recibir propiedades
+
+el hijo las recibe así:
 
 ```javascript
 import "../styles/layout/Button.scss";
@@ -135,17 +137,25 @@ Button.propTypes = {
 };
 ```
 
-## Enviar propiedades
+Es importante ejecutar `npm install prop-types` en la consola para que el hijo "exija" al padre sus props y que la consola nos avise si el padre no le está pasando todas las props que el hijo necesita o si se las está pasando mal.
 
-Las envía el padre así:
+### Enviar propiedades
+
+El padre las envía así:
 
 ```javascript
 <Button textButton={"Ir a Adalab"} href={"http://www.adalab.es"} />
 />
-
 ```
 
-## Comunicación entre componentes por medio de props
+## Lifting y children
+
+El lifting en React significa subir datos desde un componente hija a una madre por el árbol de componentes. Para ello usamos funciones. Si una hija quiere pasar datos a su madre, puede ejecutar una función de su madre con argumentos.
+
+La madre pasa a la hija por props una función sin ejecutar, y la hija la ejecuta cuando la usuaria realice un evento determinado.
+
+- **Sin parámetros**: la hija avisa a la madre de que ha pasado algo (click en enviar, resetear formulario, cerrar un menú...)
+- **Con parámetros**: la hija avisa a la madre de que ha pasado algo y con qué datos ha ocurrido (se cambia el valor del email y el nuevo valor es pepita@adalab.es)
 
 ## Local Storage
 
