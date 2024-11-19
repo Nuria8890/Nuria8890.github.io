@@ -70,7 +70,7 @@ Otros métodos [aquí](./javascript/generales.md#string-cadenas-de-texto)
 
 Son aquellos que modifican el array original
 
-#### Método .push() y .pop()
+#### Método .push(), .pop() y .unshift()
 
 ```javascript
 var countries = ["USA", "Canada", "UK"];
@@ -91,6 +91,8 @@ var removedCountry = countries.pop();
 console.log(countries); // [ 'USA', 'Canada', 'UK', 'Germany' ]
 console.log(removedCountry); // Australia
 ```
+
+.unshift(): **añade** uno o más elementos **al inicio** de un array.
 
 #### Método .shift() y .unshift()
 

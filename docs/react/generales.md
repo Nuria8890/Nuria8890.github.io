@@ -148,14 +148,19 @@ El padre las envía así:
 />
 ```
 
-## Lifting y children
+## Lifting
 
 El lifting en React significa subir datos desde un componente hija a una madre por el árbol de componentes. Para ello usamos funciones. Si una hija quiere pasar datos a su madre, puede ejecutar una función de su madre con argumentos.
 
 La madre pasa a la hija por props una función sin ejecutar, y la hija la ejecuta cuando la usuaria realice un evento determinado.
 
 - **Sin parámetros**: la hija avisa a la madre de que ha pasado algo (click en enviar, resetear formulario, cerrar un menú...)
+
 - **Con parámetros**: la hija avisa a la madre de que ha pasado algo y con qué datos ha ocurrido (se cambia el valor del email y el nuevo valor es pepita@adalab.es)
+
+## Children
+
+Las `props.children` son componentes genéricos que se reutilizan pasándoles el contenido que deben pintar. (por ejemplo un popup)
 
 ## Local Storage
 

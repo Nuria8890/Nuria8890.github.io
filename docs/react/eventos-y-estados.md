@@ -63,3 +63,19 @@ Para crear una **constante de estado** y que React renderice el componente cada 
 4. Podemos usar y pintar la constante del estado donde queramos.
 
 5. Para modificar la constante tenemos que usar la función manejadora con `setName('Mi nuevo valor')`.
+
+## Guardar un array en el estado de React
+
+1. Tengo un array series que va a ser modificado en un futuro, así que lo guardo en useState (`const [series, setSeries] = useState(["mi array de series"])`)
+
+2. Lo modifico (añadiendo, borrando o modificando elementos).
+
+3. Ejecuto la función que modifica el estado pasándole como parámetro mi nuevo array de series, es decir, quedaría algo así: `setSeries([...series])`
+
+## Guardar un objeto en el estado de React
+
+Es igual que con los arrays:
+
+1. Creo mi objeto con useStates (`const [shipping, setShipping] = useState({});`)
+2. Lo modifico
+3. Ejecuto la función manejadora que modifica el objeto del estado y lo guardo usando spread operator: `shipping.city = ev.target.value; setShipping({ ...shipping });`
