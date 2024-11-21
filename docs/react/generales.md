@@ -38,6 +38,25 @@ function App() {} // componente de React.js
 6. Ejecuta `npm install prop-types`.
 7. Ejecuta `npm run build` para crear una versión de producción.
 
+## Crear la versión de producción de un proyecto de React con Vite
+
+1. Ejecutar `npm in gh-pages -D`
+2. Ir al fichero `vite.config.js` y definir la propiedad base con el nombre del repositorio:
+
+```javascript
+export default defineConfig({
+  plugins: [react()],
+  base: "/nombre-repo/",
+});
+```
+
+3. Añadir al archivo `package.json` la línea `"deploy": "gh-pages -d dist"`
+4. Ejecuta ` npm run build`, esto crea una carpeta llamada dist
+5. Ejecuta `npm run deploy` para crear la rama `gh-pages`
+6. Entrar en el repositorio de GitHub y
+
+- Settings - Pages - rama gh-pages - carpeta /root - guardar.
+
 ## Ficheros
 
 - **public/vite.svg**: es el favicon que aparece en la pestaña del navegador.
