@@ -179,61 +179,6 @@ La madre pasa a la hija por props una función sin ejecutar, y la hija la ejecut
 
 Las `props.children` son componentes genéricos que se reutilizan pasándoles el contenido que deben pintar. (por ejemplo un popup)
 
-## Local Storage
-
-Guarda el historial.
-
-En la consola:
-
-- localStorage.setItem('key', 'value'): añade un elemento con una clave y un valor al almacenamiento local.
-- localStorage.getItem('key'): recupera el valor de la clave especificada en el almacenamiento local.
-- localStorage.removeItem('key'): elimina el elemento del almacenamiento local según la clave especificada.
-- localStorage.clear(): elimina todo el almacenamiento local.
-
-- localStorage solo puede guardar strings, así que cada vez que queramos guardar algo en localStorage hay que utilizar la siguiente función:
-  - JSON.stringify(): convierte JavaScript en strings.
-- Para poder leer algo que hemos guardado en localStorage hay que utilizar la siguiente función:
-  - JSON.parse(): convierte un string en array.
-
-Ejemplo en consola:
-
-```javascript
-const defaultTodos = [
-  { text: "Cortar cebolla", completed: true },
-  { text: "Curso React.js", completed: false },
-  { text: "Saltar a la comba", completed: false },
-  { text: "Piscina", completed: true },
-];
-
-JSON.stringify(defaultTodos); // '[{"text":"Cortar cebolla","completed":true},{"text":"Curso React.js","completed":false},{"text":"Saltar a la comba","completed":false},{"text":"Piscina","completed":true}]'
-
-const stringifyedTodos = JSON.stringify(defaultTodos);
-
-stringifyedTodos; // '[{"text":"Cortar cebolla","completed":true},{"text":"Curso React.js","completed":false},{"text":"Saltar a la comba","completed":false},{"text":"Piscina","completed":true}]'
-
-JSON.parse(stringifyedTodos);
-
-// (4) [{…}, {…}, {…}, {…}]
-// 0
-// :
-// {text: 'Cortar cebolla', completed: true}
-// 1
-// :
-// {text: 'Curso React.js', completed: false}
-// 2
-// :
-// {text: 'Saltar a la comba', completed: false}
-// 3
-// :
-// {text: 'Piscina', completed: true}
-// length
-// :
-// 4
-// [[Prototype]]
-// :
-// Array(0)
-```
-
 ## Custom Hooks
 
 Separar la lógica de un componente cuando es demasiado compleja o "enguarrina" el código y no deja que se lea facilmente.
