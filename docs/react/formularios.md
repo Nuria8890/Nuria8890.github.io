@@ -1,5 +1,7 @@
 # Formularios en React
 
+Para que los formularios estén controlados, como norma general, en el value del input pasamos la variable de estado asociada a ese input.
+
 ## Input de tipo text, number, email...
 
 - Guardamos el value seleccionado en nuestra variable de estado. `setEmail(ev.target.value)` esto lo haré dentro de una función manejadora.
@@ -15,6 +17,23 @@
 
 - Cuando marcamos o desmarcamos no cambia el value, sino que cambia la propiedad `checked`, por lo que es el estado de esta propiedad (marcada o desmarcada, true o false) lo que tengo que guardar en mi variable de estado: `const [acceptsConditions, setAcceptsContitions] = useState("false")`
 - Y en la propia propiedad checked tengo que guardar el valor de mi variable de estado `checked={acceptsConditions}` para controlar este input.
+
+```javascript
+const [foods, setFoods] = useState(
+{
+  name:"",
+  price:"",
+  allergies: [];
+})
+
+const handleAllergies=(event)=>{
+const allergyValue = event.target.value,
+
+const updatedAllergies = [...food.alergies, allergyValue]
+
+setFood({...food, allergies: updatedAllergies})
+}
+```
 
 ## Input de tipo radio
 

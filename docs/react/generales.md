@@ -50,12 +50,10 @@ export default defineConfig({
 });
 ```
 
-3. Añadir al archivo `package.json` la línea `"deploy": "gh-pages -d dist"`
+3. Añadir al archivo `package.json`, en los scripts, la línea `"deploy": "gh-pages -d dist"`
 4. Ejecuta ` npm run build`, esto crea una carpeta llamada dist
-5. Ejecuta `npm run deploy` para crear la rama `gh-pages`
-6. Entrar en el repositorio de GitHub y
-
-- Settings - Pages - rama gh-pages - carpeta /root - guardar.
+5. Ejecuta `npm run deploy`. Esto crea la rama `gh-pages` o la actualiza en caso de que ya se haya subido una primera versión.
+6. Entrar en el repositorio de GitHub y: Settings - Pages - rama gh-pages - carpeta /root - guardar.
 
 ## Ficheros
 
