@@ -1,5 +1,7 @@
 # useEffect
 
+<!-- No sé si lo he entendido bien: Se usa cuando queremos realizar una acción pero sin que se renderice la página. -->
+
 - Como primer parámetro SIEMPRE recibe una **función sin ejecutar**, esta función puede ser un `fetch` o una escritura en `localStorage`.
 
 - Como segundo parámetro recibe un array (opcional), que sirve para indicar a React cuándo queremos que se ejecute el primer parámetro.

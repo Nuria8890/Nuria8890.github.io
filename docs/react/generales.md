@@ -177,7 +177,21 @@ La madre pasa a la hija por props una función sin ejecutar, y la hija la ejecut
 
 ## Children
 
-Las `props.children` son componentes genéricos que se reutilizan pasándoles el contenido que deben pintar. (por ejemplo un popup)
+Las `props.children` son componentes genéricos que se reutilizan pasándoles el contenido que deben pintar. (por ejemplo un popup/modal)
+
+```javascript
+// Si la variable de estado isModalOpen es true, se visualiza el componente Modal
+{
+  isModalOpen && (
+    <Modal>
+      <h3>Más información</h3>
+      <p>
+        nkfjvhg ohgorhvgorh vehgherg herogj ofdcnvfjd hgfdhg ofdnvofd hnbsjhgbns
+      </p>
+    </Modal>
+  );
+}
+```
 
 ## Custom Hooks
 
