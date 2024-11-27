@@ -13,7 +13,7 @@ Para trabajar con rutas en React tenemos que instalar y configurar React Router 
 </HashRouter>
 ```
 
-Para mostrar u ocultar un contenido en función de la ruta debemos usar el componente:
+Para mostrar u ocultar un contenido en función de la ruta debemos usar el componente. Esto lo escribimos en APP:
 
 ```
 <Routes>
@@ -44,7 +44,7 @@ Rutas que cambian, es decir, una ruta dinámica es una única ruta con la que po
 
 Estas tres rutas, en el fondo, son la misma página, pero su contenido cambia.
 
-Para gestionar rutas dinámicas tenemos que expresar una ruta con un patrón. La parte variable del patrón la expresamos con dos puntos :. Y para obtener los parámetros de la ruta dinámica tenemos dos opciones, useLocation o useParams
+Para gestionar rutas dinámicas tenemos que expresar una ruta con un patrón. La parte variable del patrón la expresamos con dos puntos y después el valor que cambiará `:id`. Y para obtener los parámetros de la ruta dinámica tenemos dos opciones, useLocation o useParams.
 
 ### useLocation
 

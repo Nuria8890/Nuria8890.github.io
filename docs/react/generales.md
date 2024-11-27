@@ -40,7 +40,7 @@ function App() {} // componente de React.js
 
 ## Crear la versión de producción de un proyecto de React con Vite
 
-1. Ejecutar `npm in gh-pages -D`
+1. Ejecutar `npm i gh-pages -D`
 2. Ir al fichero `vite.config.js` y definir la propiedad base con el nombre del repositorio:
 
 ```javascript
@@ -51,9 +51,10 @@ export default defineConfig({
 ```
 
 3. Añadir al archivo `package.json`, en los scripts, la línea `"deploy": "gh-pages -d dist"`
-4. Ejecuta ` npm run build`, esto crea una carpeta llamada dist
-5. Ejecuta `npm run deploy`. Esto crea la rama `gh-pages` o la actualiza en caso de que ya se haya subido una primera versión.
+4. Ejecuta `npm run build`, esto crea una carpeta llamada `dist`
+5. Ejecuta `npm run deploy`. Esto crea la rama `gh-pages`
 6. Entrar en el repositorio de GitHub y: Settings - Pages - rama gh-pages - carpeta /root - guardar.
+7. Si ya he creado una primera versión en producción y quiero subir cambios, tengo que ejecutar primero `npm run build` para actualizar la carpeta `dist`, y luego `npm run deploy` para subirlo a GitHub
 
 ## Ficheros
 
