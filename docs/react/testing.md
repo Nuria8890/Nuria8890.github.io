@@ -24,7 +24,7 @@ Los test unitarios deben ser FIRST: Fast, Isolated, Repeatable, Self verifying, 
 
 - **Timely / Hechos a tiempo**: deberíamos hacer estos tests antes de que sucedan los errores, no como consecuencia de ellos. Y según el TDD deben ser hechos antes incluso que el código.
 
-Los test tienen tres pasos: AAA (Arrange (preparación), Act (acción), Assert (aserción))
+Los test tienen tres pasos: AAA (Arrange (preparación (renderizar el componente)), Act (acción (la acción que quieremos probar)), Assert (aserción (comprobar si el restultado de la acción es el esperado)))
 
 ```javascript
 // Con este título describimos lo que hace el test
@@ -84,6 +84,52 @@ module.exports = {
 
 4. Crear un carpeta `test` dentro de `src` para crear archivos de prueba (por ejemplo: App.test.js)
 
-5. Ejecutar `npm test` para ejecutar un test normal, o `npm run test:watch` para ejecutar pruebas en modo de observación, así cuando los archivos cambien se vuelven a ejecutar las pruebas automáticamente.
+- Para hacer un test de un botón, saber si ese botón, que es super importante, existe:
+  1. Importar el componente a testear
+  2. Importar lo necesario para renderizar el componente, por ejemplo el navegador
+  3. Escribir el test agrupándolos en `describe()`, recibe siempre dos parámetros:
+  - string (descripción de mi suite de tests)
+  - función. Dentro de esta función metemos la función `test()`, que recibe dos parámetros también, un string y una función.
 
-- **Testing library**: https://testing-library.com/
+```
+import App form "../components/App";
+import {render, screen, fireEvent} from "@testing-library/react";
+
+describe("App component", ()=>{
+  test("renders button CTA correctly", ()=>{
+    <!-- preparación -->
+    render(<App />)
+
+    <!-- actuación -->
+    const button = screen.getAllByText("Soliciar información");
+  <!-- getAllByText me devuelve un array con todos los elementos que tienen ese texto -->
+
+    <!-- aserción -->
+    expect(button.length).tobe(1);
+  <!-- aquí estoy comprobando si la constante button tiene de longitud 1 (solo quiero que exita un botón con ese texto) -->
+
+  })
+
+})
+```
+
+```
+describe("Counter component", ()=>{
+  test("renders button CTA correctly", ()=>{
+
+    render(<Counter />)
+
+
+    const incrementButton = screen.getByText("Incrementar");
+    fireEvent.click(incrementButton);
+    const countText = screen.getAllByText("Contador: 1");
+
+    expectcountText.length).tobe(1);
+
+  })
+})
+```
+
+5. Ejecutar `npm test` para ejecutar un test normal, o `npm run test:watch` para ejecutar pruebas en modo de observación, así cuando los archivos cambien se vuelven a ejecutar las pruebas automáticamente. Si quiero que solo me ejecute el text en el que estoy trabajando justo ahora tengo que ejecutar `npm test --testPathPattern=Nombre-de-mi-archivo.test.js`
+
+- **React Testing library**: https://testing-library.com/
