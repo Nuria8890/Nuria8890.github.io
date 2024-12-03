@@ -2,11 +2,15 @@
 
 MySQL es un sistema de administración de bases de datos que nos va a permitir crear, leer, actualizar y borrar datos.
 
-SQL guarda los datos en formato de tabla (SQLite, Microsoft SQL, Postgres SQL)
+SQL guarda los datos en formato de tabla (SQLite, Microsoft SQL, Postgres SQL). SQL es el lenguaje que se utiliza para interactuar con bdd relacionales.
+
+Una bdd nos permite guardar información de manera organizada, permanente y segura.
 
 ## MySQL Workbench
 
-Permite escribir código en SQL y crear modelado de datos (hacer el diseño de la bdd de forma gráfica).
+En la terminal, ejecutar `docker-compose up` en la carpeta `/home/nuria/Friki/ADALAB/mysql`, y minimizar, luego abrir el delfín.
+
+Permite escribir código en SQL y crear modelado de datos (hacer el diseño de la bdd de forma gráfica). MySQL Workbench es el programa que se utiliza para trabajar con la bdd.
 
 - **Crear nueva base de datos** El nombre de la base de datos debe ser único
 
