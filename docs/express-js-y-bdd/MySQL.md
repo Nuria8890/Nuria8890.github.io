@@ -10,11 +10,28 @@ Una bdd nos permite guardar información de manera organizada, permanente y segu
 
 En la terminal, ejecutar `docker-compose up` en la carpeta `/home/nuria/Friki/ADALAB/mysql`, y minimizar, luego abrir el delfín.
 
+- EXPORTAR bdd
+
+  - `mysqldump -h127.0.0.1 -uroot -proot nombre_bdd > nombre_archvo.sql`
+
+- IMPORTAR bdd
+
+  - Conectarme a mysql desde la carpeta en la que esté el archivo que quiero importar `mysql -h127.0.0.1 -uroot -proot`
+  - Borrar bdd que tengo en mi local (si ya existe la que quiero importar) `drop database nombre_bdd;`
+
+  - Comprobar que se ha borrado `show databases;` - Crear la bdd `create database nombre_bdd;`
+
+  - Usar la bdd `use nombre_bdd;`
+
+  - Comprobar que no hay datos en esa bdd `show tables;`
+
+  - Importar bdd `source nombre_archivo.sql;`
+
 Permite escribir código en SQL y crear modelado de datos (hacer el diseño de la bdd de forma gráfica). MySQL Workbench es el programa que se utiliza para trabajar con la bdd.
 
 - **Crear nueva base de datos** El nombre de la base de datos debe ser único
 
-```
+```sql
 CREATE DATABASE Nombre_base_datos;
 CREATE DATABASE Person
 
@@ -24,7 +41,7 @@ USE Person
 
 - **Crear una nueva tabla en la base de datos** En cada columna hay que indicar el tipo de dato
 
-```
+```sql
 CREATE TABLE nombre_tabla(
   columna1 tipo_dato1 otras_caracteristicas,
   columna2 tipo_dato2 otras_caracteristicas,
@@ -92,16 +109,16 @@ Se utiliza para modificar la estructura de las tablas y sus columnas de una base
 
 - Estructura básica:
 
-```
+```sql
 ALTER [ONLINE | OFFLINE] [IGNORE] TABLE nombre_tabla
 [alter_specification [, alter_specification] ...]
 ```
 
 - Diferentes opciones para modificar una tabla en MySQL
 
-```
-# alter_specification:
-# table_options
+```sql
+-- alter_specification:
+-- table_options
 | ADD [COLUMN] col_name column_definition
       [FIRST | AFTER col_name ]
 | ADD [COLUMN] (col_name column_definition,...)
@@ -142,59 +159,59 @@ ALTER [ONLINE | OFFLINE] [IGNORE] TABLE nombre_tabla
 
 - **Renombrar** y/o cambiar el nombre la tabla:
 
-```
+```sql
 ALTER TABLE nombre_tabla RENAME nombre_nuevo_tabla;
 ```
 
 - **Eliminar** una **columna** de la tabla:
 
-```
+```sql
 ALTER TABLE nombre_tabla DROP COLUMN nombre_columna;
 ```
 
 - **Eliminar varias columnas** de la tabla
 
-```
+```sql
 ALTER TABLE nombre_tabla DROP COLUMN nombre_columna, DROP COLUMN nombre_columna2;
 ```
 
 - **Eliminar** una **clave** primaria y clave externa (FOREING KEY y PRIMARY KEY):
 
-```
-<!-- Eliminar clave primaria -->
+```sql
+-- Eliminar clave primaria
 ALTER TABLE nombre_tabla DROP PRIMARY KEY;
 
-<!-- Eliminar clave externa -->
+-- Eliminar clave externa
 ALTER TABLE nombre_tabla DROP FOREIGN KEY nombre_columna;
 ```
 
 - **Insertar** una nueva **columna al final** de la tabla
 
-```
+```sql
 ALTER TABLE nombre_tabla ADD fecha_nacimiento date;
 ```
 
 - **Añadir** una nueva **columna** después de otra:
 
-```
+```sql
 ALTER TABLE nombre_tabla ADD nombre_columna VARCHAR(5) AFTER nombre_columna_anterior;
 ```
 
 - **Insertar** una nueva **columna** en la **primera posición** de la tabla:
 
-```
+```sql
 ALTER TABLE nombre_tabla ADD nombre_columna VARCHAR(5) INT FIRST;
 ```
 
 - **Asignar** como **clave primaria** a una columna:
 
-```
+```sql
 ALTER TABLE nombre_Tabla ADD PRIMARY KEY(nombre_columna);
 ```
 
 - DROP TABLE: elimina una o varias tablas.
 
-```
+```sql
 DROP [TEMPORARY] TABLE [IF EXISTS]
 tbl_name [, tbl_name] ...
 [RESTRICT | CASCADE]
@@ -202,13 +219,13 @@ tbl_name [, tbl_name] ...
 
 - TRUNCATE TABLE: vacía una tabla por completo.
 
-```
+```sql
 TRUNCATE [TABLE] tbl_name
 ```
 
 - RENAME TABLE: renombra una o más tablas.
 
-```
+```sql
 RENAME TABLE
 tbl_name TO new_tbl_name
 [, tbl_name2 TO new_tbl_name2] ...
@@ -218,18 +235,18 @@ tbl_name TO new_tbl_name
 
 - **Renombrar** una columna:
 
-```
+```sql
 ALTER TABLE nombre_tabla CHANGE nombre_viejo_columna nombre_nuevo_columna;
 ```
 
 - **Cambiar** el **nombre y tipo de dato** de una columna:
 
-```
+```sql
 ALTER TABLE nombre_tabla CHANGE nombre_viejo_columna nombre_nuevo_columna VARCHAR(20);
 ```
 
 - Solamente **cambiar el tipo de dato** de una columna:
 
-```
+```sql
 ALTER TABLE nombre_tabla MODIFY nombre_columna DATE NOT NULL;
 ```
