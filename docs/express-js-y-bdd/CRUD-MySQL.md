@@ -7,6 +7,8 @@ Delete
 
 ## Añadir un nuevo registro
 
+Cuando en frontEnd se hace un POST en backEnd se hace un INSERT TO
+
 `INSERT INTO`
 
 ```sql
@@ -21,6 +23,8 @@ VALUES ('maria@gmail.com', '987widJYVxyh', 'María'),
 ```
 
 ## Leer uno o varios registros
+
+Cuando en frontEnd se hace un GET en backEnd se hace un SELECT
 
 `SELECT`
 
@@ -130,13 +134,20 @@ FROM users
 WHERE id BETWEEN 5 and 10
 ```
 
-- Operador **`IN`**: selecciona los registros cuyo valor de una columna se encuenntra entre un listado dado. Es una forma abreviada de hacer múltiples condiciones con OR en un WHERE.
+- Operador **`IN`**: selecciona los registros cuyo valor de una columna se encuentra entre un listado dado. Es una forma abreviada de hacer múltiples condiciones con OR en un WHERE.
 
 ```sql
 --  Selecciona las usuarias cuyo name sea María o Lucía
 SELECT name AS Nombre, email as Usuario
 FROM users
 WHERE name IN ('María', 'Lucía');
+
+
+--Las dos sentencias siguientes son lo mismo:
+-- Mostrat el nombre y la marca de todos los productos de la marca lg, ,marca hp y phillips
+SELECT name, brand FROM products WHERE brand = 'lg' OR brand = 'hp', OR brand = 'phillips';
+
+SELECT namme, brand FROM products WHERE brand IN('lg', 'hp', 'phillips');
 ```
 
 - Operador **`AS`**: se usa para cambiar el nombre de una columna o tabla con un alias (el alias es temporal y solo existe mientras dura la consulta.)
@@ -169,6 +180,8 @@ SELECT * FROM users WHERE email LIKE '%gmail%'
 
 ## Modificar un registro exisitente
 
+Cuando en frontEnd se hace un PUT en backEnd se hace un UPDATE
+
 `UPDATE`
 
 SIEMPRE hay que poner el `WHERE` porque tienes que especificar qué entrada quieres cambiar, si no se pone se modificarán todos los registros de la tabla.
@@ -194,6 +207,8 @@ WHERE id = 3
 ```
 
 ## Borrar un registro existente
+
+Cuando en frontEnd se hace un DELETE en backEnd se hace un DELETE
 
 `DELETE`
 
