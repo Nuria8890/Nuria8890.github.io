@@ -5,6 +5,10 @@
 - Click en Add Diagram - Add Table
 - Click en icono de Place a New Table, click en la hoja de cuadros y doble click en la tabla (entidad) para renombrar y añadir atributos.
 
+- Database - forward engineer: para transformar el diagrama en bbdd real (que escriba el código por mi)
+
+- file - save model: para guardar el diagrama que he creado. También se puede exportar como una imagen.
+
 ## Claves foráneas (foreign key FK)
 
 Son columnas que se definen en una tabla y hacen referencia obligatoriamente a claves primarias de otra tabla.

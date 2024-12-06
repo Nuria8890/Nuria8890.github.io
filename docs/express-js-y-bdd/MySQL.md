@@ -10,16 +10,18 @@ Una bdd nos permite guardar información de manera organizada, permanente y segu
 
 En la terminal, ejecutar `docker-compose up` en la carpeta `/home/nuria/Friki/ADALAB/mysql`, y minimizar, luego abrir el delfín.
 
-- EXPORTAR bdd
+- **EXPORTAR bdd**
 
   - `mysqldump -h127.0.0.1 -uroot -proot nombre_bdd > nombre_archvo.sql`
 
-- IMPORTAR bdd
+- **IMPORTAR bdd**
 
   - Conectarme a mysql desde la carpeta en la que esté el archivo que quiero importar `mysql -h127.0.0.1 -uroot -proot`
   - Borrar bdd que tengo en mi local (si ya existe la que quiero importar) `drop database nombre_bdd;`
 
-  - Comprobar que se ha borrado `show databases;` - Crear la bdd `create database nombre_bdd;`
+  - Comprobar que se ha borrado `show databases;`
+
+  - Crear la bdd `create database nombre_bdd;`
 
   - Usar la bdd `use nombre_bdd;`
 
