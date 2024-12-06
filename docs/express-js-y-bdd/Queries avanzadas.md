@@ -58,13 +58,11 @@ HAVING condición;
 Permite aplicar lógica condicional en las consultas (if ... else...).
 
 ```sql
-SELECT
+SELECT salario,
 CASE
     WHEN salario < 2000 THEN "Bajo"
-    ELSE
-        CASE WHEN salario > 3000 THEN "Alto"
-        ELSE "Medio"
-        END
-    END RangoSalario
+    WHEN salario > 3000 THEN "Alto"
+    ELSE "Medio"
+    END AS RangoSalario
 FROM empleadas;
 ```
