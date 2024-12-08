@@ -182,7 +182,7 @@ Son aquellos que NO modifican el array original, pero sí iteran con él.
 
 #### Método .map() y .forEach()
 
-.map(): **devuelve un nuevo array**, siempre de la misma longitud que el origina, con el resultado de aplicar una función a cada elemento del array original. El único argumento que recibe la función map es una función.
+.map(): **devuelve un nuevo array**, siempre de la misma longitud que el original, con el resultado de aplicar una función a cada elemento del array original. El único argumento que recibe la función map es una función.
 
 Se utiliza para transformar los elementos de un array.
 
@@ -277,7 +277,7 @@ console.log(iteratedColors); // undefined
 
 .filter(): **crea un nuevo array** con los elementos del array original que cumplen una condición dada por una función.
 
-Se utiliza para buscar _todos_ elementos de un array que cumplan una condición.
+Se utiliza para buscar _todos_ los elementos de un array que cumplan una condición.
 
 ```javascript
 const names = ["María", "Lucía", "Susana", "Rocío", "Inmaculada"];

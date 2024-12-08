@@ -1,6 +1,6 @@
 # Diagramas de entidad relación (E-R)
 
-- Abrir el delfín (woekbench)
+- Abrir el delfín (workbench)
 - Click en el icono de los cuadraditos (diagrama)
 - Click en Add Diagram - Add Table
 - Click en icono de Place a New Table, click en la hoja de cuadros y doble click en la tabla (entidad) para renombrar y añadir atributos.
@@ -42,12 +42,15 @@ CREATE TABLE users (
 Estas claves foráneas sirven para hacer consultas combinando columnas de diferentes tablas.
 Hacer un producto cartesiano de dos tablas significa que se combinan todos los registros de una tabla con los de otra tabla.
 
-## Cláusula INNER JOIN
+## Cláusula INNER JOIN / LEFT JOIN / RIGHT JOIN / FULL JOIN
 
 Permite unir y enlazar más de dos tablas.
 
+Al unir la tabla A con la tabla B, a **LEFT JOIN** simplemente incluye filas de A independientemente de si se encuentra una fila coincidente en B. **RIGHT JOINE** lo mismo, pero al revés, manteniendo las filas en B independientemente de si se encuentra una coincidencia en A. Por último, **FULL JOIN** simplemente significa que se mantienen las filas de ambas tablas, independientemente de si existe una fila coincidente en la otra tabla.
+
 ```sql
 SELECT tabla1.columna1, tabla1.columna2, tabla2.columna1
-FROM tabla1 INNER JOIN tabla2
-ON tabla1.columna1 = tabla2.columna1
+FROM tabla1
+INNER/LEFT/RIGHT/FULL JOIN tabla2
+    ON tabla1.columna1 = tabla2.columna1
 ```
