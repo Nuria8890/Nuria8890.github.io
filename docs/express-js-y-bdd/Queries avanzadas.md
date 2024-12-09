@@ -1,5 +1,7 @@
 # Queries avanzadas
 
+Realizan un cálculo sobre un conjunto de filas y devuelve un único valor.
+
 ## MIN y MAX
 
 Devuelve los valores mínimo y máximo de una columna. Si son letras, "ordena alfabéticamente" y MIN devuelve la A y max devuelve la Z.
@@ -40,6 +42,8 @@ FROM tabla;
 
 Agrupa filas en función de valores comunes en una columna y realiza cálculos y análisis dentro de esos grupos individuales.
 
+Con `WHERE` filtramos filas individuales, y con `HAVING` filtramos grupos que han sido generados por `GROUP BY`.
+
 ```sql
 SELECT columna_agrupada, función_agregación(columna_calculo)
 FROM tabla
@@ -56,6 +60,8 @@ HAVING condición;
 ## CASE
 
 Permite aplicar lógica condicional en las consultas (if ... else...).
+
+Va a crear una nueva columna SOLO DE LECTURA, no se crea nada en la bbdd.
 
 ```sql
 SELECT salario,
