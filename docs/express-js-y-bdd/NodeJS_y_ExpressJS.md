@@ -1,8 +1,16 @@
 # NodeJS
 
-NodeJS sirve para ejecutar JS en la terminal o en un servidor, y nos permite leer o escribir en los ficheros del ordenador desde la terminal.
+NodeJS es un entorno de ejecución que nos permite ejecutar JS en la terminal o en un servidor, y nos permite leer o escribir en los ficheros del ordenador desde la terminal.
 
 Con NodeJS no podemos manejar eventos (`document.querySelector(".main")` Si queremos ejecutar un archivo que contiene esta línea de código, no funcionaría, nos daría error)
+
+Diferencias NODEJS VS JS:
+
+- No hay interfaz gráfica, no se ven los cambios en la página web, no vamos a escribir para el navegador.
+- No hay eventos.
+- Tenemos acceso a diferentes niveles del ordenador. Por ejemplo podemos acceder a los permisos.
+- Muchas librerías van a ser diferentes.
+- Los módulos (ficheros) se importan de diferente forma.
 
 ## Ejecutar ficheros en la terminal con NodeJS:
 
@@ -57,7 +65,8 @@ Pasos a seguir para inicializar un proyecto:
 
 - Ejecutar `npm init`
 - Instalar express: `npm install express`
-- Instalar cors: `npm install cors` para que se acepten peticiones que se hacen a un recurso que está en otro origen
+- Instalar cors: `npm install cors` para que se acepten peticiones que se hacen a un recurso que está en otro origen.
+- Instalar nodemon: `npm install -g nodemon`
 - Agregar cors en el index.js
 
   ```
