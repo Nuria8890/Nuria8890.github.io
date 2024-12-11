@@ -4,18 +4,26 @@ Es una ruta o path a la que atiende una aplicación servidor para un verbo o met
 
 ```javascript
 // Ejemplo de endpoint
-server.método("/nombre_de_la_ruta", (req, res) => {
-  // req: objeto que trae toda la información de la petición.
-  // res: objeto para responder la petición.
+const variable_con_datos = [
+  { datos: "datos del primer elemento" },
+  { datos: "datos del segundo elemento" },
+  { datos: "datos del tercer elemento" },
+];
+server.método("/nombre_de_la_ruta", (request, response) => {
+  // request: objeto que trae toda la información de la petición.
+  // response: objeto para responder la petición.
   /* Pasos:
   1. Buscar la información en un fichero o en la bbdd.
   2. Procesar esa información
   3. Enviar la respuesta
   */
-  const response = {
-    users: [{ name: "Sofía" }, { name: "María" }],
-  };
-  res.json(response);
+  if (variable_con_datos.length === 0) {
+    response
+      .status(404)
+      .json({ succes: false, error: "No se ha encontrado el resultado" });
+  } else {
+    response.status(200).json({ succes: true, result: variable_con_datos });
+  }
 });
 ```
 
@@ -24,11 +32,36 @@ server.método("/nombre_de_la_ruta", (req, res) => {
 
 # Métodos
 
-- **GET**: obtener información del servidor.
-- **POST**: añadir información al servidor.
-- **PUT**: reemplazar información en el servidor.
+- **GET**: obtener información del servidor. `SELECT * FROM...`
+- **POST**: añadir información al servidor. `INSERT INTO`
+
+```javascript
+server.post("/ruta", (req, res) => {
+  // actualizo mi bbdd
+  // envío respuesta
+  res.status(201).json({
+    success: true,
+    message: "Recurso añadido correctamente",
+  });
+});
+```
+
+- **PUT**: reemplazar información en el servidor. `UPDATE ... SET`
+
+```javascript
+server.put("/ruta/:id", (req, res) => {
+  // recojo el id que me envía front
+  // actualizo mi bbdd
+  // envío respuesta
+  res.status(200).json({
+    success: true,
+    message: "Recurso actualizado correctamente",
+  });
+});
+```
+
+- **DELETE**: eliminar totalmente información del servidor. `DELETE`
 - **PATCH**: actualizar una parte de la información que hemos enviado al servidor.
-- **DELETE**: eliminar totalmente información del servidor.
 - **OPTIONS**: sirve para pedir información sobre los métodos.
 
 # Cabeceras
