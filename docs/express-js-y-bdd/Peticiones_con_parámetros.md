@@ -6,12 +6,37 @@ Query params es una forma de enviar parámetros desde front al API REST mediante
 
 `https://randomuser.me/api/?gender=female&results=500`
 
-En el **servidor** los datos que nos están enviando desde front los recibimos en el parámetro `req.query` como un **string**.
+- En **front**:
 
 ```javascript
-server.get("/api", (req, res) => {
-  const gender = req.query.gender; // cuyo valor en el ejemplo de arriba es female
-  const results = req.query.results; // cuyo valor en el ejemplo de arriba es 500
+
+```
+
+- En el **servidor** los datos que nos están enviando desde front los recibimos en el parámetro `req.query` como un **string**.
+
+```javascript
+// Endpoints
+app.get("/api/students", async (req, res) => {
+  // 1. Contectarme a la bbdd
+  const connection = await getConnection();
+
+  // 2. Recoger la información que me envían desde front
+  const name = req.query.name;
+
+  // 3. Escribir la query
+  const query = "SELECT * FROM students WHERE name = ?;";
+
+  // 4. Ejecutar la query
+  const [result] = await connection.query(query, [name]);
+
+  // 5. Finalizar la conexión con la bbdd
+  connection.end();
+
+  // 6. Responder a frontend
+  res.json({
+    status: "success",
+    message: result,
+  });
 });
 ```
 
@@ -19,7 +44,7 @@ server.get("/api", (req, res) => {
 
 Los body params sirven para obtener los valores que un formulario envía a nuestra API. Se utilizan para enviar valores que no queremos que se vean en la URL (contraseñas).
 
-**En front**: enviamos los datos en el cuerpo del `fetch` de tipo `POST`.
+- **En front**: enviamos los datos en el cuerpo del `fetch` de tipo `POST`. Acepta todos los métodos menos el GET, es decir, cualquier método que _envíe_ información.
 
 ```javascript
 const bodyParams = {
@@ -36,22 +61,39 @@ fetch("http://localhost:3000/user", {
 });
 ```
 
-**En el servidor**: obtenemos los datos con `req.body`
+- **En el servidor**: obtenemos los datos con `req.body`
 
 ```javascript
-app.post("/user", (req, res) => {
-  console.log("Body params:", req.body);
-  console.log("Body param userName:", req.body.userName);
-  console.log("Body param userEmail:", req.body.userEmail);
+app.post("/api/student", async (req, res) => {
+  // 1. Contectarme a la bbdd
+  const connection = await getConnection();
+  // comprueblo la conexión con Postman simulando un POST
 
-  // add new user to dababase
-  users.push({
-    name: req.body.userName,
-    email: req.body.userEmail,
-  });
+  // 2. Recoger la información que me envían desde front
+  const studentData = req.body;
+  console.log("Datos que me envía frontend: ", studentData);
 
-  res.json({
+  // 3. Escribir la query
+  const query =
+    "INSERT INTO students (name, lastname, age, email) VALUES (?,?,?,?);";
+
+  // 4. Ejecutar la query
+  const [result] = await connection.query(query, [
+    studentData.name,
+    studentData.lastname,
+    studentData.age,
+    studentData.email,
+  ]);
+
+  // 5. Finalizar la conexión con la bbdd
+  connection.end();
+  console.log("Resultado de la query: ", result);
+
+  // 6. Responder a frontend
+  res.status(201).json({
+    status: "success",
     result: "User created",
+    id: result.insertId,
   });
 });
 ```
