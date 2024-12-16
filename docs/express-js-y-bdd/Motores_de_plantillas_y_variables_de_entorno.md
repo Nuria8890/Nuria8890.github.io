@@ -91,3 +91,12 @@ const getDataFromApi = () => {
    .then(...)
 };
 ```
+
+Utilizar variables de entorno:
+
+- Ejecutar `npm install dotenv`
+- Crear un fichero en la raiz del repositorio `.env` donde metemos todas las variables de entorno que quiera
+- Meter este fichero en `.gitignore`
+- Configurar el servidor para que acepte variables de entorno con la librería dotenv
+- Crear las variables de entorno. (Por ejemplo: `process.env.USER_DATABASE,`)
+- Crear archivo `.env_example` donde escribo toda la información que está en `.env`, pero vacía, así facilito la vida a quien quiera descargarse mi proyecto.
