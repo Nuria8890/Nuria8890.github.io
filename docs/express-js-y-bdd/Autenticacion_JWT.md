@@ -35,6 +35,8 @@ eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjkyMDAyMSIsIm5hbWUiOiJLcmlzaG5hIn0
 
 ## Utilizar JWT:
 
+Sirve para generar tokens
+
 1. Ejecutar `npm install jsonwebtoken`
 2. Importar jsonweboken en el archivo principal de Express.js `const jwt = require('jsonwebtoken');`
 3. Generar y verificar tokens:
@@ -170,5 +172,187 @@ server.post("/api/login", async (req, res) => {
     //Finalmente, si todo es correcto, la función responde con un estado 200 y envía un objeto JSON con el token, el nombre de usuario y el nombre real del usuario.
     res.status(200).json({ token, username: user.username });
   }
+});
+```
+
+## Frontend
+
+## Backend
+
+```javascript
+// Endpoint de registro
+
+server.post("/api/register", async (req, res) => {
+  // 1. Recojo los datos que me envía frontend
+  const username = req.body.username;
+  const password = req.body.password;
+
+  // Otra manera de recoger los parámetros, con destructuring:
+  // const {username, password} = req.body;
+
+  // 2. Encripto la contraseña
+  const passwordHash = await bcrypt.hash(password, 10);
+  // 3. Me conecto a la bbdd
+  const connection = await getDBConnection();
+  // 4. Añado los datos a la bbdd
+  const sql = "INSERT INTO users (username, password) VALUES (?,?);";
+
+  const [result] = await connection.query(sql, [username, passwordHash]);
+
+  connection.end();
+
+  res.status(201).json({ status: "succes", id: result.insertId });
+});
+```
+
+```javascript
+// Enpoint de autenticación (login) verificar que el username y la contraseña existen en mi bbdd
+
+server.post("/api/login", async (req, res) => {
+  //1. Recoger los datos que me envían de frontend
+  const body = req.body;
+
+  //2. Buscar si el usuario existe en bbdd
+  const sql = "SELECT * FROM users WHERE username= ?";
+  // 3. Me conecto a la bbdd
+  const connection = await getDBConnection();
+  //  4. Ejecuto la consulta
+  const [users] = await connection.query(sql, [body.username]);
+
+  // 5. Compruebo si la usuaria está registrada
+  if (users.length > 0) {
+    // Comprueblo si la contraseña que me envía fronted coincide con la que tengo encriptada en bdd
+    const isSamePassword = await bcrypt.compare(
+      body.password,
+      users[0].pasword
+    );
+    // Si la contraseña es la misma, genero un token y se lo envío a frontend
+    if (isSamePassword) {
+      // En el token guardo el email y el id
+      const infoToken = {
+        id: users[0].id,
+        username: users[0].username,
+      };
+      const token = generateToken(infoToken);
+      res.status(200).json({
+        status: "succes",
+        token: token,
+      });
+    } else {
+      res.status(400).json({
+        status: "error",
+        message: "Contraseña incorrecta",
+      });
+    }
+  } else {
+    res.status(400).json({
+      status: "error",
+      message: "Usuario no registrado",
+    });
+  }
+
+  //  Finalizo la conexión
+  connection.end();
+});
+
+function generateToken(tokenData) {
+  /*
+  parámetros:
+  - datos que quiero guardar en el token
+  - clave secreta
+  - caducidad del token
+  */
+
+  const token = jwt.sign(tokenData, secretKey, { expiresIn: "1h" });
+  return token;
+}
+```
+
+# Autorización JWT
+
+El token que nos devuelve backen en el endpoint de /`login` lo almacenamos en la aplicación cliente para saber si ese usuario está logado o no.
+
+Para verificar si el token llega de frontend a backend, utilizamos la función middleware `authenticateToken` añadiéndola como parámetro entre los puntos finales de la API y la función de devolución de llamada:
+
+## Front
+
+```javascript
+let api_token = "";
+
+fetch("http://localhost:4000/api/login", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify(bodyParams),
+})
+  .then((response) => response.json())
+  .then((responseData) => {
+    console.log("Server response:", responseData);
+    api_token = responseData.token;
+  });
+
+fetch("http://localhost:4000/articles", {
+  method: "GET",
+  headers: {
+    "Content-Type": "application/json",
+    authorization: api_token,
+  },
+})
+  .then((response) => response.json())
+  .then((responseData) => {
+    console.log("Server response:", responseData);
+  });
+```
+
+## Back
+
+```javascript
+const authenticateToken = (req, res, next) => {
+  const token = req.headers["authorization"];
+
+  if (!token) {
+    return res.status(401).json({ error: "Token no proporcionado" });
+  } else {
+    const decoded = verifyToken(token);
+
+    if (!decoded) {
+      return res.status(401).json({ error: "Token inválido" });
+    } else {
+      req.user = decoded;
+      next();
+    }
+  }
+};
+
+const authenticateTokenSINELSE = (req, res, next) => {
+  const token = req.headers["authorization"];
+
+  if (!token) {
+    return res.status(401).json({ error: "Token no proporcionado" });
+  }
+
+  const decoded = verifyToken(token);
+
+  if (!decoded) {
+    return res.status(401).json({ error: "Token inválido" });
+  }
+
+  req.user = decoded;
+  next();
+};
+
+// El usuario solo pordrá acceder a la sección de artículos si se ha registrado y logado previamente
+
+server.get("/articles", authenticateToken, async (req, res) => {
+  let sql = "SELECT * FROM articles WHERE email = ?";
+
+  const connection = await getDBConnection();
+  const [articles] = await connection.query(sql, [req.user.email]);
+  connection.end();
+  const response = {
+    articles: articles,
+  };
+  res.json(response);
 });
 ```
