@@ -57,7 +57,7 @@ const verifyToken = (token) => {
 };
 ```
 
-4. Middleware de autenticación (lógica de intercambio de información entre aplicaciones):
+4. Middleware de autenticación (lógica de intercambio de información entre aplicaciones) Es una función que siempre se va a ejecutar antes de procesar la petición al servidor, es una función intermediaria entre la solicitud de frontend y la petición al servidor:
 
 ```javascript
 const authenticateToken = (req, res, next) => {
@@ -276,6 +276,8 @@ Para verificar si el token llega de frontend a backend, utilizamos la función m
 
 ## Front
 
+<!-- VER APUNTES ANA -->
+
 ```javascript
 let api_token = "";
 
@@ -307,33 +309,21 @@ fetch("http://localhost:4000/articles", {
 
 ## Back
 
+<!-- VER APUNTES ANA -->
+
 ```javascript
 const authenticateToken = (req, res, next) => {
+  // 1. Recoger el token que envía frontend en el header (authorization)
   const token = req.headers["authorization"];
 
+  // 2. Validar el token con la clave secreta que se utiliza para crear los tokens (la clave secreta estará en una variable de entorno por temas de seguridad)
   if (!token) {
-    return res.status(401).json({ error: "Token no proporcionado" });
+    res.status(401).json({ status: "error", message: "Not authenticated" });
   } else {
-    const decoded = verifyToken(token);
-
-    if (!decoded) {
-      return res.status(401).json({ error: "Token inválido" });
-    } else {
-      req.user = decoded;
-      next();
-    }
-  }
-};
-
-const authenticateTokenSINELSE = (req, res, next) => {
-  const token = req.headers["authorization"];
-
-  if (!token) {
-    return res.status(401).json({ error: "Token no proporcionado" });
   }
 
   const decoded = verifyToken(token);
-
+  // 3. Obtener el email de la usuaria que ha hecho login, que es quien tiene el token
   if (!decoded) {
     return res.status(401).json({ error: "Token inválido" });
   }
@@ -345,6 +335,8 @@ const authenticateTokenSINELSE = (req, res, next) => {
 // El usuario solo pordrá acceder a la sección de artículos si se ha registrado y logado previamente
 
 server.get("/articles", authenticateToken, async (req, res) => {
+  // 1. Autorizar la petición (con la función authenticateToken)
+  // 2.
   let sql = "SELECT * FROM articles WHERE email = ?";
 
   const connection = await getDBConnection();
