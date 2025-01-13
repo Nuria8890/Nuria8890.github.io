@@ -2,25 +2,78 @@
 
 ## HTML
 
-1. ¿Qué es una librería (biblioteca) de código? ¿Has usado alguna? ¿Usarías Bootstrap en un proyecto nuevo?
+**1. ¿Qué es una librería (biblioteca) de código?**
 
-2. ¿Qué es accesibilidad web? ¿Por qué es importante? ¿Cómo construyes una web accesible?
+Una librería es por ejemplo Bootstrap, que es un conjunto de recursos que han sido realizados por unos desarrolladores para que otros desarrolladores puedan utilizalos y sea más fácil escribir el código, ya que utilizando librerías nos evitamos escribir un determinado código desde cero, y así podremos programar de manera más eficiente y efectiva.
 
-3. ¿Cómo afrontas un desarrollo front-end que de soporte a distintos tipos de navegadores?
+**2. ¿Qué es accesibilidad web? ¿Por qué es importante? ¿Cómo construyes una web accesible?**
 
-4. ¿Cómo afrontas un desarrollo front-end que de soporte a distintos dispositivos con distintos tamaños de pantalla?
+La accesibilidad web se refiere a desarrollar sitios web que sean accesibles para todos, sobretodo para personas con capacidades diferentes, como visuales o auditivas. Es importante construir una web accesible que ofrezca una experiencia inclusiva para todos los usuarios.
 
-5. Para qué es útil el posicionamiento (position) de elementos en CSS. Da ejemplos de uso en una web.
+Para construir una web accesible, por ejemplo, habría que:
 
-6. Cómo afrontas el desarrollo de una página para un dispositivo que no tiene soporte para flexbox.
+- utilizar media queries para que la web se adapte a diferentes dispositivos y tamaños de pantalla
+- utilizar HTML semántico, es decir, utilizar las etiquetas adecuadas para estructurar el contenido de la página de manera lógica, por ejemplo `header`, `nav`, `main`, `article`, `footer`...
+- y también estructurarlo de manera jerárquica utilizando `h1`, `h2`...
+- utilizar también texto alternativo con etiquetas `alt` para imágenes o cualquier elemento visual
+- usar etiquetas `label` en los formularios para que al hacer click en el texto nos lleve directamente al campo en el que tenemos que escribir
+- usar colores de texto y fondo adecuados para facilitar la lectura, y una fuente de texto legible
 
-7. ¿Qué es DOCTYPE y para que se usa?
+**3. ¿Cómo afrontas un desarrollo front-end que de soporte a distintos tipos de navegadores?**
 
-8. ¿Cuál es la diferencia entre div, section y article?
+Para que la web tenga soporte en diferentes tipos de navegadores hay que seguir una serie de buenas prácticas, como por ejemplo:
 
-9. Lista todas las etiquetas de HTML que conozcas.
+- utilizar HTML semántico, es decir, utilizar las etiquetas adecuadas para estructurar el contenido de la página de manera lógica, por ejemplo `header`, `nav`, `main`, `article`, `footer`...
+- y también estructurarlo de manera jerárquica utilizando `h1`, `h2`...
+- utilizar media queries para que la web se adapte a diferentes dispositivos y tamaños de pantalla
+- utilizar medidas relativas como `%`, `rem`
+- utilizar frameworks y librerías que ya sean compatibles en diferentes navegadores (Bootstrap o jQuery)
+- utilizar una hoja de estilos CSS de reset para resetear todos los estilos que traen por defecto los navegadores
+- utilizar las DevTools en los diferentes navegadores para depurar y probar el rendimiento de cada estilo
 
-10. ¿Por qué es útil una herramienta de automatización de tareas? ¿Has usado alguna? ¿Para qué?
+**4. Para qué es útil el posicionamiento (position) de elementos en CSS. Da ejemplos de uso en una web.**
+
+El posicionamiento nos permite controlar cómo se van a colocar los elementos en la página web.
+
+Por ejemplo es útil para colocar un menú de encabezado que queremos que al hacer scroll, se quede fijo y permanezca en la parte superior de la página (position `fixed`).
+
+Otro ejemplo es un tooltip que aparece sobre un botón cuando pasamos el ratón por encima (`:hover`), si usamos `position: absolute`, lo podemos posicionar en relación a ese botón.
+
+**5. Cómo afrontas el desarrollo de una página para un dispositivo que no tiene soporte para flexbox.**
+
+Utilizando:
+
+- CSS Grid
+- display inline-block
+- un diseño más sencillo para no tener que colocar demasiado los elementos...
+
+**6. ¿Qué es DOCTYPE y para que se usa?**
+
+DOCTYPE es una etiqueta que se coloca al principio de un documento HTML y se usa para inidcar al navegador la versión del lenguaje y el tipo de documento que se está utilizando, para que el navegador sepa cómo renderizar ese contenido.
+
+**7. ¿Cuál es la diferencia entre div, section y article?**
+
+Los tres son elementos HTML que se utilizan para estructurar el contenido de una página web, pero son diferentes entre sí:
+
+- `div`: es un contenedor genérico que no tiene ningún contenido semántico.
+
+- `section`: se utiliza para agrupar contenido que está relacionado o forma parte de un mismo tema.
+
+- `article`: se usa para representar contenido independiente, que tiene sentido por sí mismo.
+
+**8. Lista todas las etiquetas de HTML que conozcas.**
+
+header, main, footer, h1-h6, p, br, hr, strong, em, a, img, video, audio, ul, ol, li, table, form, input, lable, textarea, button, select, div, spam, section, article, aside, link, script...
+
+**9. ¿Por qué es útil una herramienta de automatización de tareas? ¿Has usado alguna? ¿Para qué?**
+
+Una herramienta de automatizacion de tareas es por ejemplo `Vite`, es útil porque ayudan a ser más eficientes, nos ahorran tener que realizar tareas repetitivas y ayudan a reducir los errores, y todo esto permite que el desarrollador esté concentrado en cosas más importantes.
+
+Lo he utilizado para:
+
+- convertir Sass en CSS y que ese código sea legible para el ordenador
+- generar un único html (cuando se tiene el código dividido en partials)
+- optimizar los ficheros CSS y JavaScript antes de subir la web a producción.
 
 ## CSS
 
