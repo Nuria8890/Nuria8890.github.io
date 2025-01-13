@@ -1,13 +1,14 @@
-# Apuntes de Friki
+# Apuntes de programación Web
 
 > An awesome project.
 
 ## Terminal y GitHub
-  - [Terminal](./terminal-y-gitHub/terminal.md)
-  - [GitHub](./terminal-y-gitHub/gitHub.md)
 
+- [Terminal](./terminal-y-gitHub/terminal.md)
+- [GitHub](./terminal-y-gitHub/gitHub.md)
 
 ## HTML y CSS
+
 - [HTML](./html-y-css/html.md)
   - [Etiquetas](./html-y-css/html-etiquetas.md)
   - Atributos
@@ -33,8 +34,8 @@
   - Responsive desing: Media Queries
 - [Sass](./html-y-css/sass.md)
 
-
 ## [Javascript](./javascript/generales.md)
+
 - Variables
 - Operadores de comparación
 - Operadores lógicos
@@ -54,6 +55,5 @@
   - [Funciones](./javascript/funciones.md)
 - Type Casting y Coerción (Conversión de tipos)
 - [Condicionales y bucles](./javascript/condicionales_y_bucles.md)
-
 
 ## [React](./react/generales.md)
