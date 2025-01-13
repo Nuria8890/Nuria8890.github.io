@@ -77,25 +77,83 @@ Lo he utilizado para:
 
 ## CSS
 
-1. ¿Qué es la cascada de CSS y cómo funciona?
+**1. ¿Qué es la cascada de CSS y cómo funciona?**
 
-2. ¿Has usado alguna vez un sistema de grid? ¿Prefieres usarlo o no?
+La cascada es la forma en la que se aplican los estilos CSS a los elementos HTML, es decir, el navegador lee el código CSS y va aplicando los estilos de arriba a abajo.
 
-3. ¿Conoces algún preprocesador de CSS? ¿Cuáles son las ventajas/inconvenientes de usarlo?
+Existen una serie de reglas de combinación de estilos, en función de su **origen** (estilos del navegador, en línea u hojas de estilo), **especificidad** (estilos en línea, selectores de id, de clase, de tipo) y **orden** (se aplica la última regla definida).
 
-4. ¿Has usado o implementado alguna vez media queries o realizado layous específicos para móvil?
+**2. ¿Has usado alguna vez un sistema de grid? ¿Prefieres usarlo o no?**
 
-5. ¿Puedes explicar la diferencia entre desarrollar un sitio web responsive frente a usar una estrategia mobile-first?
+He utilizado CSS Grid, display inline-block y Flexbox.
 
-6. ¿Qué es y cómo funciona la especificidad de selectores CSS?
+Prefiero utilizar flexbox o la ibrería de bootstrap.
 
-7. Describe qué es z-index y para qué usarlo.
+**3. ¿Conoces algún preprocesador de CSS? ¿Cuáles son las ventajas/inconvenientes de usarlo?**
 
-8. Describe qué son pseudo-elementos y discute para qué puedes usarlos.
+Conozco **Sass**.
 
-9. Cuál es la diferencia entre una transición y una animación en CSS. Da ejemplos de uso.
+Ventajas:
 
-10. Qué es un sistema de diseño y por qué es útil.
+- permite escribir los estilos de manera más eficiente, organizada y legible
+- se pueden anidar los estilos y se pueden utilizar variables
+- permite dividir el código en varios archivos e importarlos en un archivo principal
+
+Inconvenientes:
+
+- necesitan de una herramienta de compliación, como por ejemplo node.js, y en proyectos muy grandes puede que el tiempo de carga sea mayor
+- a la hora de debuggear, puede ser más dificil de depurar el código, porque el código final no siempre refleja la estructura real del código fuente.
+
+**4. ¿Has usado o implementado alguna vez media queries o realizado layous específicos para móvil?**
+
+Sí, siempre que realizo cualquier maquetación de un proyecto, la hago responsive para que se adapte a todos los dipositivos y diferentes tamaños de pantallas, y siempre utilizo la estrategia mobile first, ya que se priorizan los dispositivos con menor capacidad de pantalla, conexión y batería.
+
+**5. ¿Puedes explicar la diferencia entre desarrollar un sitio web responsive frente a usar una estrategia mobile-first?**
+
+Al utilizar la estrategia mobile first se priorizan los dispositivos con menor capacidad de pantalla, conexión y batería.
+
+Normalmente cuando se desarrolla un sitio web responsive se utiliza esta estrategia, ya que es más sencillo añadir estilos y características que quitarlos.
+
+**6. ¿Qué es y cómo funciona la especificidad de selectores CSS?**
+
+La especificidad es una regla que determina qué estilos de CSS debe aplicar el navegador a los elementos HTML.
+
+El navegador primero lee los estilos en línea, luego los selectores de id, después los de clase, y por último las etiquetas.
+
+**7. Describe qué es z-index y para qué usarlo.**
+
+z-indez es una propiedad de CSS que coloca los elementos en el eje Z, se suele usar junto con la propiedad `position` (relative, absolute, fixed o sticky)
+
+**8. Describe qué son pseudo-elementos y discute para qué puedes usarlos.**
+Los pseudo-elementos permiten aplicar estilos a partes específicas de un elemento HTML, por ejemplo:
+
+- para resaltar la primera linea de un párrafo `p::first-line{font-weight:bold}`
+- o la primera letra `p::first-letter{font-weight:bold}`
+- o cuando un usuario selecciona un texto, resaltarlo de una manera específica `::selection{background-color:yellow}`
+
+**9. Cuál es la diferencia entre una transición y una animación en CSS. Da ejemplos de uso.**
+
+Ambas permiten crear efectos visuales dinámicos en los elementos de una página web, pero
+
+- las transiciones hacen que ese efecto visual ocurra de manera suave y gradual (`transition: background-color 0.3s ease`) cuando sucede un evento, por ejemplo un `:hover`
+
+- las animaciones no necesitan que ocurra ningún evento para que se active ese efecto visual, y se definen mediante `@keyframes` para especificar los estados intermedios de la animación (cuántas veces se repite la animación, a qué velocidad, hacia que eje se mueve, cuánta distancia...)
+
+10. **Qué es un sistema de diseño y por qué es útil.**
+
+Un sistema de diseño son una serie de reglas que se definen para que la interfaz de usuario tenga coherencia.
+
+Por ejemplo, definir:
+
+- la paleta de colores, la tipografía que se va a utilizar, los iconos...
+- qué elementos se van a reutilizar (botones, modales, menús...)
+
+Es útil porque:
+
+- facilita el trabajo de los diseñadores y desarrolladores al existir componentes reutilizables
+- mejora la comunicación entre ambos equipos
+- hace que todos los elementos de la web se vean y se comporten de manera similar, lo que facilita una buena navegación y experiencia al usuario.
+- facilita el mantenimiento y actualización de la web, ya que no hay que actualizar cada elemento de forma individual.
 
 ## JavaScript
 
