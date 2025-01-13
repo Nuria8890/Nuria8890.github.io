@@ -157,51 +157,72 @@ Es útil porque:
 
 ## JavaScript
 
-1. ¿Qué es una librería (biblioteca) de código? ¿Has usado alguna en JS?
+**1. ¿Qué es una librería (biblioteca) de código? ¿Has usado alguna en JS?**
 
-2. ¿Qué es un API? ¿Por qué es importante para el desarrollo front-end?
+Una librería de código es por ejemplo jQuery, que es un conjunto de recursos que han sido realizados por unos desarrolladores para que otros desarrolladores puedan utilizalos y sea más fácil escribir el código, ya que utilizando librerías nos evitamos escribir un determinado código desde cero, y así podremos programar de manera más eficiente y efectiva.
 
-3. ¿Qué es debugging de aplicaciones? ¿Cómo lo haces?
+**2. ¿Qué es un API? ¿Por qué es importante para el desarrollo front-end?**
+Una API es una Interfaz de Programación de Aplicaciones, y permite que el navegador pueda comunicarse con el servidor.
 
-4. ¿Qué es el DOM y por qué es importante saber manipularlo para un desarrollador front-end?
+Es importante para el desarrollo front-end porque:
 
-5. What is the difference between == and ===?
+- gracias a las APIs, las aplicaciones se comunican con un servidor y es posible obtener, enviar, modificar o eliminar datos que están alojados en una base de datos.
 
-6. What are the differences between variables created using let, var or const?
+**3. ¿Qué es debugging de aplicaciones? ¿Cómo lo haces?**
 
-7. What are callbacks? What for and how to use them.
+El debuggin es la depuración del código, sirve para corregir errores.
 
-8. What is "use strict";? what are the advantages and disadvantages to using it?
+Normalmente utilizo console.log, y si no encuentro el error utilizo `debugger` en las DevTools para ir viendo el comportamiento del código.
 
-9. Explain what is localStorage and why is it useful.
+Si estoy utilizando React, uso una extensión que se llama React DEvTools.
 
-10. Explain the concept of hoisting
+**4. ¿Qué es el DOM y por qué es importante saber manipularlo para un desarrollador front-end?**
 
-11. Can you give an example for destructuring an object or an array?
+El DOM es una representación en forma de árbol de la estructura de un documento HTML, que permite ser modificado por lenguajes de programación como JS, o también a través de las DevTools.
 
-12. Explain the difference between ES6 spread operator and rest operator
+Es importante saber manipularlo porque:
 
-13. What is an endpoint nad how it is useful?
+- nos permite interactuar de forma dinámica con la página web a través de eventos como clicks, desplazamientos con el ratón, entradas del teclado...
+- podemos modificar el contenido de la página sin necesidad de recargarla
+- puede ayudarnos a optimizar el rendimiento de la aplicación minimizando el número de cambios en el DOM, así mejoramos la velocidad.
 
-14. ES6 Template Literals offer a lot of flexibility in generating strings, can you give an example?
+**5. What is the difference between == and ===?**
 
-15. Explain what is it HTTP and requests types and response codes.
+**6. What are the differences between variables created using let, var or const?**
 
-16. Explain Ajax in as much detail as possible.
+**7. What are callbacks? What for and how to use them.**
 
-17. What are Promises and why are they useful?
+**8. What is "use strict";? what are the advantages and disadvantages to using it?**
 
-18. Explain how this works in JavaScript
+**9. Explain what is localStorage and why is it useful.**
 
-19. Explain "destructuring" and why is it useful
+**10. Explain the concept of hoisting**
 
-20. Explain the difference between spread operator and rest operator
+**11. Can you give an example for destructuring an object or an array?**
 
-21. What are classes? And instances?
+**12. Explain the difference between ES6 spread operator and rest operator**
 
-22. What is classes inheritance and why is it useful
+**13. What is an endpoint nad how it is useful?**
 
-23. What are JS module and how are they useful
+**14. ES6 Template Literals offer a lot of flexibility in generating strings, can you give an example?**
+
+**15. Explain what is it HTTP and requests types and response codes.**
+
+**16. Explain Ajax in as much detail as possible.**
+
+**17. What are Promises and why are they useful?**
+
+**18. Explain how this works in JavaScript**
+
+**19. Explain "destructuring" and why is it useful**
+
+**20. Explain the difference between spread operator and rest operator**
+
+**21. What are classes? And instances?**
+
+**22. What is classes inheritance and why is it useful**
+
+**23. What are JS module and how are they useful**
 
 ## React
 
