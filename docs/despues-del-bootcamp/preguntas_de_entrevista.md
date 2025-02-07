@@ -188,11 +188,19 @@ Es importante saber manipularlo porque:
 
 **5. What is the difference between == and ===?**
 
+El == compara solo el valor, y el === compara tanto el valor como el tipo de dato.
+
 **6. What are the differences between variables created using let, var or const?**
+
+Las variables creadas con let pueden ser modificadas posteriormente, es decir, se les puede asignar otro valor, y las asignadas con const su valor va a ser constante, no se le podrá asignar otro valor.
 
 **7. What are callbacks? What for and how to use them.**
 
+Los callbacks son funciones que se pasan como argumento a otras funciones, y se utilizan para manejar operaciones asíncronas como eventos, solicitudes al servidor o temporizadores.
+
 **8. What is "use strict";? what are the advantages and disadvantages to using it?**
+
+Use strict ayuda a escribir código más seguro y menos propenso a errores, se pone en la primera línea de un archivo JavaScript.
 
 **9. Explain what is localStorage and why is it useful.**
 
