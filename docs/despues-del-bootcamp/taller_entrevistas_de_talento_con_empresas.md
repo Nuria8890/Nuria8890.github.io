@@ -1,4 +1,4 @@
-# Taller entrevistas de talento con empresas con Career Hub
+# Taller entrevistas de talento con empresas
 
 Isabel García (APIUX): directora de desarrollo de negocio. Está entre el cliente y desarrollo. reclutamiento y selección de perfiles IT.
 
@@ -96,7 +96,7 @@ La verdad es que empecé el bootcamp con bastante miedo por el reto que suponía
 
 A día de hoy estoy buscando un trabajo donde poder aprender y crecer laboralmente y donde me den la oportunidad de aplicar todos los conocimientos que he adquirido en Adalab. Y en un futuro me encantaría ser experta en frontend, ya que creo que el front es un mundo fascinante, que me está encantando, y considero que está un poquito infravalorado por el resto de desarrolladores, ya que normalmente se centran más en backend o en sistemas, pero creo que el frontend puede dar muchísimo de sí si lo sabes utilizar bien, así que me encantaría descubrirlo en su máxima expresión.
 
-## SEGUNDO TALLER
+## SEGUNDO TALLER (con Andrea Salvador)
 
 ### CONÓCETE
 
@@ -137,4 +137,61 @@ La empresa para la que trabajaba cerró, así que empecé a ver videos de progra
 
 Comencé el bootcamp con bastante miedo por el reto que suponía adquirir tantísimos conocimientos en tan poco tiempo, pero gracias a lo disciplinada que soy y a mis ganas y entusiasmo por aprender, conseguí aprovechar al 100% el curso, donde he adquirido habilidades tecnológicas clave como HTML, CSS y JavaScript, especializándome en React y NodeJS para el desarrollo de aplicaciones web.
 
-A día de hoy estoy buscando un trabajo donde poder aprender y crecer laboralmente, y en un futuro me encantaría ser experta en frontend, ya que creo que puede dar muchísimo de sí si lo sabes utilizar bien, por lo que estoy constantemente buscando nuevos retos de programación para tener una formación contínua. Me encantaría descubrir cómo mis habilidades pueden contribuir al éxito de tu equipo.
+A día de hoy estoy buscando una oportunidad donde poder aprender y crecer laboralmente, y en un futuro me encantaría ser experta en frontend, ya que creo que puede dar muchísimo de sí si lo sabes utilizar bien, así que para ello estoy constantemente buscando nuevos retos de programación y formándome continuamente. Me encantaría descubrir cómo mis habilidades pueden contribuir al éxito de [algún equipo de trabajo] [tu equipo] .
+
+## TERCER TALLER
+
+Paula Basterrechea: people.
+Christian: lidera la líea de tecnología.
+
+KELEA: 7 años. Ayudan a encontrar soluciones a sus clientes. No son una consultora tradicional, se adaptan a la realidad de cada cliente. Tienen muy en cuenta a las personas, a sus trabajadores.
+Dos líneas de negocio:
+
+- Kelea consulting:
+- Kelea tech: el último año.
+  - solucion 1: IT DEVELOPMENT: front, back, full stack, QA
+    - proyectos para 2025: interfaces de usuario interactivas y atractivas que proporcionan una experiencia fluida y user-friendly. TS, JS, HTML, Sass, React.
+  - solucion 2: DATA: data, IA...
+    CLIENTES: inditex, iberia, abanca, navantia, sacyr, yamaha, agbar, clarel, bbva.
+
+PROCESO DE SELECCIÓN:
+
+- match cultural: Paula Basterrechea.
+- match técnico: Christian. con qué stack te sientes más cómodo trabajando.
+- entrevista con el cliente para ver si encajamos.
+
+Has comentado que antes de pasar a la entrevista técnica, tenemos que hacer un match cultural... te quería preguntar, qué perfil o perfiles estais buscando? qué tipo de personas buscáis para que ese match se produzca.
+
+- trabajar en equipo y rodeado de gente
+- ser humano y cercano
+- compartir conocimiento, experiencias, vivencias...
+- iquietudes de buscar futuro y ser inquieta,
+- crecer y aportar a proyectos.
+- dar una vuelta de tuerca y ser cada día mejores
+
+paula.basterrechea@kelea.es
+
+- Oficinas en Coruña y Madrid. Ofertas 100% remoto, flexibilidad para ir a oficina. Al estar empezando, tiene que ir a la oficina.
+
+Fecha de icorporación: marzo.
+Se trabajará solo con un único cliente.
+
+Oferta: talent pool de perfiles técnicos: objetivo, van revisando perfiles para que cuando salga un proyecto.
+
+CARTA DE PRESENTACIÓN:
+
+Hola, soy Nuria y me gustaría expresar mi interés en un puesto de trabajo como Desarrolladora Front-End en Kelea, tras haber asistido al taller de entrevistas de talento con Paula Basterrechea, de la mano de Career Hub (Adalab).
+
+Durante mis 12 años de experiencia en la gestión contable he tenido que aprender a ser una persona muy organizada y disciplinada, lo que me ha llevado a ser metódica y detallista.
+
+Sin embargo, tras el cierre de la empresa, decidí reinventarme y seguir mi pasión por la tecnología.
+
+Tras dedicar casi un año a estudiar programación web por mi cuenta, decidí apuntarme al bootcamp de Adalab, donde he adquirido habilidades en HTML, CSS, SCSS, JavaScript, React, Node.js, Express.js, MySQL, así como en el uso de Git y GitHub para el control de versiones.
+
+Gracias a mi alto nivel de aprendizaje y a mi perseverancia, he podido adaptarme rápidamente a estas nuevas tecnologías y entornos de trabajo con metodologías Agile y Scrum. Estoy convencida de que estas habilidades, combinadas con mi entusiasmo por el desarrollo web, me convierten en una candidata ideal para un puesto de Front-End Developer.
+
+Estoy muy interesada en la posibilidad de formar parte de este equipo y contribuir al éxito de los proyectos en los que participe.
+
+Agradezco de antemano vuestra consideración y espero tener la oportunidad de aportar valor a Kelea.
+
+Me encantaría concertar una entrevista con vosotr@s para poder conocernos un poquito más.
